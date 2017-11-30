@@ -26,4 +26,5 @@
 Useful links :
 
 https://www.quora.com/What-is-the-best-bill-splitting-app-for-friends
+
 http://www.settleup.info/files/master-thesis-david-vavra.pdf
