@@ -5,10 +5,14 @@
 * Split equally.
 * Split some amounts only across certain people.
 * 
+
+
 2) Add people and invite. 
         -> User login and credentials.
-        -> Web, iPhone & Android. (All platform).
-        -> Maybe even without smart phone.. (SMS) ?
+        -> Invite users, with QR Code, etc.. 
+
+* Web, iPhone & Android. (All platform).
+* Maybe even without smart phone.. (SMS) ?
         -> 
 
 * Integrate different payment modes.
