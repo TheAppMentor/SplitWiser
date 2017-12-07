@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		73271BF21FD988E300FD0EBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73271BF11FD988E300FD0EBB /* User.swift */; };
 		7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB71FD7AF520010C673 /* AppDelegate.swift */; };
 		7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB91FD7AF520010C673 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		73271BF11FD988E300FD0EBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7376CEB41FD7AF520010C673 /* SplitWiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitWiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376CEB71FD7AF520010C673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				73271BF11FD988E300FD0EBB /* User.swift */,
+				20CDF4AF1FD9956D00ED98E2 /* Event.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
 				7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
 				73271BF21FD988E300FD0EBB /* User.swift in Sources */,
