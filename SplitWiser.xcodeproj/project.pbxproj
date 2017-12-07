@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73271BF21FD988E300FD0EBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73271BF11FD988E300FD0EBB /* User.swift */; };
 		7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB71FD7AF520010C673 /* AppDelegate.swift */; };
 		7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB91FD7AF520010C673 /* ViewController.swift */; };
 		7376CEBD1FD7AF520010C673 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7376CEBB1FD7AF520010C673 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73271BF11FD988E300FD0EBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7376CEB41FD7AF520010C673 /* SplitWiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitWiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376CEB71FD7AF520010C673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7376CEB91FD7AF520010C673 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		73271BF01FD988D000FD0EBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				73271BF11FD988E300FD0EBB /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		7376CEAB1FD7AF520010C673 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 		7376CEB61FD7AF520010C673 /* SplitWiser */ = {
 			isa = PBXGroup;
 			children = (
+				73271BF01FD988D000FD0EBB /* Models */,
 				7376CEB71FD7AF520010C673 /* AppDelegate.swift */,
 				7376CEB91FD7AF520010C673 /* ViewController.swift */,
 				7376CEBB1FD7AF520010C673 /* Main.storyboard */,
@@ -261,6 +272,7 @@
 			files = (
 				7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
+				73271BF21FD988E300FD0EBB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
