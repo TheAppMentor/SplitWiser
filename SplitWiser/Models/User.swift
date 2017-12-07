@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
-	
-	
+	var phoneNumber:String!
+	var userName:String!
+	var profileImage:UIImage?
 }
