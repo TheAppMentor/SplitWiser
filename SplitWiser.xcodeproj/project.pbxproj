@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
+		20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDC4C91FDAD90F0013456B /* EventManager.swift */; };
 		2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8150C21FDA3E82001F9452 /* Transaction.swift */; };
 		73271BF21FD988E300FD0EBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73271BF11FD988E300FD0EBB /* User.swift */; };
 		7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB71FD7AF520010C673 /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		20FDC4C91FDAD90F0013456B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		2F8150C21FDA3E82001F9452 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		73271BF11FD988E300FD0EBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7376CEB41FD7AF520010C673 /* SplitWiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitWiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20FDC4C81FDAD8FC0013456B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				20FDC4C91FDAD90F0013456B /* EventManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		73271BF01FD988D000FD0EBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 		7376CEB61FD7AF520010C673 /* SplitWiser */ = {
 			isa = PBXGroup;
 			children = (
+				20FDC4C81FDAD8FC0013456B /* Managers */,
 				73271BF01FD988D000FD0EBB /* Models */,
 				7376CEB71FD7AF520010C673 /* AppDelegate.swift */,
 				7376CEB91FD7AF520010C673 /* ViewController.swift */,
@@ -276,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
 				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
 				7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,

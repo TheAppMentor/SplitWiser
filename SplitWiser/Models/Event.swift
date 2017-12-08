@@ -8,13 +8,10 @@
 
 import Foundation
 
-class Event {
-	
-	var eventId: String!
-	var name: String!
-	var description: String!
-	var date: Date!
-	var amount: Int!
-	var paidBy: [User]!
-	var participants: [User]!
+struct Event {
+	var eventId: UUID
+	var name: String
+	var description: String
+	var date: Date
+	var transactions: [Transaction]
 }
