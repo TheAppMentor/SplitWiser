@@ -25,18 +25,18 @@ struct TransactionHandler {
 
         // No Matching Transaction found.
         guard fetchedTrans.isEmpty == false else {throw TransactionError.notFound}
-        guard fetchedTrans.count == 1 else {guard TransactionError.duplicateTransaction}
+        guard fetchedTrans.count == 1 else {throw TransactionError.duplicateTransaction}
         
         return fetchedTrans.first ?? nil
     }
     
     func fetchDetailsForTransactions(transactions : [UUID]) throws -> [TransactionRepresentable]? {
-        do{
-            for eachTransaction in transactions{
-                try fetchTransaction(tranID: eachTransaction)
-            }catch 
-
-        }
+//        do{
+//            for eachTransaction in transactions{
+//                try fetchTransaction(tranID: eachTransaction)
+//            }
+//
+//        }
         
         return nil
     }

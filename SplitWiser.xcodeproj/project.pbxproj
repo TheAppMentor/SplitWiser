@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
+		28D540E4C77897253F5231CA /* Pods_SplitWiserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */; };
 		2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8150C21FDA3E82001F9452 /* Transaction.swift */; };
 		2F8151371FDA9B6A001F9452 /* TransactionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151361FDA9B6A001F9452 /* TransactionHandler.swift */; };
 		2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151391FDAA303001F9452 /* TransactionError.swift */; };
@@ -15,6 +16,7 @@
 		2F8151401FDAACAF001F9452 /* TransactionCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F81513F1FDAACAF001F9452 /* TransactionCurrency.swift */; };
 		2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151411FDAACE1001F9452 /* UserTranShare.swift */; };
 		2F8151441FDAACF7001F9452 /* TransactionRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151431FDAACF7001F9452 /* TransactionRepresentable.swift */; };
+		2F8151461FDAD306001F9452 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F8151451FDAD305001F9452 /* GoogleService-Info.plist */; };
 		73271BF21FD988E300FD0EBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73271BF11FD988E300FD0EBB /* User.swift */; };
 		7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB71FD7AF520010C673 /* AppDelegate.swift */; };
 		7376CEBA1FD7AF520010C673 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CEB91FD7AF520010C673 /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 		7376CEC21FD7AF520010C673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7376CEC01FD7AF520010C673 /* LaunchScreen.storyboard */; };
 		7376CECD1FD7AF530010C673 /* SplitWiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CECC1FD7AF530010C673 /* SplitWiserTests.swift */; };
 		7376CED81FD7AF530010C673 /* SplitWiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */; };
+		7E422D3EB28156D5AD18DDFF /* Pods_SplitWiserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */; };
+		FB0906858EE29C63F1176496 /* Pods_SplitWiser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.release.xcconfig"; sourceTree = "<group>"; };
+		130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.debug.xcconfig"; sourceTree = "<group>"; };
+		145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests.release.xcconfig"; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2F8150C21FDA3E82001F9452 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2F8151361FDA9B6A001F9452 /* TransactionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHandler.swift; sourceTree = "<group>"; };
@@ -51,6 +58,8 @@
 		2F81513F1FDAACAF001F9452 /* TransactionCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCurrency.swift; sourceTree = "<group>"; };
 		2F8151411FDAACE1001F9452 /* UserTranShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTranShare.swift; sourceTree = "<group>"; };
 		2F8151431FDAACF7001F9452 /* TransactionRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepresentable.swift; sourceTree = "<group>"; };
+		2F8151451FDAD305001F9452 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		414802165F3778B9BF033358 /* Pods-SplitWiserUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73271BF11FD988E300FD0EBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7376CEB41FD7AF520010C673 /* SplitWiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitWiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376CEB71FD7AF520010C673 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +74,11 @@
 		7376CED31FD7AF530010C673 /* SplitWiserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitWiserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiserUITests.swift; sourceTree = "<group>"; };
 		7376CED91FD7AF530010C673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7516BB1B5BB01EE248A22CE4 /* Pods-SplitWiserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.release.xcconfig"; sourceTree = "<group>"; };
+		769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60713B6304599F0155A583C /* Pods-SplitWiserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0906858EE29C63F1176496 /* Pods_SplitWiser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E422D3EB28156D5AD18DDFF /* Pods_SplitWiserTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +102,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D540E4C77897253F5231CA /* Pods_SplitWiserUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20365A19BB2F250E2665DA99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */,
+				0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */,
+				A60713B6304599F0155A583C /* Pods-SplitWiserTests.debug.xcconfig */,
+				7516BB1B5BB01EE248A22CE4 /* Pods-SplitWiserTests.release.xcconfig */,
+				414802165F3778B9BF033358 /* Pods-SplitWiserUITests.debug.xcconfig */,
+				145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2F8151381FDA9B74001F9452 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +167,8 @@
 				7376CECB1FD7AF530010C673 /* SplitWiserTests */,
 				7376CED61FD7AF530010C673 /* SplitWiserUITests */,
 				7376CEB51FD7AF520010C673 /* Products */,
+				20365A19BB2F250E2665DA99 /* Pods */,
+				BE8E434831D5A57BD50E39E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +194,7 @@
 				7376CEBE1FD7AF520010C673 /* Assets.xcassets */,
 				7376CEC01FD7AF520010C673 /* LaunchScreen.storyboard */,
 				7376CEC31FD7AF520010C673 /* Info.plist */,
+				2F8151451FDAD305001F9452 /* GoogleService-Info.plist */,
 			);
 			path = SplitWiser;
 			sourceTree = "<group>";
@@ -184,6 +217,16 @@
 			path = SplitWiserUITests;
 			sourceTree = "<group>";
 		};
+		BE8E434831D5A57BD50E39E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */,
+				D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */,
+				769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,9 +234,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7376CEDC1FD7AF530010C673 /* Build configuration list for PBXNativeTarget "SplitWiser" */;
 			buildPhases = (
+				A65CD8E64434B862F12FBFC5 /* [CP] Check Pods Manifest.lock */,
 				7376CEB01FD7AF520010C673 /* Sources */,
 				7376CEB11FD7AF520010C673 /* Frameworks */,
 				7376CEB21FD7AF520010C673 /* Resources */,
+				35E627EFF3099A4764473AED /* [CP] Embed Pods Frameworks */,
+				CF61299F48E4A63890358C15 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7376CEDF1FD7AF530010C673 /* Build configuration list for PBXNativeTarget "SplitWiserTests" */;
 			buildPhases = (
+				A7255E9AFF03F0C65FAE29B2 /* [CP] Check Pods Manifest.lock */,
 				7376CEC41FD7AF530010C673 /* Sources */,
 				7376CEC51FD7AF530010C673 /* Frameworks */,
 				7376CEC61FD7AF530010C673 /* Resources */,
+				69884D9E5DECA2FFC90AEC99 /* [CP] Embed Pods Frameworks */,
+				2BECF98DC248EC595557D35C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -226,9 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7376CEE21FD7AF530010C673 /* Build configuration list for PBXNativeTarget "SplitWiserUITests" */;
 			buildPhases = (
+				48F7A46DFFCCF371793C1843 /* [CP] Check Pods Manifest.lock */,
 				7376CECF1FD7AF530010C673 /* Sources */,
 				7376CED01FD7AF530010C673 /* Frameworks */,
 				7376CED11FD7AF530010C673 /* Resources */,
+				BC25FFF7B586DB002E0F877C /* [CP] Embed Pods Frameworks */,
+				7B4A5E08685825C3129F0C58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7376CEC21FD7AF520010C673 /* LaunchScreen.storyboard in Resources */,
+				2F8151461FDAD306001F9452 /* GoogleService-Info.plist in Resources */,
 				7376CEBF1FD7AF520010C673 /* Assets.xcassets in Resources */,
 				7376CEBD1FD7AF520010C673 /* Main.storyboard in Resources */,
 			);
@@ -312,6 +365,144 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BECF98DC248EC595557D35C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35E627EFF3099A4764473AED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48F7A46DFFCCF371793C1843 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		69884D9E5DECA2FFC90AEC99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B4A5E08685825C3129F0C58 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65CD8E64434B862F12FBFC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7255E9AFF03F0C65FAE29B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC25FFF7B586DB002E0F877C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF61299F48E4A63890358C15 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7376CEB01FD7AF520010C673 /* Sources */ = {
@@ -492,13 +683,14 @@
 		};
 		7376CEDD1FD7AF530010C673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D38394224C;
+				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sap.SplitWiser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,13 +699,14 @@
 		};
 		7376CEDE1FD7AF530010C673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D38394224C;
+				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sap.SplitWiser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,6 +715,7 @@
 		};
 		7376CEE01FD7AF530010C673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A60713B6304599F0155A583C /* Pods-SplitWiserTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -539,6 +733,7 @@
 		};
 		7376CEE11FD7AF530010C673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7516BB1B5BB01EE248A22CE4 /* Pods-SplitWiserTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +751,7 @@
 		};
 		7376CEE31FD7AF530010C673 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 414802165F3778B9BF033358 /* Pods-SplitWiserUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -572,6 +768,7 @@
 		};
 		7376CEE41FD7AF530010C673 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
