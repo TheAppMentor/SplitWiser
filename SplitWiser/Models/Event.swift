@@ -13,5 +13,5 @@ struct Event {
 	var name: String
 	var description: String
 	var date: Date
-	var transactions: [Transaction]
+	var transactions: [TransactionRepresentable]
 }
