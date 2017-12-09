@@ -29,18 +29,26 @@ private struct Transaction : Equatable {
 }
 
 extension Transaction : TransactionRepresentable{
-
+    func getPaidBy() -> SplitWiserUser {
+        return paidBy
+    }
+    
+    func getAssociatedEvent() -> Event {
+        return associatedEvent
+    }
+    
     //private init() {}
-
+    
     func generateTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: SplitWiserUser, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
-                
+        
         
         return Transaction.init(tranID: UUID(), associatedEvent: associatedEvent, tranDate: date!, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, tranImages: transactionImages, description: transactionDescription)
-        }
+    }
     
     func getTransactionID() -> UUID{
         return tranID
     }
 }
+
 
 

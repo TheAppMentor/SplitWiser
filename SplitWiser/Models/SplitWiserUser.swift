@@ -15,7 +15,7 @@ struct SplitWiserUser {
 	var userName:String
 	var profileImage:UIImage?
 	var email:String?
-	var transactionsProvider: TransactionHandler
+	var transactionsProvider: TransactionManager
 	var eventsProvider: EventManager
 	
 	func getTranscations() -> [TransactionRepresentable]? {
@@ -25,4 +25,11 @@ struct SplitWiserUser {
 	func getEvents() -> [Event]? {
 		return eventsProvider.getEventsFor(user: self)
 	}
+}
+
+extension SplitWiserUser : Equatable {
+    
+    static func == (lhs : SplitWiserUser, rhs : SplitWiserUser) -> Bool{
+        return (lhs.phoneNumber == rhs.phoneNumber && lhs.userName == rhs.userName)
+    }
 }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct TransactionHandler {
+struct TransactionManager : TransactionDelegate {
     
-    static let shared = TransactionHandler()
+    static let shared = TransactionManager()
     
     private var transactionStore = [TransactionRepresentable]()
     
@@ -44,5 +44,10 @@ struct TransactionHandler {
 	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
 		return nil
 	}
+    
+    func fetchAllTransactionsForEvent(event: Event) -> [TransactionRepresentable]? {
+        let allTrans = transactionStore.filter({$0.getAssociatedEvent() == event})
+        return allTrans
+    }
     
 }

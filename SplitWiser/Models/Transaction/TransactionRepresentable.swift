@@ -14,4 +14,6 @@ protocol TransactionRepresentable {
     func generateTransaction(date : Date?, associatedEvent : Event, status : TransactionStatus, paidBy : SplitWiserUser, paidFor : [UserTranShare], amount : Double, currency : TransactionCurrency, transactionImages : [UIImage]?, transactionDescription : String) -> Self?
     
     func getTransactionID() -> UUID
+    func getPaidBy() -> SplitWiserUser
+    func getAssociatedEvent() -> Event
 }

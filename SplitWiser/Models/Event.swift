@@ -16,3 +16,9 @@ struct Event {
 	var createdBy: SplitWiserUser
 	var transactions: [TransactionRepresentable]
 }
+
+extension Event{
+    static func == (lhs : Event, rhs : Event) -> Bool{
+        return (lhs.eventId == rhs.eventId)
+    }
+}
