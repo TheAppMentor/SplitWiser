@@ -20,7 +20,7 @@ private struct Transaction : Equatable {
     var associatedEvent : Event
     var tranDate : Date
     var status : TransactionStatus
-    var paidBy : User
+    var paidBy : SplitWiserUser
     var paidFor : [UserTranShare]?
     var amount : Double
     var currency : TransactionCurrency
@@ -32,7 +32,7 @@ extension Transaction : TransactionRepresentable{
 
     //private init() {}
 
-    func generateTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: User, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
+    func generateTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: SplitWiserUser, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
                 
         
         return Transaction.init(tranID: UUID(), associatedEvent: associatedEvent, tranDate: date!, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, tranImages: transactionImages, description: transactionDescription)

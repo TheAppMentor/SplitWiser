@@ -13,5 +13,6 @@ struct Event {
 	var name: String
 	var description: String
 	var date: Date
+	var createdBy: SplitWiserUser
 	var transactions: [TransactionRepresentable]
 }

@@ -11,7 +11,7 @@ import UIKit
 
 protocol TransactionRepresentable {
     
-    func generateTransaction(date : Date?, associatedEvent : Event, status : TransactionStatus, paidBy : User, paidFor : [UserTranShare], amount : Double, currency : TransactionCurrency, transactionImages : [UIImage]?, transactionDescription : String) -> Self?
+    func generateTransaction(date : Date?, associatedEvent : Event, status : TransactionStatus, paidBy : SplitWiserUser, paidFor : [UserTranShare], amount : Double, currency : TransactionCurrency, transactionImages : [UIImage]?, transactionDescription : String) -> Self?
     
     func getTransactionID() -> UUID
 }

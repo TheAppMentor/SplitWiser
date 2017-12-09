@@ -9,7 +9,7 @@
 import Foundation
 
 struct UserTranShare {
-    var user : User
+    var user : SplitWiserUser
     var sharePercentage : Double?
     var shareAmount : Double
 }

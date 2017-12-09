@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  SplitWiserUser.swift
 //  SplitWiser
 //
 //  Created by Santebidanur Nagaraja, Pavan Kowshik on 12/7/17.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class User {
+class SplitWiserUser {
 	var phoneNumber:String!
 	var userName:String!
 	var profileImage:UIImage?
