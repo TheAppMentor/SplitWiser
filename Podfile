@@ -6,6 +6,10 @@ target 'SplitWiser' do
   use_frameworks!
 
   # Pods for SplitWiser
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
   pod 'Firebase', '~> 4.7'
 
   target 'SplitWiserTests' do
