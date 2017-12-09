@@ -40,5 +40,9 @@ struct TransactionHandler {
         
         return nil
     }
+	
+	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
+		return nil
+	}
     
 }

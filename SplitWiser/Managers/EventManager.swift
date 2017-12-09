@@ -23,5 +23,9 @@ struct EventManager {
 	func getDetailsOfEvent(id: UUID) -> Event? {
 		return nil
 	}
+	
+	func getEventsFor(user:SplitWiserUser) -> [Event]? {
+		return nil
+	}
 
 }

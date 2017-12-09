@@ -27,6 +27,7 @@
 		7376CEC21FD7AF520010C673 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7376CEC01FD7AF520010C673 /* LaunchScreen.storyboard */; };
 		7376CECD1FD7AF530010C673 /* SplitWiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CECC1FD7AF530010C673 /* SplitWiserTests.swift */; };
 		7376CED81FD7AF530010C673 /* SplitWiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */; };
+		73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC52D21FDC229D00CF2376 /* UserManager.swift */; };
 		7E422D3EB28156D5AD18DDFF /* Pods_SplitWiserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */; };
 		FB0906858EE29C63F1176496 /* Pods_SplitWiser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		7376CED31FD7AF530010C673 /* SplitWiserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitWiserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiserUITests.swift; sourceTree = "<group>"; };
 		7376CED91FD7AF530010C673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73CC52D21FDC229D00CF2376 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		7516BB1B5BB01EE248A22CE4 /* Pods-SplitWiserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.release.xcconfig"; sourceTree = "<group>"; };
 		769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				20FDC4C91FDAD90F0013456B /* EventManager.swift */,
+				73CC52D21FDC229D00CF2376 /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -329,6 +332,11 @@
 					7376CEB31FD7AF520010C673 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					7376CEC71FD7AF530010C673 = {
 						CreatedOnToolsVersion = 9.1;
@@ -447,7 +455,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		69884D9E5DECA2FFC90AEC99 /* [CP] Embed Pods Frameworks */ = {
@@ -495,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A7255E9AFF03F0C65FAE29B2 /* [CP] Check Pods Manifest.lock */ = {
@@ -513,7 +521,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BC25FFF7B586DB002E0F877C /* [CP] Embed Pods Frameworks */ = {
@@ -560,6 +568,7 @@
 			files = (
 				20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */,
 				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
+				73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */,
 				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
 				20FC7CEB1FDB8D3C0036735E /* SignInVC.swift in Sources */,
 				2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */,
@@ -737,6 +746,7 @@
 			baseConfigurationReference = 130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SplitWiser/SplitWiser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;
@@ -753,6 +763,7 @@
 			baseConfigurationReference = 0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SplitWiser/SplitWiser.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;

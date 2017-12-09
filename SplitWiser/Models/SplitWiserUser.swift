@@ -9,8 +9,20 @@
 import Foundation
 import UIKit
 
-class SplitWiserUser {
-	var phoneNumber:String!
-	var userName:String!
+struct SplitWiserUser {
+	
+	var phoneNumber:String
+	var userName:String
 	var profileImage:UIImage?
+	var email:String?
+	var transactionsProvider: TransactionHandler
+	var eventsProvider: EventManager
+	
+	func getTranscations() -> [TransactionRepresentable]? {
+		return transactionsProvider.fetchTransactionsFor(user: self)
+	}
+	
+	func getEvents() -> [Event]? {
+		return eventsProvider.getEventsFor(user: self)
+	}
 }
