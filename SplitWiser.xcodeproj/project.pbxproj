@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* EventError.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20FC7CEB1FDB8D3C0036735E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */; };
 		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
@@ -54,6 +55,7 @@
 		0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.release.xcconfig"; sourceTree = "<group>"; };
 		130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.debug.xcconfig"; sourceTree = "<group>"; };
 		145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests.release.xcconfig"; sourceTree = "<group>"; };
+		202C59B61FDD1E02001E6A0C /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
 		20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				2F8151391FDAA303001F9452 /* TransactionError.swift */,
+				202C59B61FDD1E02001E6A0C /* EventError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				20FC7CEB1FDB8D3C0036735E /* SignInVC.swift in Sources */,
 				2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
+				202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */,
 				2F8151441FDAACF7001F9452 /* TransactionRepresentable.swift in Sources */,
 				2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */,
 				2F81513E1FDAAC8D001F9452 /* TransactionStatus.swift in Sources */,
