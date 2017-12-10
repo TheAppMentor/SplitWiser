@@ -15,6 +15,7 @@ import Foundation
 protocol TransactionDelegate {
     
     func someSampleMethod()
+	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]?
     func fetchAllTransactionsForEvent(event : Event) -> [TransactionRepresentable]?
     func fetchAllTransactionsFor(event : Event, user : SplitWiserUser) -> [TransactionRepresentable]?
 }
@@ -25,6 +26,11 @@ extension TransactionDelegate {
     func someSampleMethod(){
         // Empty Implementation, Prashanth will implement.
     }
+	
+	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
+		//transactions for a particular user irrespective of events
+		return nil
+	}
     
     func fetchAllTransactionsFor(event : Event, user : SplitWiserUser) -> [TransactionRepresentable]?{
         if let allTrans = fetchAllTransactionsForEvent(event: event){

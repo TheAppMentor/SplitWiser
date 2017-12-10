@@ -40,10 +40,6 @@ struct TransactionManager : TransactionDelegate {
         
         return nil
     }
-	
-	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
-		return nil
-	}
     
     func fetchAllTransactionsForEvent(event: Event) -> [TransactionRepresentable]? {
         let allTrans = transactionStore.filter({$0.getAssociatedEvent() == event})

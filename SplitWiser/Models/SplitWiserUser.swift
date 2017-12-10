@@ -18,12 +18,26 @@ struct SplitWiserUser {
 	var transactionsProvider: TransactionManager
 	var eventsProvider: EventManager
 	
-	func getTranscations() -> [TransactionRepresentable]? {
+	private func getTranscations() -> [TransactionRepresentable]? {
 		return transactionsProvider.fetchTransactionsFor(user: self)
 	}
 	
 	func getEvents() -> [Event]? {
 		return eventsProvider.getEventsFor(user: self)
+	}
+	
+	func getTransactionsPaidByCurrentUser() -> [TransactionRepresentable]? {
+		let transactions = self.getTranscations()
+		var myPaidTransactions:[TransactionRepresentable]?
+		if let transactionsForUser = transactions {
+			myPaidTransactions = [TransactionRepresentable]()
+			for transaction in transactionsForUser {
+				if transaction.getPaidBy() == self {
+					myPaidTransactions?.append(transaction)
+				}
+			}
+		}
+		return myPaidTransactions
 	}
 }
 
