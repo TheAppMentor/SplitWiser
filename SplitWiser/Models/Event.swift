@@ -9,16 +9,23 @@
 import Foundation
 
 struct Event {
-	var eventId: UUID
+	var eventId: UUID?
 	var name: String
 	var description: String
-	var date: Date
-	var createdBy: SplitWiserUser
-	var transactions: [TransactionRepresentable]
+	var date: Double
+	//var createdBy: SplitWiserUser
+	//var transactions: [TransactionRepresentable]?
+
+	init(name: String, description: String? = "") {
+		self.name = name
+		self.description = description!
+		self.date = Date().timeIntervalSince1970
+		//self.createdBy = createdBy
+	}
 }
 
-extension Event{
-    static func == (lhs : Event, rhs : Event) -> Bool{
+extension Event {
+    static func == (lhs : Event, rhs : Event) -> Bool {
         return (lhs.eventId == rhs.eventId)
     }
 }

@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
 struct EventManager {
 
+	let eventRef = Database.database().reference(withPath: EVENTCONSTANTS.DB_PATH)
+
 	func createEvent(name: String, description: String? = "") -> Bool {
 		let success = false
+		let event = Event(name: name, description: description)
+		eventRef.setValue("Where am I")
 		return success
 	}
 

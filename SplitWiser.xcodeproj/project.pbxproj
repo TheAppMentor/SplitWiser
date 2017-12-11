@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* EventError.swift */; };
+		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
+		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20FC7CEB1FDB8D3C0036735E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */; };
 		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
@@ -56,6 +58,8 @@
 		130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.debug.xcconfig"; sourceTree = "<group>"; };
 		145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests.release.xcconfig"; sourceTree = "<group>"; };
 		202C59B61FDD1E02001E6A0C /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
+		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
 		20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -120,6 +124,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202C59C31FDD2C55001E6A0C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				202C59C41FDD2C63001E6A0C /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		20365A19BB2F250E2665DA99 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +221,7 @@
 		7376CEB61FD7AF520010C673 /* SplitWiser */ = {
 			isa = PBXGroup;
 			children = (
+				202C59C31FDD2C55001E6A0C /* Constants */,
 				20FC7CEC1FDB995E0036735E /* ViewControllers */,
 				20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */,
 				2F81513B1FDAA308001F9452 /* Error */,
@@ -227,6 +240,7 @@
 		7376CECB1FD7AF530010C673 /* SplitWiserTests */ = {
 			isa = PBXGroup;
 			children = (
+				202C59C11FDD2A85001E6A0C /* EventTests.swift */,
 				7376CECC1FD7AF530010C673 /* SplitWiserTests.swift */,
 				7376CECE1FD7AF530010C673 /* Info.plist */,
 			);
@@ -565,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */,
+				202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */,
 				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
 				73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */,
 				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
@@ -587,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */,
 				7376CECD1FD7AF530010C673 /* SplitWiserTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -783,6 +799,19 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D38394224C;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseUI\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = SplitWiserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sap.SplitWiserTests;
@@ -801,6 +830,19 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D38394224C;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Firebase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseAuth\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseCore\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseDatabase\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseInstanceID\"",
+					"\"${PODS_ROOT}/Headers/Public/FirebaseUI\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSignIn\"",
+					"\"${PODS_ROOT}/Firebase/Core/Sources\"",
+				);
 				INFOPLIST_FILE = SplitWiserTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sap.SplitWiserTests;
