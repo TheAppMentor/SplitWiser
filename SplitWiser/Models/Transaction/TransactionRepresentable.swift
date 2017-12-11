@@ -11,9 +11,16 @@ import UIKit
 
 protocol TransactionRepresentable {
     
-    func generateTransaction(date : Date?, associatedEvent : Event, status : TransactionStatus, paidBy : SplitWiserUser, paidFor : [UserTranShare], amount : Double, currency : TransactionCurrency, transactionImages : [UIImage]?, transactionDescription : String) -> Self?
+    var tranID : UUID {get}
+    var associatedEvent : Event {get set}
+    var tranDate : Date {get}
+    var status : TransactionStatus {get set}
+    var paidBy : SplitWiserUser {get}
+    var paidFor : [UserTranShare]? {get}
+    var amount : Double {get}
+    var currency : TransactionCurrency {get}
+    var tranImages : [UIImage]? {get}
+    var description : String? {get}
     
-    func getTransactionID() -> UUID
-    func getPaidBy() -> SplitWiserUser
-    func getAssociatedEvent() -> Event
+    static func generateTransaction(date : Date?, associatedEvent : Event, status : TransactionStatus, paidBy : SplitWiserUser, paidFor : [UserTranShare], amount : Double, currency : TransactionCurrency, transactionImages : [UIImage]?, transactionDescription : String) -> Self?
 }
