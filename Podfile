@@ -15,6 +15,13 @@ target 'SplitWiser' do
   target 'SplitWiserTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'FirebaseUI/Auth'
+    pod 'FirebaseUI/Google'
+    pod 'Firebase', '~> 4.7'
+
   end
 
   target 'SplitWiserUITests' do

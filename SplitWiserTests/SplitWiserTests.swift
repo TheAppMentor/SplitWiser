@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SplitWiser
+//@testable import SplitWiser
 
 class SplitWiserTests: XCTestCase {
     

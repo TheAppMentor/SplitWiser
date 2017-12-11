@@ -9,6 +9,7 @@
 import Foundation
 
 enum TransactionError : Error {
-    case notFound
+    case noTransactionMatchingID (transactionID : UUID)
     case duplicateTransaction
+    case invalidEvent
 }
