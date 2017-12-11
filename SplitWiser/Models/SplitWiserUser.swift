@@ -32,7 +32,7 @@ struct SplitWiserUser {
 		if let transactionsForUser = transactions {
 			myPaidTransactions = [TransactionRepresentable]()
 			for transaction in transactionsForUser {
-				if transaction.getPaidBy() == self {
+				if transaction.paidBy == self {
 					myPaidTransactions?.append(transaction)
 				}
 			}
