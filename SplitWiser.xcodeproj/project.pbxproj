@@ -10,6 +10,8 @@
 		202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* EventError.swift */; };
 		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
 		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
+		202C59CF1FE5096A001E6A0C /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59CE1FE5096A001E6A0C /* Persistance.swift */; };
+		202C59D11FE50AB4001E6A0C /* FirebasePersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20FC7CEB1FDB8D3C0036735E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */; };
 		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
@@ -62,6 +64,8 @@
 		202C59B61FDD1E02001E6A0C /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		202C59CE1FE5096A001E6A0C /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = SplitWiser/Persistance/Persistance.swift; sourceTree = SOURCE_ROOT; };
+		202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebasePersistanceManager.swift; path = SplitWiser/Persistance/FirebasePersistanceManager.swift; sourceTree = SOURCE_ROOT; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
 		20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 		202C59CD1FE508EE001E6A0C /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
+				202C59CE1FE5096A001E6A0C /* Persistance.swift */,
+				202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */,
 			);
 			name = Persistance;
 			path = "New Group";
@@ -617,6 +623,8 @@
 				73271BF21FD988E300FD0EBB /* SplitWiserUser.swift in Sources */,
 				2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */,
 				2F8151371FDA9B6A001F9452 /* TransactionManager.swift in Sources */,
+				202C59D11FE50AB4001E6A0C /* FirebasePersistanceManager.swift in Sources */,
+				202C59CF1FE5096A001E6A0C /* Persistance.swift in Sources */,
 				2F1933D41FDE971E0016C2AE /* CalculationEngine.swift in Sources */,
 				2F81514A1FDC692A001F9452 /* TransactionDelegate.swift in Sources */,
 			);
