@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseDatabase
 
 struct EventManager {
 
 	let eventRef = Database.database().reference(withPath: EVENTCONSTANTS.DB_PATH)
 
-	func createEvent(name: String, description: String? = "", user: SplitWiserUser) -> Bool {
+	func createEvent(name: String, description: String? = "", user: User) -> Bool {
 		let success = false
 		let event = Event(name: name, description: description, createdBy: user)
-		eventRef.setValue("Where am I")
+		eventRef.setValue(["name":event.name])
 		return success
 	}
 

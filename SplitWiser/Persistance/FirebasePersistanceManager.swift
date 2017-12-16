@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import FirebaseDatabase
 
-class FirebasePersistanceManager: Persistance {
+struct FirebasePersistanceManager: Persistance {
+
 	func create() {
 
 	}

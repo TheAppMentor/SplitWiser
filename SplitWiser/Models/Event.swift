@@ -7,16 +7,16 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct Event {
 	var eventId: UUID?
 	var name: String
 	var description: String
 	var date: Double
-	var createdBy: SplitWiserUser
-	var transactions: [TransactionRepresentable]?
+	var createdBy: User
 
-	init(name: String, description: String? = "", createdBy: SplitWiserUser) {
+	init(name: String, description: String? = "", createdBy: User) {
 		self.name = name
 		self.description = description!
 		self.date = Date().timeIntervalSince1970
