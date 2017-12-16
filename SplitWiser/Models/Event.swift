@@ -13,14 +13,14 @@ struct Event {
 	var name: String
 	var description: String
 	var date: Double
-	//var createdBy: SplitWiserUser
-	//var transactions: [TransactionRepresentable]?
+	var createdBy: SplitWiserUser
+	var transactions: [TransactionRepresentable]?
 
-	init(name: String, description: String? = "") {
+	init(name: String, description: String? = "", createdBy: SplitWiserUser) {
 		self.name = name
 		self.description = description!
 		self.date = Date().timeIntervalSince1970
-		//self.createdBy = createdBy
+		self.createdBy = createdBy
 	}
 }
 

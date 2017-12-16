@@ -13,9 +13,9 @@ struct EventManager {
 
 	let eventRef = Database.database().reference(withPath: EVENTCONSTANTS.DB_PATH)
 
-	func createEvent(name: String, description: String? = "") -> Bool {
+	func createEvent(name: String, description: String? = "", user: SplitWiserUser) -> Bool {
 		let success = false
-		let event = Event(name: name, description: description)
+		let event = Event(name: name, description: description, createdBy: user)
 		eventRef.setValue("Where am I")
 		return success
 	}
