@@ -10,9 +10,36 @@ import Foundation
 
 struct CalculationEngine {
     
-    func fetchTotalAmountPaidBy(event : Event, user : SplitWiserUser) throws -> Double?{
-        //Pavan : Just adding some dummy function.. plz add methods as appropriate.
-        return nil
-    }
-
+	func fetchTotalAmountPaidBy(event : Event, user : SplitWiserUser) throws -> Double{
+		var totalAmountPaidByuser:Double = 0.0
+		if let transacations = event.transactionsProvider.fetchAllTransactionsForEvent(event: event) {
+			for transaction in transacations {
+				if transaction.paidBy.phoneNumber == user.phoneNumber {
+					totalAmountPaidByuser = totalAmountPaidByuser + transaction.amount
+				}
+			}
+		}
+		return totalAmountPaidByuser
+	}
+	
+	func fetchTotalAmountOwedBy(event : Event, user : SplitWiserUser) throws -> Double {
+		var totalAmountOwedByuser:Double = 0.0
+		if let transacations = event.transactionsProvider.fetchAllTransactionsForEvent(event: event) {
+			for transaction in transacations {
+				if let usersPaidFor = transaction.paidFor {
+					for splituser in usersPaidFor {
+						if splituser.user.phoneNumber == user.phoneNumber {
+							if let percentage = splituser.sharePercentage {
+							totalAmountOwedByuser = totalAmountOwedByuser + (percentage * splituser.shareAmount)
+							} else {
+								totalAmountOwedByuser = totalAmountOwedByuser + splituser.shareAmount
+							}
+						}
+					}
+				}
+			}
+		}
+		return totalAmountOwedByuser
+	}
+		
 }

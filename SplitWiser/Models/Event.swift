@@ -15,12 +15,14 @@ struct Event {
 	var description: String
 	var date: Double
 	var createdBy: User
+	var transactionsProvider: TransactionManager
 
 	init(name: String, description: String? = "", createdBy: User) {
 		self.name = name
 		self.description = description!
 		self.date = Date().timeIntervalSince1970
 		self.createdBy = createdBy
+		self.transactionsProvider = TransactionManager.shared
 	}
 }
 
