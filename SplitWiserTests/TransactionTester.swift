@@ -30,13 +30,16 @@ class TransactionTester: XCTestCase {
         userList.append(userPrashanth)
         userList.append(userJagan)
         
-        let lunchEvent = Event(eventId: UUID(), name: "Lunch", description: "Lunch Description", date: Date(), createdBy: userPavan, transactions: [])
-        
-        let movieEvent = Event(eventId: UUID(), name: "Movie", description: "Movie Description", date: Date(), createdBy: userPavan, transactions: [])
+        //let lunchEvent = Event(eventId: UUID(), name: "Lunch", description: "Lunch Description", date: Date(), createdBy: userPavan, transactions: [])
+        //let movieEvent = Event(eventId: UUID(), name: "Movie", description: "Movie Description", date: Date(), createdBy: userPavan, transactions: [])
+        let lunchEvent = Event(eventId: UUID(), name: "Lunch", description: "Lunch Description", date: Date().timeIntervalSinceNow)
+        let movieEvent = Event(eventId: UUID(), name: "Movie", description: "Movie Description", date: Date().timeIntervalSinceNow)
+
+        //        let lunchEvent = EventManager().createEvent(name: "Lunch", description: "Lunch Description")
+//        let movieEvent = EventManager().createEvent(name: "Movie", description: "Movie Description")
         
         eventList.append(lunchEvent)
         eventList.append(movieEvent)
-
     }
     
     
@@ -57,10 +60,7 @@ class TransactionTester: XCTestCase {
             XCTAssert(false, "Failed to Add Transaction")
         }
     }
-    
-    
-    
-    
+
     
     
     func testTotalAmount(){
