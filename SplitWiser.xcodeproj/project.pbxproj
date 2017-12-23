@@ -18,6 +18,16 @@
 		20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDC4C91FDAD90F0013456B /* EventManager.swift */; };
 		28D540E4C77897253F5231CA /* Pods_SplitWiserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */; };
 		2F1933D41FDE971E0016C2AE /* CalculationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1933D31FDE971E0016C2AE /* CalculationEngine.swift */; };
+		2F7971D01FED7AF1003E7A29 /* EventListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971CF1FED7AF1003E7A29 /* EventListTVC.swift */; };
+		2F7971D21FEE1019003E7A29 /* CreateEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971D11FEE1019003E7A29 /* CreateEventVC.swift */; };
+		2F7971D91FEE61C5003E7A29 /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971D71FEE61C5003E7A29 /* ParticipantCell.swift */; };
+		2F7971DA1FEE61C5003E7A29 /* ParticipantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7971D81FEE61C5003E7A29 /* ParticipantCell.xib */; };
+		2F7971DD1FEE6264003E7A29 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971DC1FEE6264003E7A29 /* RoundedImageView.swift */; };
+		2F7971E01FEE67C2003E7A29 /* UIView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971DF1FEE67C2003E7A29 /* UIView_Extension.swift */; };
+		2F7971E51FEE7AF5003E7A29 /* ParticipantListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971E31FEE7AF4003E7A29 /* ParticipantListView.swift */; };
+		2F7971E61FEE7AF5003E7A29 /* ParticipantListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7971E41FEE7AF4003E7A29 /* ParticipantListView.xib */; };
+		2F7971E81FEE8997003E7A29 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7971E71FEE8997003E7A29 /* AddEventView.swift */; };
+		2F7971EA1FEE89A7003E7A29 /* AddEventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F7971E91FEE89A7003E7A29 /* AddEventView.xib */; };
 		2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8150C21FDA3E82001F9452 /* Transaction.swift */; };
 		2F8151371FDA9B6A001F9452 /* TransactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151361FDA9B6A001F9452 /* TransactionManager.swift */; };
 		2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8151391FDAA303001F9452 /* TransactionError.swift */; };
@@ -72,6 +82,16 @@
 		20FC7CED1FDB99940036735E /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		20FDC4C91FDAD90F0013456B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		2F1933D31FDE971E0016C2AE /* CalculationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationEngine.swift; sourceTree = "<group>"; };
+		2F7971CF1FED7AF1003E7A29 /* EventListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTVC.swift; sourceTree = "<group>"; };
+		2F7971D11FEE1019003E7A29 /* CreateEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventVC.swift; sourceTree = "<group>"; };
+		2F7971D71FEE61C5003E7A29 /* ParticipantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
+		2F7971D81FEE61C5003E7A29 /* ParticipantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantCell.xib; sourceTree = "<group>"; };
+		2F7971DC1FEE6264003E7A29 /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		2F7971DF1FEE67C2003E7A29 /* UIView_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView_Extension.swift; sourceTree = "<group>"; };
+		2F7971E31FEE7AF4003E7A29 /* ParticipantListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantListView.swift; sourceTree = "<group>"; };
+		2F7971E41FEE7AF4003E7A29 /* ParticipantListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParticipantListView.xib; sourceTree = "<group>"; };
+		2F7971E71FEE8997003E7A29 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		2F7971E91FEE89A7003E7A29 /* AddEventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEventView.xib; sourceTree = "<group>"; };
 		2F8150C21FDA3E82001F9452 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		2F8151361FDA9B6A001F9452 /* TransactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionManager.swift; sourceTree = "<group>"; };
 		2F8151391FDAA303001F9452 /* TransactionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionError.swift; sourceTree = "<group>"; };
@@ -168,6 +188,7 @@
 			children = (
 				20FC7CEA1FDB8D3C0036735E /* SignInVC.swift */,
 				20FC7CED1FDB99940036735E /* EventsVC.swift */,
+				2F7971D11FEE1019003E7A29 /* CreateEventVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -188,6 +209,20 @@
 				2F1933D31FDE971E0016C2AE /* CalculationEngine.swift */,
 			);
 			path = Engine;
+			sourceTree = "<group>";
+		};
+		2F7971DB1FEE61D1003E7A29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2F7971E31FEE7AF4003E7A29 /* ParticipantListView.swift */,
+				2F7971E71FEE8997003E7A29 /* AddEventView.swift */,
+				2F7971E91FEE89A7003E7A29 /* AddEventView.xib */,
+				2F7971E41FEE7AF4003E7A29 /* ParticipantListView.xib */,
+				2F7971DC1FEE6264003E7A29 /* RoundedImageView.swift */,
+				2F7971D71FEE61C5003E7A29 /* ParticipantCell.swift */,
+				2F7971D81FEE61C5003E7A29 /* ParticipantCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2F81513B1FDAA308001F9452 /* Error */ = {
@@ -257,10 +292,13 @@
 				73271BF01FD988D000FD0EBB /* Models */,
 				7376CEB71FD7AF520010C673 /* AppDelegate.swift */,
 				7376CEBB1FD7AF520010C673 /* Main.storyboard */,
+				2F7971CF1FED7AF1003E7A29 /* EventListTVC.swift */,
 				7376CEBE1FD7AF520010C673 /* Assets.xcassets */,
 				7376CEC01FD7AF520010C673 /* LaunchScreen.storyboard */,
 				7376CEC31FD7AF520010C673 /* Info.plist */,
 				2F8151451FDAD305001F9452 /* GoogleService-Info.plist */,
+				2F7971DB1FEE61D1003E7A29 /* Views */,
+				2F7971DF1FEE67C2003E7A29 /* UIView_Extension.swift */,
 			);
 			path = SplitWiser;
 			sourceTree = "<group>";
@@ -417,8 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7376CEC21FD7AF520010C673 /* LaunchScreen.storyboard in Resources */,
+				2F7971DA1FEE61C5003E7A29 /* ParticipantCell.xib in Resources */,
 				2F8151461FDAD306001F9452 /* GoogleService-Info.plist in Resources */,
+				2F7971EA1FEE89A7003E7A29 /* AddEventView.xib in Resources */,
 				7376CEBF1FD7AF520010C673 /* Assets.xcassets in Resources */,
+				2F7971E61FEE7AF5003E7A29 /* ParticipantListView.xib in Resources */,
 				7376CEBD1FD7AF520010C673 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,6 +648,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F7971D01FED7AF1003E7A29 /* EventListTVC.swift in Sources */,
+				2F7971DD1FEE6264003E7A29 /* RoundedImageView.swift in Sources */,
 				20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */,
 				202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */,
 				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
@@ -617,13 +660,18 @@
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
 				202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */,
 				2F8151441FDAACF7001F9452 /* TransactionRepresentable.swift in Sources */,
+				2F7971D21FEE1019003E7A29 /* CreateEventVC.swift in Sources */,
 				2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */,
 				2F81513E1FDAAC8D001F9452 /* TransactionStatus.swift in Sources */,
+				2F7971D91FEE61C5003E7A29 /* ParticipantCell.swift in Sources */,
 				2F8151401FDAACAF001F9452 /* TransactionCurrency.swift in Sources */,
 				73271BF21FD988E300FD0EBB /* SplitWiserUser.swift in Sources */,
 				2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */,
 				2F8151371FDA9B6A001F9452 /* TransactionManager.swift in Sources */,
+				2F7971E51FEE7AF5003E7A29 /* ParticipantListView.swift in Sources */,
 				202C59D11FE50AB4001E6A0C /* FirebasePersistanceManager.swift in Sources */,
+				2F7971E81FEE8997003E7A29 /* AddEventView.swift in Sources */,
+				2F7971E01FEE67C2003E7A29 /* UIView_Extension.swift in Sources */,
 				202C59CF1FE5096A001E6A0C /* Persistance.swift in Sources */,
 				2F1933D41FDE971E0016C2AE /* CalculationEngine.swift in Sources */,
 				2F81514A1FDC692A001F9452 /* TransactionDelegate.swift in Sources */,
@@ -800,7 +848,7 @@
 				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -817,7 +865,7 @@
 				DEVELOPMENT_TEAM = TLV25NDMDF;
 				INFOPLIST_FILE = SplitWiser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thehobbylobby.SplitWiser1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

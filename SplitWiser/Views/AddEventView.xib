@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
+            <connections>
+                <outlet property="eventName" destination="4vR-V5-Axt" id="MmC-q3-ESh"/>
+                <outlet property="participantListView" destination="hDk-L5-2Jt" id="qvQ-7j-gno"/>
+                <outlet property="profilePicButton" destination="Zwt-HT-eFW" id="hYB-OW-SKW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Wrg-ps-V48" userLabel="View Enter Event Name">
+            <rect key="frame" x="0.0" y="0.0" width="488" height="254"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aVA-xb-F8T">
+                    <rect key="frame" x="0.0" y="0.0" width="488" height="254"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JUe-jb-khw">
+                            <rect key="frame" x="16" y="0.0" width="456" height="245"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-qf-kGg">
+                                    <rect key="frame" x="0.0" y="0.0" width="456" height="157.5"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwt-HT-eFW">
+                                            <rect key="frame" x="0.0" y="42.5" width="73" height="73"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Zwt-HT-eFW" secondAttribute="height" multiplier="1:1" id="daV-gX-O8X"/>
+                                            </constraints>
+                                            <state key="normal" image="AddEvent"/>
+                                        </button>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-V5-Axt">
+                                            <rect key="frame" x="93" y="65" width="363" height="28"/>
+                                            <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-AQ-nIO">
+                                    <rect key="frame" x="0.0" y="165.5" width="456" height="79.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDk-L5-2Jt" userLabel="View Invited Users" customClass="ParticipantListView" customModule="SplitWiser" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="456" height="79.5"/>
+                                            <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.4822613442" colorSpace="calibratedRGB"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="hDk-L5-2Jt" secondAttribute="trailing" id="JUN-E8-QdI"/>
+                                        <constraint firstAttribute="bottom" secondItem="hDk-L5-2Jt" secondAttribute="bottom" id="pwM-Hm-IAV"/>
+                                        <constraint firstItem="hDk-L5-2Jt" firstAttribute="leading" secondItem="TVg-AQ-nIO" secondAttribute="leading" id="zye-Bx-ERb"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TVg-AQ-nIO" firstAttribute="height" secondItem="gDp-qf-kGg" secondAttribute="height" multiplier="0.5" id="3Pd-gr-HgA"/>
+                                <constraint firstAttribute="bottom" secondItem="TVg-AQ-nIO" secondAttribute="bottom" id="9Yf-67-rpJ"/>
+                                <constraint firstItem="TVg-AQ-nIO" firstAttribute="leading" secondItem="JUe-jb-khw" secondAttribute="leading" id="AdS-Nd-LxS"/>
+                                <constraint firstItem="gDp-qf-kGg" firstAttribute="top" secondItem="JUe-jb-khw" secondAttribute="top" id="EAD-oG-FJa"/>
+                                <constraint firstAttribute="trailing" secondItem="gDp-qf-kGg" secondAttribute="trailing" id="jDN-bv-smK"/>
+                                <constraint firstItem="gDp-qf-kGg" firstAttribute="leading" secondItem="JUe-jb-khw" secondAttribute="leading" id="pf1-jC-WOb"/>
+                                <constraint firstAttribute="trailing" secondItem="TVg-AQ-nIO" secondAttribute="trailing" id="rXw-KB-vBV"/>
+                            </constraints>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhN-eZ-6Fp" userLabel="View - Line Separator">
+                            <rect key="frame" x="0.0" y="253" width="488" height="1"/>
+                            <color key="backgroundColor" red="0.86657208200000002" green="0.86672115329999999" blue="0.86656266449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="DWh-wk-DTs"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="EhN-eZ-6Fp" secondAttribute="trailing" id="FcG-OM-dXz"/>
+                        <constraint firstItem="EhN-eZ-6Fp" firstAttribute="leading" secondItem="aVA-xb-F8T" secondAttribute="leading" id="W3H-rR-5iq"/>
+                        <constraint firstItem="JUe-jb-khw" firstAttribute="leading" secondItem="aVA-xb-F8T" secondAttribute="leading" constant="16" id="mFj-uJ-ieZ"/>
+                        <constraint firstItem="EhN-eZ-6Fp" firstAttribute="centerX" secondItem="aVA-xb-F8T" secondAttribute="centerX" id="pIv-S6-3S7"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="aVA-xb-F8T" firstAttribute="leading" secondItem="Wrg-ps-V48" secondAttribute="leading" id="2lS-SV-YVM"/>
+                <constraint firstAttribute="trailing" secondItem="aVA-xb-F8T" secondAttribute="trailing" id="Jcg-xi-qav"/>
+                <constraint firstItem="aVA-xb-F8T" firstAttribute="top" secondItem="Wrg-ps-V48" secondAttribute="top" id="gS1-Sm-jJ3"/>
+                <constraint firstAttribute="bottom" secondItem="aVA-xb-F8T" secondAttribute="bottom" id="nlI-E6-eNC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Ys9-zB-PL4"/>
+            <point key="canvasLocation" x="-121" y="-107"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="AddEvent" width="70" height="73"/>
+    </resources>
+</document>
