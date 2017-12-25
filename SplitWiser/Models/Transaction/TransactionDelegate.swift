@@ -21,7 +21,7 @@ protocol TransactionDelegate {
     func fetchAllTransactionsFor(event : Event, user : SplitWiserUser) throws -> [TransactionRepresentable]?
 
     func fetchTotalAmountPaidBy(event : Event, user : SplitWiserUser) throws -> Double?
-    func fetchTotalAmountOwed(event : Event, user : SplitWiserUser) -> Double?
+    func fetchTotalAmountOwed(event : Event, user : SplitWiserUser) throws -> Double?
 
     mutating func addTransaction(date : Date?,
                         associatedEvent : Event,
@@ -55,7 +55,7 @@ extension TransactionDelegate {
         return allTransForUser
     }
     
-    func fetchTotalAmountPaidFor(event : Event, user : SplitWiserUser) -> Double?{
+   /* func fetchTotalAmountPaidFor(event : Event, user : SplitWiserUser) -> Double?{
         
         return nil
     }
@@ -76,6 +76,6 @@ extension TransactionDelegate {
     
     func fetchTotalAmountOwed(event: Event, user: SplitWiserUser) -> Double? {
         return nil
-    }
+    }*/
     
 }

@@ -215,7 +215,7 @@
 		73271BF01FD988D000FD0EBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				73271BF11FD988E300FD0EBB /* SplitWiserUser.swift */,
+				73E273251FF0DF6D0039DE47 /* User */,
 				20CDF4AF1FD9956D00ED98E2 /* Event.swift */,
 				2F81513C1FDAAC71001F9452 /* Transaction */,
 			);
@@ -283,6 +283,14 @@
 				7376CED91FD7AF530010C673 /* Info.plist */,
 			);
 			path = SplitWiserUITests;
+			sourceTree = "<group>";
+		};
+		73E273251FF0DF6D0039DE47 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				73271BF11FD988E300FD0EBB /* SplitWiserUser.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		BE8E434831D5A57BD50E39E1 /* Frameworks */ = {
