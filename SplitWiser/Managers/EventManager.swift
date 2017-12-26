@@ -27,23 +27,31 @@ struct EventManager {
 				print("🔆🔆🔆 "+(error?.localizedDescription)!)
 				completionHandler(event, EventError.genericError)
 			} else {
-				print("🔆🔆🔆 "+key)
+				print("🔆🔆🔆 CREATED - "+key)
 				event.eventId = key
 				completionHandler(event, nil)
 			}
 		})
 	}
 
-	func deleteEvent(id: UUID) -> Bool {
-		let success = false
-		return success
+	func deleteEvent(event: Event, completionHandler: @escaping (Error?) -> Void) {
+		let node = eventRef.child(event.eventId!)
+		node.removeValue(completionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			if error != nil {
+				print("🔆🔆🔆 "+(error?.localizedDescription)!)
+				completionHandler(EventError.genericError)
+			} else {
+				print("🔆🔆🔆 DELETED!")
+				completionHandler(nil)
+			}
+		})
 	}
 
 	func getDetailsOfEvent(id: UUID) -> Event? {
 		return nil
 	}
 	
-	func getEventsFor(user:SplitWiserUser) -> [Event]? {
+	func getEventsFor(user: SplitWiserUser) -> [Event]? {
 		return nil
 	}
 

@@ -51,8 +51,28 @@ class EventTests: XCTestCase {
 				// Fulfill the expectation to indicate that the background task has finished successfully.
 				expectation.fulfill()
 			})
-			// Wait until the expectation is fulfilled, with a timeout of 3 seconds.
-			wait(for: [expectation], timeout: 4.0)
+			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
+			wait(for: [expectation], timeout: 5.0)
+		}
+	}
+
+	func testEventDeletion() {
+		// Create an expectation for a background download task.
+		let expectation = XCTestExpectation(description: "Delete event")
+
+		if let u = Auth.auth().currentUser {
+			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
+			let user = SplitWiserUser(phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+			var event = Event(name: "Lunch@SomeDarnPlace", createdBy: user)
+			event.eventId = "-L1GNc_hUSIR9siA8cm5"
+			EventManager().deleteEvent(event: event, completionHandler: {(error) in
+
+				XCTAssertNil(error)
+				// Fulfill the expectation to indicate that the background task has finished successfully.
+				expectation.fulfill()
+			})
+			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
+			wait(for: [expectation], timeout: 5.0)
 		}
 	}
     
