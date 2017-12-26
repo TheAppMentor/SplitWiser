@@ -20,12 +20,12 @@ struct EventManager {
 		let entry = ["name": event.name,
 					 "description": event.description,
 					 "date": event.date,
-					 "createdBy": event.createdBy.email] as [String : Any]
+					 "createdBy": event.createdBy.email as Any] as [String : Any]
 		let updates = ["\(key)": entry] as [String : Any]
 		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
 			if error != nil {
 				print("🔆🔆🔆 "+(error?.localizedDescription)!)
-				completionHandler(event, error)
+				completionHandler(event, EventError.genericError)
 			} else {
 				print("🔆🔆🔆 "+key)
 				event.eventId = key
