@@ -44,7 +44,7 @@ class EventTests: XCTestCase {
 
 		if let u = Auth.auth().currentUser {
 			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
-			let user = SplitWiserUser(phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+			let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
 			EventManager().createEvent(name: "Lunch@SomeDarnPlace", user: user, completionHandler: {(event, error) in
 
 				XCTAssertNil(error)
@@ -62,7 +62,7 @@ class EventTests: XCTestCase {
 
 		if let u = Auth.auth().currentUser {
 			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
-			let user = SplitWiserUser(phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+			let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
 			var event = Event(name: "Lunch@SomeDarnPlace", createdBy: user)
 			event.eventId = "-L1GNc_hUSIR9siA8cm5"
 			EventManager().deleteEvent(event: event, completionHandler: {(error) in
@@ -73,6 +73,24 @@ class EventTests: XCTestCase {
 			})
 			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
 			wait(for: [expectation], timeout: 5.0)
+		}
+	}
+
+	func testFetchEvents() {
+		// Create an expectation for a background download task.
+		let expectation = XCTestExpectation(description: "Fetch events")
+
+		if let u = Auth.auth().currentUser {
+			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
+			let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+			EventManager().fetchEventsFor(user: user, completionHandler: {(events, error) in
+
+				XCTAssertNil(error)
+				// Fulfill the expectation to indicate that the background task has finished successfully.
+				expectation.fulfill()
+			})
+			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
+			wait(for: [expectation], timeout: 30.0)
 		}
 	}
     
