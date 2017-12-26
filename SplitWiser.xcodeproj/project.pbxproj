@@ -163,6 +163,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		20E210A21FF2145D00362C0C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				20CDF4AF1FD9956D00ED98E2 /* Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		20FC7CEC1FDB995E0036735E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +223,8 @@
 		73271BF01FD988D000FD0EBB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				20E210A21FF2145D00362C0C /* Event */,
 				73E273251FF0DF6D0039DE47 /* User */,
-				20CDF4AF1FD9956D00ED98E2 /* Event.swift */,
 				2F81513C1FDAAC71001F9452 /* Transaction */,
 			);
 			path = Models;
