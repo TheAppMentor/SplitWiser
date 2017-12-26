@@ -10,4 +10,5 @@ import Foundation
 
 struct EVENTCONSTANTS {
 	static let DB_PATH = "EVENTS"
+	static let EVENT_USER_MAPPING = "EVENT-USER-MAPPING"
 }

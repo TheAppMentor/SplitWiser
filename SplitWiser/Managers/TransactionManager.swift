@@ -10,14 +10,16 @@ import Foundation
 import UIKit
 
 struct TransactionManager : TransactionDelegate {
-
-    
-    
+	
     static let shared = TransactionManager()
+	
+	private let calculationEngine : CalculationEngine
     
     private var transactionStore = [TransactionRepresentable]()
     
-    private init(){}
+    private init(){
+		calculationEngine = CalculationEngine()
+	}
     
     mutating func addTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: SplitWiserUser, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) throws -> TransactionRepresentable? {
                 
@@ -58,6 +60,14 @@ struct TransactionManager : TransactionDelegate {
         let allTrans = transactionStore.filter({$0.associatedEvent == event})
         return allTrans
     }
+	
+	func fetchTotalAmountPaidBy(event: Event, user: SplitWiserUser) throws -> Double? {
+		return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:user)
+	}
+	
+	func fetchTotalAmountOwed(event: Event, user: SplitWiserUser) throws -> Double? {
+		return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:user)
+	}
     
 }
 

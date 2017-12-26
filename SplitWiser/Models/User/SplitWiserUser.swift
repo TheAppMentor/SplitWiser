@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 struct SplitWiserUser {
-	
+
+	var uid: String
 	var phoneNumber:String
 	var userName:String
 	var profileImage:UIImage?
@@ -23,7 +24,10 @@ struct SplitWiserUser {
 	}
 	
 	func getEvents() -> [Event]? {
-		return eventsProvider.getEventsFor(user: self)
+		eventsProvider.fetchEventsFor(user: self, completionHandler: {(events, error) in
+
+		})
+		return nil
 	}
 	
 	func getTransactionsPaidByCurrentUser() -> [TransactionRepresentable]? {
