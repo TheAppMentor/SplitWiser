@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDh-g1-vxs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hVP-v0-2yr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,14 +18,65 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sign InVC-->
+        <!--Landing PageVC-->
         <scene sceneID="PhH-Cb-ltI">
             <objects>
-                <viewController id="DDh-g1-vxs" customClass="SignInVC" customModule="SplitWiser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DDh-g1-vxs" customClass="LandingPageVC" customModule="SplitWiser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mBx-nH-fZz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.79215686269999996" green="0.89411764709999997" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="los-Oo-0d1">
+                                <rect key="frame" x="100" y="228.5" width="175" height="210"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_213720_cc" translatesAutoresizingMaskIntoConstraints="NO" id="t7h-yp-hXQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="t7h-yp-hXQ" secondAttribute="height" multiplier="1:1" id="2a9-3f-N7w"/>
+                                            <constraint firstAttribute="width" constant="175" id="K6H-gQ-j8e"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Wiser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-in-YQb">
+                                        <rect key="frame" x="15.5" y="175" width="144" height="35"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
+                                        <color key="textColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-Pl-ULr">
+                                <rect key="frame" x="156.5" y="555" width="62" height="92"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKB-iN-B0B">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="40"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                        <state key="normal" title="Enter">
+                                            <color key="titleColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginToApp:" destination="DDh-g1-vxs" eventType="touchUpInside" id="SOT-Vv-qdn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5e-Wl-DT8">
+                                        <rect key="frame" x="0.0" y="60" width="62" height="32"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="CoY-yy-hi5" kind="show" id="niS-UA-qEz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ixj-Pl-ULr" firstAttribute="centerX" secondItem="mBx-nH-fZz" secondAttribute="centerX" id="EVV-IF-Anu"/>
+                            <constraint firstItem="los-Oo-0d1" firstAttribute="centerX" secondItem="mBx-nH-fZz" secondAttribute="centerX" id="GoO-Ik-41a"/>
+                            <constraint firstItem="SXc-Ko-2dM" firstAttribute="bottom" secondItem="ixj-Pl-ULr" secondAttribute="bottom" constant="20" id="qnU-E9-z3U"/>
+                            <constraint firstItem="los-Oo-0d1" firstAttribute="centerY" secondItem="mBx-nH-fZz" secondAttribute="centerY" id="yd6-pF-cDa"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SXc-Ko-2dM"/>
                     </view>
                     <navigationItem key="navigationItem" id="48M-LN-dhq"/>
@@ -35,7 +86,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZ7-ji-WyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="756" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1095.2" y="120.98950524737631"/>
+        </scene>
+        <!--User Registration PhoneVC-->
+        <scene sceneID="yIU-vj-Yu9">
+            <objects>
+                <viewController id="Gcn-9e-UsR" customClass="UserRegistrationPhoneVC" customModule="SplitWiser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8qz-rf-hIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Zue-Z4-Rt5"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="orp-v8-Sob"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r56-2N-q7w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2447" y="-610"/>
         </scene>
         <!--EventsVC-->
         <scene sceneID="FiS-6Y-bYZ">
@@ -69,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoS-6r-XKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647.2" y="120.98950524737631"/>
+            <point key="canvasLocation" x="1986.4000000000001" y="120.98950524737631"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="L2K-pp-LP2">
@@ -264,11 +331,48 @@
             </objects>
             <point key="canvasLocation" x="1307.2" y="944.52773613193415"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f9C-g8-PWS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CoY-yy-hi5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mg0-Cs-8CN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gcn-9e-UsR" kind="relationship" relationship="rootViewController" id="xCg-GD-Geu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajR-xh-bNN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="-610"/>
+        </scene>
+        <!--Sign In Nav Controller-->
+        <scene sceneID="nKe-GI-Bo3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hVP-v0-2yr" customClass="SignInNavController" customModule="SplitWiser" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Wo5-9D-PAg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DDh-g1-vxs" kind="relationship" relationship="rootViewController" id="ZmB-me-YSG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrI-PF-mRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="351" y="121"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddNewUserBlue" width="80" height="80"/>
         <image name="Checkbox" width="30" height="30"/>
         <image name="PersonPlaceHolder" width="80" height="80"/>
+        <image name="noun_213720_cc" width="350" height="350"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>
