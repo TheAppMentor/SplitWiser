@@ -45,10 +45,20 @@
                                     <action selector="createEvent:" destination="BoS-6r-XKj" eventType="touchUpInside" id="RgS-X6-d7k"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JkH-rh-mgg">
+                                <rect key="frame" x="123" y="246" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.79215686269999996" green="0.89411764709999997" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="NBl-C1-bG9"/>
                     </view>
+                    <connections>
+                        <outlet property="eventName" destination="JkH-rh-mgg" id="PWQ-AP-T6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BoS-6r-XKj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
