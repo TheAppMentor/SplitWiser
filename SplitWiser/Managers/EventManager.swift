@@ -14,11 +14,24 @@ struct EventManager {
 
 	let eventRef = Database.database().reference(withPath: EVENTCONSTANTS.DB_PATH)
 
-	func createEvent(name: String, description: String? = "", user: User) -> Bool {
-		let success = false
-		let event = Event(name: name, description: description, createdBy: user)
-		eventRef.setValue(["name":event.name])
-		return success
+	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event, Error?) -> Void) {
+		var event = Event(name: name, description: description, createdBy: user)
+		let key = eventRef.childByAutoId().key
+		let entry = ["name": event.name,
+					 "description": event.description,
+					 "date": event.date,
+					 "createdBy": event.createdBy.email] as [String : Any]
+		let updates = ["\(key)": entry] as [String : Any]
+		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			if error != nil {
+				print("🔆🔆🔆 "+(error?.localizedDescription)!)
+				completionHandler(event, error)
+			} else {
+				print("🔆🔆🔆 "+key)
+				event.eventId = key
+				completionHandler(event, nil)
+			}
+		})
 	}
 
 	func deleteEvent(id: UUID) -> Bool {
