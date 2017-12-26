@@ -7,12 +7,17 @@
 //
 
 import XCTest
+import Firebase
+import FirebaseAuth
 @testable import SplitWiser
 
 class EventTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+		print("----------------------------")
+		print("      EVENT TESTS           ")
+		print("----------------------------")
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -34,9 +39,21 @@ class EventTests: XCTestCase {
     }
 
 	func testEventCreation() {
-		//let status = EventManager().createEvent(name: "Lunch@Beijing", description: "Friday hangouts")
-		//let expected = true
-		//XCTAssertTrue(expected == status)
+		// Create an expectation for a background download task.
+		let expectation = XCTestExpectation(description: "Create event")
+
+		if let u = Auth.auth().currentUser {
+			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
+			let user = SplitWiserUser(phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+			EventManager().createEvent(name: "Lunch@SomeDarnPlace", user: user, completionHandler: {(event, error) in
+
+				XCTAssertNil(error)
+				// Fulfill the expectation to indicate that the background task has finished successfully.
+				expectation.fulfill()
+			})
+			// Wait until the expectation is fulfilled, with a timeout of 3 seconds.
+			wait(for: [expectation], timeout: 4.0)
+		}
 	}
     
 }
