@@ -10,7 +10,7 @@ import Foundation
 import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
-
+	
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
 		let key = eventRef.childByAutoId().key
@@ -20,16 +20,24 @@ struct FirebasePersistanceManager: Persistance {
 			completionHandler(key,error)
 		})
 	}
-
+	
 	func retrieve() {
-
+		
 	}
-
+	
 	func update() {
-
+		
 	}
-
-	func delete() {
-
+	
+	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
+		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
+		let node = eventRef.child(persistanceConvertible.getIdToBeDeleted())
+		node.removeValue(completionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			if error != nil {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		})
 	}
 }

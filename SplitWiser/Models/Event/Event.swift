@@ -33,6 +33,11 @@ extension Event {
 }
 
 extension Event: PersistanceConvertible {
+	
+	func getIdToBeDeleted() -> String {
+		return self.eventId!
+	}
+	
 	func getColumnNamevalueDictionary() -> [String : Any] {
 		return  ["name": self.name,
 					 "description": self.description,

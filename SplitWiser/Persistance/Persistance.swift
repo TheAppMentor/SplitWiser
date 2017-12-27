@@ -12,10 +12,17 @@ protocol Persistance {
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
 	func retrieve()
 	func update()
-	func delete()
+	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 }
 
 protocol PersistanceConvertible {
+	//values to be inserted into the table
+	//key is the column name, value is the value to be inserted
 	func getColumnNamevalueDictionary() -> [String : Any]
+	
+	//Id of the row to be deleted from the table
+	func getIdToBeDeleted() -> String
+	
+	//table on which the CRUD operations are to be performed
 	func getTableName() -> String
 }

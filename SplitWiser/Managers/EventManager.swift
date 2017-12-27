@@ -22,17 +22,13 @@ struct EventManager {
 	}
 
 	func deleteEvent(event: Event, completionHandler: @escaping (Error?) -> Void) {
-		//will refactor
-		/*let node = eventRef.child(event.eventId!)
-		node.removeValue(completionBlock: {(error: Error?, dbRef: DatabaseReference) in
-			if error != nil {
-				print("🔆🔆🔆 " + (error?.localizedDescription)!)
-				completionHandler(EventError.genericError)
-			} else {
-				print("🔆🔆🔆 DELETED!")
+		persistanceManager.delete(persistanceConvertible: event) { (success) in
+			if success {
 				completionHandler(nil)
+			} else {
+				completionHandler(EventError.genericError)
 			}
-		})*/
+		}
 	}
 
 	func getDetailsOfEvent(id: UUID) -> Event? {
