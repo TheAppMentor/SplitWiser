@@ -9,8 +9,13 @@
 import Foundation
 
 protocol Persistance {
-	func create()
+	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
 	func retrieve()
 	func update()
 	func delete()
+}
+
+protocol PersistanceConvertible {
+	func getColumnNamevalueDictionary() -> [String : Any]
+	func getTableName() -> String
 }

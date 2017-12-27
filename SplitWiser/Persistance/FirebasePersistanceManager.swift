@@ -11,8 +11,14 @@ import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
 
-	func create() {
-
+	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
+		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
+		let key = eventRef.childByAutoId().key
+		let entry = persistanceConvertible.getColumnNamevalueDictionary()
+		let updates = ["\(key)": entry] as [String : Any]
+		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			completionHandler(key,error)
+		})
 	}
 
 	func retrieve() {

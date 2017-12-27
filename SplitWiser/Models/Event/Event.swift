@@ -31,3 +31,19 @@ extension Event {
         return (lhs.eventId == rhs.eventId)
     }
 }
+
+extension Event: PersistanceConvertible {
+	func getColumnNamevalueDictionary() -> [String : Any] {
+		return  ["name": self.name,
+					 "description": self.description,
+					 "date": self.date,
+					 "createdBy": self.createdBy.uid as Any] as [String : Any]
+	}
+	
+	func getTableName() -> String {
+		return EVENTCONSTANTS.DB_PATH
+	}
+	
+	
+}
+

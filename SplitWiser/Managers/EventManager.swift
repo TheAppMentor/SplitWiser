@@ -12,39 +12,18 @@ import FirebaseDatabase
 
 struct EventManager {
 
-	let eventRef = Database.database().reference(withPath: EVENTCONSTANTS.DB_PATH)
+	let persistanceManager = FirebasePersistanceManager()
 
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
-		var event = Event(name: name, description: description, createdBy: user)
-		let key = eventRef.childByAutoId().key
-		let entry = ["name": event.name,
-					 "description": event.description,
-					 "date": event.date,
-					 "createdBy": event.createdBy.uid as Any] as [String : Any]
-		let updates = ["\(key)": entry] as [String : Any]
-		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
-			if error != nil {
-				print("🔆🔆🔆 EVENT CREATION ERROR - " + (error?.localizedDescription)!)
-				completionHandler(nil, EventError.genericError)
-			} else {
-				print("🔆🔆🔆 EVENT CREATED - "+key)
-				event.eventId = key
-				let values = ["\(key)": true]
-				let eventUserMappingRef = Database.database().reference(withPath: EVENTCONSTANTS.EVENT_USER_MAPPING+"/"+event.createdBy.uid)
-				eventUserMappingRef.updateChildValues(values, withCompletionBlock: {(mappingError: Error?, mappingDbRef: DatabaseReference) in
-					if mappingError != nil {
-						print("🔆🔆🔆 MAPPING CREATION ERROR - " + (error?.localizedDescription)!)
-					} else {
-						print("🔆🔆🔆 MAPPING CREATED")
-					}
-				})
-				completionHandler(event, nil)
-			}
-		})
+		let event = Event(name: name, description: description, createdBy: user)
+		persistanceManager.insert(persistanceConvertible: event) { (insertionId,success) in
+			
+		}
 	}
 
 	func deleteEvent(event: Event, completionHandler: @escaping (Error?) -> Void) {
-		let node = eventRef.child(event.eventId!)
+		//will refactor
+		/*let node = eventRef.child(event.eventId!)
 		node.removeValue(completionBlock: {(error: Error?, dbRef: DatabaseReference) in
 			if error != nil {
 				print("🔆🔆🔆 " + (error?.localizedDescription)!)
@@ -53,7 +32,7 @@ struct EventManager {
 				print("🔆🔆🔆 DELETED!")
 				completionHandler(nil)
 			}
-		})
+		})*/
 	}
 
 	func getDetailsOfEvent(id: UUID) -> Event? {
@@ -61,7 +40,8 @@ struct EventManager {
 	}
 	
 	func fetchEventsFor(user: SplitWiserUser, completionHandler: @escaping ([Event]?, Error?) -> Void) {
-		let eventUserMappingRef = Database.database().reference(withPath: EVENTCONSTANTS.EVENT_USER_MAPPING+"/"+user.uid)
+		//will refactor
+		/*let eventUserMappingRef = Database.database().reference(withPath: EVENTCONSTANTS.EVENT_USER_MAPPING+"/"+user.uid)
 		eventUserMappingRef.observeSingleEvent(of: .value, with: {(snapshot) in
 			print("🔆🔆 FOUND IT! ")
 			var arrayOfEvents = [Event]()
@@ -86,7 +66,7 @@ struct EventManager {
 		}) {(error) in
 			print("🔆🔆🔆 " + error.localizedDescription)
 			completionHandler(nil, EventError.genericError)
-		}
+		}*/
 	}
 
 }

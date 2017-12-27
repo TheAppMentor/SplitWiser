@@ -10,8 +10,6 @@
 		202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* EventError.swift */; };
 		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
 		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
-		202C59CF1FE5096A001E6A0C /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59CE1FE5096A001E6A0C /* Persistance.swift */; };
-		202C59D11FE50AB4001E6A0C /* FirebasePersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
 		20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDC4C91FDAD90F0013456B /* EventManager.swift */; };
@@ -45,6 +43,8 @@
 		7376CECD1FD7AF530010C673 /* SplitWiserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CECC1FD7AF530010C673 /* SplitWiserTests.swift */; };
 		7376CED81FD7AF530010C673 /* SplitWiserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */; };
 		73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CC52D21FDC229D00CF2376 /* UserManager.swift */; };
+		73E273291FF377AD0039DE47 /* FirebasePersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E273271FF377AD0039DE47 /* FirebasePersistanceManager.swift */; };
+		73E2732A1FF377AD0039DE47 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E273281FF377AD0039DE47 /* Persistance.swift */; };
 		7E422D3EB28156D5AD18DDFF /* Pods_SplitWiserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */; };
 		88B7B3181FF229AB0083BF22 /* SignInNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7B3171FF229AB0083BF22 /* SignInNavController.swift */; };
 		88D4F4EA1FF22341005E6CFD /* UserRegistrationPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4F4E91FF22341005E6CFD /* UserRegistrationPhoneVC.swift */; };
@@ -76,8 +76,6 @@
 		202C59B61FDD1E02001E6A0C /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
 		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		202C59CE1FE5096A001E6A0C /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Persistance.swift; path = SplitWiser/Persistance/Persistance.swift; sourceTree = SOURCE_ROOT; };
-		202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebasePersistanceManager.swift; path = SplitWiser/Persistance/FirebasePersistanceManager.swift; sourceTree = SOURCE_ROOT; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
 		20FC7CED1FDB99940036735E /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
@@ -118,6 +116,8 @@
 		7376CED71FD7AF530010C673 /* SplitWiserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiserUITests.swift; sourceTree = "<group>"; };
 		7376CED91FD7AF530010C673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73CC52D21FDC229D00CF2376 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		73E273271FF377AD0039DE47 /* FirebasePersistanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebasePersistanceManager.swift; sourceTree = "<group>"; };
+		73E273281FF377AD0039DE47 /* Persistance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		7516BB1B5BB01EE248A22CE4 /* Pods-SplitWiserTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.release.xcconfig"; sourceTree = "<group>"; };
 		769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,16 +162,6 @@
 				202C59C41FDD2C63001E6A0C /* Constants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		202C59CD1FE508EE001E6A0C /* Persistance */ = {
-			isa = PBXGroup;
-			children = (
-				202C59CE1FE5096A001E6A0C /* Persistance.swift */,
-				202C59D01FE50AB4001E6A0C /* FirebasePersistanceManager.swift */,
-			);
-			name = Persistance;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		20365A19BB2F250E2665DA99 /* Pods */ = {
@@ -294,7 +284,7 @@
 		7376CEB61FD7AF520010C673 /* SplitWiser */ = {
 			isa = PBXGroup;
 			children = (
-				202C59CD1FE508EE001E6A0C /* Persistance */,
+				73E273261FF377AD0039DE47 /* Persistance */,
 				202C59C31FDD2C55001E6A0C /* Constants */,
 				20FC7CEC1FDB995E0036735E /* ViewControllers */,
 				20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */,
@@ -343,6 +333,15 @@
 				73271BF11FD988E300FD0EBB /* SplitWiserUser.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		73E273261FF377AD0039DE47 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				73E273271FF377AD0039DE47 /* FirebasePersistanceManager.swift */,
+				73E273281FF377AD0039DE47 /* Persistance.swift */,
+			);
+			path = Persistance;
 			sourceTree = "<group>";
 		};
 		BE8E434831D5A57BD50E39E1 /* Frameworks */ = {
@@ -675,6 +674,7 @@
 				20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */,
 				202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */,
 				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
+				73E2732A1FF377AD0039DE47 /* Persistance.swift in Sources */,
 				88D4F4EC1FF227EF005E6CFD /* LandingPageVC.swift in Sources */,
 				88D4F4EA1FF22341005E6CFD /* UserRegistrationPhoneVC.swift in Sources */,
 				73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */,
@@ -686,6 +686,7 @@
 				2F7971D21FEE1019003E7A29 /* CreateEventVC.swift in Sources */,
 				2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */,
 				2F81513E1FDAAC8D001F9452 /* TransactionStatus.swift in Sources */,
+				73E273291FF377AD0039DE47 /* FirebasePersistanceManager.swift in Sources */,
 				2F7971D91FEE61C5003E7A29 /* ParticipantCell.swift in Sources */,
 				2F8151401FDAACAF001F9452 /* TransactionCurrency.swift in Sources */,
 				73271BF21FD988E300FD0EBB /* SplitWiserUser.swift in Sources */,
@@ -693,10 +694,8 @@
 				2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */,
 				2F8151371FDA9B6A001F9452 /* TransactionManager.swift in Sources */,
 				2F7971E51FEE7AF5003E7A29 /* ParticipantListView.swift in Sources */,
-				202C59D11FE50AB4001E6A0C /* FirebasePersistanceManager.swift in Sources */,
 				2F7971E81FEE8997003E7A29 /* AddEventView.swift in Sources */,
 				2F7971E01FEE67C2003E7A29 /* UIView_Extension.swift in Sources */,
-				202C59CF1FE5096A001E6A0C /* Persistance.swift in Sources */,
 				2F1933D41FDE971E0016C2AE /* CalculationEngine.swift in Sources */,
 				2F81514A1FDC692A001F9452 /* TransactionDelegate.swift in Sources */,
 			);
