@@ -34,23 +34,33 @@ class AllEventsListTVC: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return allEvents.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "eventListCell", for: indexPath)
 
-        // Configure the cell...
+        if let eventListView = cell.viewWithTag(1111) as? AddEventView{
+         
+//            @IBOutlet weak var profilePicButton: UIButton!
+//            @IBOutlet weak var eventName: UITextField!
+//            @IBOutlet weak var participantListView: ParticipantListView!
 
+            eventListView.profilePicButton.setImage(#imageLiteral(resourceName: "PersonPlaceHolder"), for: .normal)
+            eventListView.eventName.text = allEvents[indexPath.row].name
+            eventListView.eventDescription.text = allEvents[indexPath.row].description
+            
+        }
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -100,5 +110,18 @@ class AllEventsListTVC: UITableViewController {
 }
 
 extension AllEventsListTVC {
+    
+    var allEvents : [Event]{
+        
+        var tempEventList = [Event]()
+        
+        let user1 = SplitWiserUser.init(uid: UUID().uuidString, phoneNumber: "89185-393485", userName: "Pavan", profileImage: nil, email: "PK@gmail.com", transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+
+        let ev1 = Event.init(name: "Lunch", description: "When we had lunch together", createdBy: user1)
+        let ev2 = Event.init(name: "Dinner", description: "When we had dinner together", createdBy: user1)
+        let ev3 = Event.init(name: "Movie", description: "When we went for a Movie", createdBy: user1)
+
+        return [ev1,ev2,ev3]
+    }
     
 }

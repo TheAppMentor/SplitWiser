@@ -15,6 +15,7 @@ class AddEventView: UIView {
     @IBOutlet weak var profilePicButton: UIButton!
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var participantListView: ParticipantListView!
+    @IBOutlet weak var eventDescription: UITextField!
     
     
     override init(frame: CGRect) {
