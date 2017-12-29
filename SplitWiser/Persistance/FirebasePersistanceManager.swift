@@ -30,13 +30,23 @@ struct FirebasePersistanceManager: Persistance {
 		
 	}
 	
-	func update() {
-		
+	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
+		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
+		let key = persistanceConvertible.getIdToBeModified()
+		let entry = persistanceConvertible.getColumnNamevalueDictionary()
+		let updates = ["\(key)": entry] as [String : Any]
+		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			if error != nil {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		})
 	}
 	
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
-		let node = eventRef.child(persistanceConvertible.getIdToBeDeleted())
+		let node = eventRef.child(persistanceConvertible.getIdToBeModified())
 		node.removeValue(completionBlock: {(error: Error?, dbRef: DatabaseReference) in
 			if error != nil {
 				completionHandler(false)

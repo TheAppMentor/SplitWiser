@@ -35,7 +35,7 @@ extension Event {
 
 extension Event: PersistanceConvertible {
 	
-	func getIdToBeDeleted() -> String {
+	func getIdToBeModified() -> String {
 		return self.eventId
 	}
 	
