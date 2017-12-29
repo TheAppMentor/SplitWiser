@@ -9,13 +9,14 @@
 import Foundation
 
 struct HerokuPersistanceManager: Persistance {
+    func retrieve() -> PersistanceConvertible? {
+        return nil
+    }
+    
 	func insert(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
 
 	}
 
-	func retrieve() {
-
-	}
 
 	func update() {
 
