@@ -17,9 +17,8 @@ struct HerokuPersistanceManager: Persistance {
 
 	}
 
-
-	func update() {
-
+	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
+		
 	}
 
 	func delete(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (Bool) -> Void) {

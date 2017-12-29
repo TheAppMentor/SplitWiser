@@ -29,7 +29,7 @@ struct Transaction : Equatable {
 }
 
 extension Transaction : PersistanceConvertible{
-    func getIdToBeDeleted() -> String {
+    func getIdToBeModified() -> String {
         return self.tranID.uuidString
     }
     
