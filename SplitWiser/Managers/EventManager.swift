@@ -31,7 +31,7 @@ struct EventManager {
 		}
 	}
 
-	func getDetailsOfEvent(id: UUID) -> Event? {
+	func getDetailsOfEvent(id: String) -> Event? {
 		return nil
 	}
 	

@@ -13,20 +13,20 @@ import UIKit
 // For any operation related to transaction, please add your required methods here..
 // I will add the implementation.
 
+
 protocol TransactionDelegate {
     
-    func someSampleMethod()
-	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]?
-    func fetchAllTransactionsForEvent(event : Event) -> [TransactionRepresentable]?
-    func fetchAllTransactionsFor(event : Event, user : SplitWiserUser) throws -> [TransactionRepresentable]?
+	func fetchTransactionsFor(userID : String) ->[TransactionRepresentable]?
+    func fetchAllTransactionsForEvent(eventID : String) -> [TransactionRepresentable]?
+    func fetchAllTransactionsFor(eventID : String, userID : String) throws -> [TransactionRepresentable]?
 
-    func fetchTotalAmountPaidBy(event : Event, user : SplitWiserUser) throws -> Double?
-    func fetchTotalAmountOwed(event : Event, user : SplitWiserUser) throws -> Double?
+    func fetchTotalAmountPaidBy(eventID : String, userID : String) throws -> Double?
+    func fetchTotalAmountOwed(eventID : String, userID : String) throws -> Double?
 
     mutating func addTransaction(date : Date?,
-                        associatedEvent : Event,
+                        associatedEvent : UUID,
                         status : TransactionStatus,
-                        paidBy : SplitWiserUser,
+                        paidBy : UUID,
                         paidFor : [UserTranShare],
                         amount : Double,
                         currency : TransactionCurrency,
@@ -34,28 +34,24 @@ protocol TransactionDelegate {
                         transactionDescription : String) throws -> TransactionRepresentable?
 }
 
-
 extension TransactionDelegate {
     
-    func someSampleMethod(){
-        // Empty Implementation, Prashanth will implement.
-    }
-	
-	func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
+/*
+    func fetchTransactionsFor(user : SplitWiserUser) ->[TransactionRepresentable]? {
 		//transactions for a particular user irrespective of events
 		return nil
 	}
     
     func fetchAllTransactionsFor(event : Event, user : SplitWiserUser) throws -> [TransactionRepresentable]?{
-        guard let allTrans = fetchAllTransactionsForEvent(event: event) else {
+        guard let allTrans = fetchAllTransactionsForEvent(eventID: event) else {
             throw TransactionError.invalidEvent
         }
         
-        let allTransForUser = allTrans.filter({return $0.paidBy == user})
+        let allTransForUser = allTrans.filter({return $0.paidBy.uuidString == user.uid})
         return allTransForUser
     }
     
-   /* func fetchTotalAmountPaidFor(event : Event, user : SplitWiserUser) -> Double?{
+    func fetchTotalAmountPaidFor(event : Event, user : SplitWiserUser) -> Double?{
         
         return nil
     }

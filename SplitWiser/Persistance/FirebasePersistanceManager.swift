@@ -10,6 +10,11 @@ import Foundation
 import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
+    func retrieve() -> PersistanceConvertible? {
+        
+        return nil
+    }
+    
 	
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())

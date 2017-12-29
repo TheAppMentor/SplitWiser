@@ -12,4 +12,6 @@ enum TransactionError : Error {
     case noTransactionMatchingID (transactionID : UUID)
     case duplicateTransaction
     case invalidEvent
+    case failedToConvertTransactionToJSON(transactionID : UUID)
+    case failedToConvertTransactionShareToJSON
 }

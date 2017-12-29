@@ -21,8 +21,8 @@ struct TransactionManager : TransactionDelegate {
 		calculationEngine = CalculationEngine()
 	}
     
-    mutating func addTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: SplitWiserUser, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) throws -> TransactionRepresentable? {
-                
+    mutating func addTransaction(date: Date?, associatedEvent: UUID, status: TransactionStatus, paidBy: UUID, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) throws -> TransactionRepresentable? {
+        
         if let tran =  Transaction.generateTransaction(date: date, associatedEvent: associatedEvent, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, transactionImages: transactionImages, transactionDescription: transactionDescription){
             transactionStore.append(tran)
             return tran
@@ -45,6 +45,52 @@ struct TransactionManager : TransactionDelegate {
         return fetchedTrans.first ?? nil
     }
     
+    
+    func fetchTransactionsFor(userID: String) -> [TransactionRepresentable]? {
+        if let theUser = UserManager().getUserWith(userID: userID){
+            assertionFailure("Prashanth Implement this shit.")
+        }
+        
+        return nil
+    }
+    
+    func fetchAllTransactionsFor(eventID: String, userID: String) throws -> [TransactionRepresentable]? {
+        if let theUser = UserManager().getUserWith(userID: userID){
+            if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
+                assertionFailure("Prashanth Implment this shit man.")
+            }
+        }
+        return nil
+
+    }
+    
+    func fetchTotalAmountPaidBy(eventID: String, userID: String) throws -> Double? {
+        if let theUser = UserManager().getUserWith(userID: userID){
+            if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
+                return try calculationEngine.fetchTotalAmountPaidBy(event: theEvent, user: theUser)
+            }
+        }
+        return nil
+    }
+    
+    func fetchTotalAmountOwed(eventID: String, userID: String) throws -> Double? {
+
+        if let theUser = UserManager().getUserWith(userID: userID){
+            if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
+                if let theAmount = try? calculationEngine.fetchTotalAmountOwedBy(event: theEvent, user: theUser){
+                    return theAmount
+                }
+            }
+        }
+        return nil
+
+        
+    }
+
+    
+    
+    
+    
     func fetchDetailsForTransactions(transactions : [UUID]) throws -> [TransactionRepresentable]? {
 //        do{
 //            for eachTransaction in transactions{
@@ -56,59 +102,32 @@ struct TransactionManager : TransactionDelegate {
         return nil
     }
     
-    func fetchAllTransactionsForEvent(event: Event) -> [TransactionRepresentable]? {
-        let allTrans = transactionStore.filter({$0.associatedEvent == event})
+    func fetchAllTransactionIDForEvent(eventID: String) -> [TransactionRepresentable]? {
+        return nil
+    }
+    
+    
+    func fetchTotalAmountPaidBy(event: Event, user: UUID) throws -> Double? {
+        
+        return nil
+    }
+
+    
+    func fetchTotalAmountOwed(event: Event, user: UUID) throws -> Double? {
+        if let theUser = UserManager().getUserWith(userID: user.uuidString){
+            return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:theUser)
+        }
+        return nil
+    }
+    
+    func fetchAllTransactionsForEvent(eventID: String) -> [TransactionRepresentable]? {
+        
+        //TODO: Prashanth Re-look at this .
+        let allTrans = transactionStore.filter({$0.associatedEvent.uuidString == eventID})
         return allTrans
+
     }
-	
-	func fetchTotalAmountPaidBy(event: Event, user: SplitWiserUser) throws -> Double? {
-		return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:user)
-	}
-	
-	func fetchTotalAmountOwed(event: Event, user: SplitWiserUser) throws -> Double? {
-		return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:user)
-	}
+
+
     
 }
-
-
-
-
-fileprivate struct Transaction : Equatable {
-    
-    static func ==(lhs: Transaction, rhs: Transaction) -> Bool {
-        return lhs.tranID == rhs.tranID
-    }
-    
-    var tranID : UUID
-    var associatedEvent : Event
-    var tranDate : Date
-    var status : TransactionStatus
-    var paidBy : SplitWiserUser
-    var paidFor : [UserTranShare]?
-    var amount : Double
-    var currency : TransactionCurrency
-    var tranImages : [UIImage]?
-    var description : String?
-}
-
-extension Transaction : TransactionRepresentable{
-    func getPaidBy() -> SplitWiserUser {
-        return paidBy
-    }
-    
-    func getAssociatedEvent() -> Event {
-        return associatedEvent
-    }
-    
-    static public func generateTransaction(date: Date?, associatedEvent: Event, status: TransactionStatus, paidBy: SplitWiserUser, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
-        
-        
-        return Transaction.init(tranID: UUID(), associatedEvent: associatedEvent, tranDate: date!, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, tranImages: transactionImages, description: transactionDescription)
-    }
-    
-    func getTransactionID() -> UUID{
-        return tranID
-    }
-}
-

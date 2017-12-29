@@ -20,7 +20,7 @@ struct SplitWiserUser {
 	var eventsProvider: EventManager
 	
 	private func getTranscations() -> [TransactionRepresentable]? {
-		return transactionsProvider.fetchTransactionsFor(user: self)
+		return transactionsProvider.fetchTransactionsFor(userID: uid)
 	}
 	
 	func getEvents() -> [Event]? {
@@ -36,7 +36,7 @@ struct SplitWiserUser {
 		if let transactionsForUser = transactions {
 			myPaidTransactions = [TransactionRepresentable]()
 			for transaction in transactionsForUser {
-				if transaction.paidBy == self {
+				if transaction.paidBy.uuidString == self.uid {
 					myPaidTransactions?.append(transaction)
 				}
 			}

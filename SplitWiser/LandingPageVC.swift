@@ -14,6 +14,7 @@ class LandingPageVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,10 +22,14 @@ class LandingPageVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func showSignUpPage(_ sender: UIButton){
+        self.performSegue(withIdentifier: "showSignUpPage", sender: nil)
+    }
+    
     @IBAction func loginToApp(_ sender: UIButton) {
 
         self.performSegue(withIdentifier: "showEvents", sender: nil)
-
         
 //        if Auth.auth().currentUser != nil {
 //            self.navigationBar.isHidden = false

@@ -49,6 +49,7 @@
 		73E2732A1FF377AD0039DE47 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E273281FF377AD0039DE47 /* Persistance.swift */; };
 		7E422D3EB28156D5AD18DDFF /* Pods_SplitWiserTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */; };
 		88B7B3181FF229AB0083BF22 /* SignInNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7B3171FF229AB0083BF22 /* SignInNavController.swift */; };
+		88B7B31A1FF2C2AA0083BF22 /* AllEventsListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */; };
 		88D4F4EA1FF22341005E6CFD /* UserRegistrationPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4F4E91FF22341005E6CFD /* UserRegistrationPhoneVC.swift */; };
 		88D4F4EC1FF227EF005E6CFD /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4F4EB1FF227EF005E6CFD /* LandingPageVC.swift */; };
 		FB0906858EE29C63F1176496 /* Pods_SplitWiser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */; };
@@ -126,6 +127,7 @@
 		769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88B7B3171FF229AB0083BF22 /* SignInNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInNavController.swift; sourceTree = "<group>"; };
+		88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsListTVC.swift; sourceTree = "<group>"; };
 		88D4F4E91FF22341005E6CFD /* UserRegistrationPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationPhoneVC.swift; sourceTree = "<group>"; };
 		88D4F4EB1FF227EF005E6CFD /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		A60713B6304599F0155A583C /* Pods-SplitWiserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				88B7B3171FF229AB0083BF22 /* SignInNavController.swift */,
 				20FC7CED1FDB99940036735E /* EventsVC.swift */,
+				88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */,
 				2F7971D11FEE1019003E7A29 /* CreateEventVC.swift */,
 			);
 			path = ViewControllers;
@@ -700,6 +703,7 @@
 				88D4F4EC1FF227EF005E6CFD /* LandingPageVC.swift in Sources */,
 				88D4F4EA1FF22341005E6CFD /* UserRegistrationPhoneVC.swift in Sources */,
 				73CC52D31FDC229D00CF2376 /* UserManager.swift in Sources */,
+				88B7B31A1FF2C2AA0083BF22 /* AllEventsListTVC.swift in Sources */,
 				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
 				2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,

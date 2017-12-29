@@ -9,5 +9,11 @@
 import Foundation
 
 struct UserManager {
+    
+    func getUserWith(userID : String) -> SplitWiserUser? {
+        
+        return nil
+    }
+    
 	
 }

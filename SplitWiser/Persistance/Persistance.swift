@@ -10,7 +10,7 @@ import Foundation
 
 protocol Persistance {
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
-	func retrieve()
+	func retrieve() -> PersistanceConvertible?
 	func update()
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 }

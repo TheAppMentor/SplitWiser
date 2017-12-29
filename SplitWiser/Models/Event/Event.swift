@@ -10,7 +10,7 @@ import Foundation
 import FirebaseAuth
 
 struct Event {
-	var eventId: String? //What if I make this a hash of userEmailId+eventName+timeStamp?
+	var eventId: String //What if I make this a hash of userEmailId+eventName+timeStamp? //Reshma, chaning this to non-optional. Coz For every event we will assign an ID always.
 	var name: String
 	var description: String
 	var date: Double
@@ -18,6 +18,7 @@ struct Event {
 	var transactionsProvider: TransactionManager
 
 	init(name: String, description: String? = "", createdBy: SplitWiserUser) {
+        self.eventId = UUID().uuidString
 		self.name = name
 		self.description = description!
 		self.date = Date().timeIntervalSince1970
@@ -35,7 +36,7 @@ extension Event {
 extension Event: PersistanceConvertible {
 	
 	func getIdToBeDeleted() -> String {
-		return self.eventId!
+		return self.eventId
 	}
 	
 	func getColumnNamevalueDictionary() -> [String : Any] {
