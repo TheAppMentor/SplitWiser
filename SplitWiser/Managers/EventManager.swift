@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 struct EventManager {
 
-	let persistanceManager = FirebasePersistanceManager()
+	let persistanceManager: Persistance = PersistanceFactory.getPersistanceManager()
 
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
 		let event = Event(name: name, description: description, createdBy: user)

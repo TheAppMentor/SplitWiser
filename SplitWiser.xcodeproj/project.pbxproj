@@ -11,6 +11,8 @@
 		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
 		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
+		20E210A41FF618B700362C0C /* PersistanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A31FF618B700362C0C /* PersistanceFactory.swift */; };
+		20E210A61FF61B3900362C0C /* HerokuPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */; };
 		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
 		20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDC4C91FDAD90F0013456B /* EventManager.swift */; };
 		28D540E4C77897253F5231CA /* Pods_SplitWiserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */; };
@@ -77,6 +79,8 @@
 		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		20E210A31FF618B700362C0C /* PersistanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceFactory.swift; sourceTree = "<group>"; };
+		20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuPersistanceManager.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
 		20FC7CED1FDB99940036735E /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		20FDC4C91FDAD90F0013456B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 			children = (
 				73E273271FF377AD0039DE47 /* FirebasePersistanceManager.swift */,
 				73E273281FF377AD0039DE47 /* Persistance.swift */,
+				20E210A31FF618B700362C0C /* PersistanceFactory.swift */,
+				20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */,
 			);
 			path = Persistance;
 			sourceTree = "<group>";
@@ -508,9 +514,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -558,7 +569,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		69884D9E5DECA2FFC90AEC99 /* [CP] Embed Pods Frameworks */ = {
@@ -567,9 +578,20 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -606,7 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A7255E9AFF03F0C65FAE29B2 /* [CP] Check Pods Manifest.lock */ = {
@@ -624,7 +646,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BC25FFF7B586DB002E0F877C /* [CP] Embed Pods Frameworks */ = {
@@ -681,6 +703,7 @@
 				20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */,
 				2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
+				20E210A41FF618B700362C0C /* PersistanceFactory.swift in Sources */,
 				202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */,
 				2F8151441FDAACF7001F9452 /* TransactionRepresentable.swift in Sources */,
 				2F7971D21FEE1019003E7A29 /* CreateEventVC.swift in Sources */,
@@ -689,6 +712,7 @@
 				73E273291FF377AD0039DE47 /* FirebasePersistanceManager.swift in Sources */,
 				2F7971D91FEE61C5003E7A29 /* ParticipantCell.swift in Sources */,
 				2F8151401FDAACAF001F9452 /* TransactionCurrency.swift in Sources */,
+				20E210A61FF61B3900362C0C /* HerokuPersistanceManager.swift in Sources */,
 				73271BF21FD988E300FD0EBB /* SplitWiserUser.swift in Sources */,
 				88B7B3181FF229AB0083BF22 /* SignInNavController.swift in Sources */,
 				2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */,
