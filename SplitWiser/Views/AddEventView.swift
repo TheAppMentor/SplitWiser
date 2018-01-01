@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 
 class AddEventView: UIView {
+    
+    @IBInspectable var allowsEditing : Bool = false
 
     @IBOutlet weak var profilePicButton: UIButton!
     @IBOutlet weak var eventName: UITextField!
@@ -21,18 +23,29 @@ class AddEventView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        setupEditing()
     }
     
+    func setupEditing(){
+            profilePicButton.isUserInteractionEnabled = allowsEditing
+            eventName.isUserInteractionEnabled = allowsEditing
+            eventDescription.isUserInteractionEnabled = allowsEditing
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
-        
+        setupEditing()
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupView()
+        setupEditing()
+    }
+    
+    override func awakeFromNib() {
+        setupEditing()
     }
     
     func setupView() {

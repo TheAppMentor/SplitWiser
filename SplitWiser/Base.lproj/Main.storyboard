@@ -183,16 +183,19 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventListCell" rowHeight="92" id="B4u-Tn-uSS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="eventListCell" rowHeight="92" id="B4u-Tn-uSS">
                                 <rect key="frame" x="0.0" y="120" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B4u-Tn-uSS" id="JsP-b0-VbA">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view tag="1111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxI-pZ-MOc" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="allowsEditing" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -236,6 +239,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4F-ps-M8a" userLabel="View Enter Event Name" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="146"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsEditing" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcH-uB-dsl">
                                         <rect key="frame" x="0.0" y="154" width="343" height="365"/>
@@ -384,6 +390,7 @@
                     <navigationItem key="navigationItem" title="Create Event" id="7Xr-hi-ID9"/>
                     <connections>
                         <outlet property="addNewUser" destination="6gI-Hh-H2A" id="t82-fc-g6h"/>
+                        <outlet property="eventDetailsView" destination="m4F-ps-M8a" id="f0d-x5-t7b"/>
                         <outlet property="userListTableView" destination="Qri-x7-2YT" id="I9f-TF-5uI"/>
                     </connections>
                 </viewController>
