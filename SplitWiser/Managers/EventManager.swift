@@ -17,7 +17,7 @@ struct EventManager {
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
 		let event = Event(name: name, description: description, createdBy: user)
 		persistanceManager.insert(persistanceConvertible: event) { (insertionId,success) in
-			
+            print("Event Manager : Created Event : \(insertionId) -> \(success)")
 		}
 	}
 

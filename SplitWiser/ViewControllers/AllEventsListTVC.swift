@@ -46,7 +46,7 @@ class AllEventsListTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventListCell", for: indexPath)
 
-        if let eventListView = cell.viewWithTag(1111) as? AddEventView{
+        if let eventListView = cell.viewWithTag(1111) as? EventDetailsView{
          
 //            @IBOutlet weak var profilePicButton: UIButton!
 //            @IBOutlet weak var eventName: UITextField!

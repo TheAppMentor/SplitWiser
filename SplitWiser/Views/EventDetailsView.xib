@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventDetailsView" customModule="SplitWiser" customModuleProvider="target">
             <connections>
                 <outlet property="eventDescription" destination="I8e-tx-pQl" id="V6h-nQ-8wv"/>
                 <outlet property="eventName" destination="4vR-V5-Axt" id="MmC-q3-ESh"/>
@@ -50,17 +50,23 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fbO-nT-WLU">
                                             <rect key="frame" x="93" y="20" width="363" height="117.5"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-V5-Axt">
+                                                <textField opaque="NO" tag="1111" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4vR-V5-Axt">
                                                     <rect key="frame" x="0.0" y="0.0" width="363" height="55"/>
                                                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="0rB-ye-H0G"/>
+                                                    </connections>
                                                 </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-tx-pQl">
                                                     <rect key="frame" x="0.0" y="63" width="363" height="54.5"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="0g2-o7-TBi"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </stackView>

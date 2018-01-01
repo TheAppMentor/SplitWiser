@@ -11,7 +11,14 @@ import ZAlertView
 import Firebase
 import FirebaseAuth
 
-class CreateEventVC: UIViewController {
+class CreateEventVC: UIViewController, EventDetailsDelegate {
+    
+    struct EventDetails {
+        var eventName : String?
+        var eventDetails : String?
+    }
+    
+    var createdEvent : EventDetails = EventDetails()
     
     @IBAction func doneAddingContact(_ sender: UIBarButtonItem) {
         
@@ -19,10 +26,7 @@ class CreateEventVC: UIViewController {
             print("New Event Created")
         })
     }
-    
-    @IBOutlet weak var addProfileImageButton: UIImageView!
-    
-    @IBOutlet weak var enterEventNameField: UITextField!
+    @IBOutlet weak var eventDetailsView: EventDetailsView!
     
     @IBOutlet weak var addNewUser: UIImageView!
     
@@ -36,13 +40,10 @@ class CreateEventVC: UIViewController {
 //        userListTableView.dataSource = self
         
         //self.navigationController?.navigationBar.set = UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: #selector(cancelAddingEvent(sender:)))
+        
+        eventDetailsView.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     @IBAction func doneAddingEvent(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
@@ -51,8 +52,11 @@ class CreateEventVC: UIViewController {
             if let u = Auth.auth().currentUser {
                 print("🙏🏻 Welcome - \(String(describing: u.displayName)) with uid - \(u.uid)")
                 let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
-                EventManager().createEvent(name: "Dummy Event Name", user: user, completionHandler: {(event, error) in
-                    
+                EventManager().createEvent(name: self.createdEvent.eventName!, user: user, completionHandler: {[weak self](event, error) in
+                    print("CreateEventVC : Finished creating event.")
+                    EventManager().fetchEventsFor(user: user, completionHandler: { (eventList, error) in
+                        print("Fetching all Events now.... \(eventList)")
+                    })
                 })
             }
         }
@@ -142,6 +146,29 @@ extension CreateEventVC : UITableViewDelegate, UITableViewDataSource{
     }
 
 }
+
+
+extension CreateEventVC{
+    func didEnterEventName(eventName : String){
+        print(#function)
+        print("Did add event with Name : \(eventName)")
+        createdEvent.eventName = eventName
+        
+    }
+    
+    func didEnterEventDescription(eventDescription : String){
+        
+    }
+    
+    func didAddEventProfilePic(profilePic : UIImage){
+        
+    }
+    
+    func didAddUserToEvent(userID : UUID){
+        
+    }
+}
+
 
 extension CreateEventVC{
     

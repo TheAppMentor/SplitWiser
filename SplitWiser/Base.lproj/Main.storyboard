@@ -118,18 +118,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wx3-zC-zoW" id="6bT-U2-Adb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pku-Bm-wau">
-                                            <rect key="frame" x="16" y="26" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="16" y="26" width="34" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S5o-NG-aNv">
-                                            <rect key="frame" x="16" y="49.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="16" y="49" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -142,10 +142,10 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B4u-Tn-uSS" id="JsP-b0-VbA">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view tag="1111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxI-pZ-MOc" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
+                                        <view tag="1111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxI-pZ-MOc" customClass="EventDetailsView" customModule="SplitWiser" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <userDefinedRuntimeAttributes>
@@ -191,7 +191,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sP8-E3-hIK">
                                 <rect key="frame" x="16" y="132" width="343" height="519"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4F-ps-M8a" userLabel="View Enter Event Name" customClass="AddEventView" customModule="SplitWiser" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4F-ps-M8a" userLabel="View Enter Event Name" customClass="EventDetailsView" customModule="SplitWiser" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="146"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <userDefinedRuntimeAttributes>
@@ -256,7 +256,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="343" height="66"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k37-NB-1X8" id="w3A-qv-mFJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4SP-dY-zBt">
@@ -358,6 +358,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addNewUser" destination="6gI-Hh-H2A" id="t82-fc-g6h"/>
+                        <outlet property="eventDetailsView" destination="m4F-ps-M8a" id="WSw-HG-hFB"/>
                         <outlet property="userListTableView" destination="Qri-x7-2YT" id="I9f-TF-5uI"/>
                     </connections>
                 </viewController>
