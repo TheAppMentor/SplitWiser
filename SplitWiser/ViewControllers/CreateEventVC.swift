@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import ZAlertView
+import Firebase
+import FirebaseAuth
 
 class CreateEventVC: UIViewController {
     
@@ -31,6 +34,8 @@ class CreateEventVC: UIViewController {
         // Do any additional setup after loading the view.
 //        userListTableView.delegate = self
 //        userListTableView.dataSource = self
+        
+        //self.navigationController?.navigationBar.set = UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: #selector(cancelAddingEvent(sender:)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +43,44 @@ class CreateEventVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    @IBAction func doneAddingEvent(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true) {
+            print("Create event called!")
+            if let u = Auth.auth().currentUser {
+                print("🙏🏻 Welcome - \(String(describing: u.displayName)) with uid - \(u.uid)")
+                let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email, transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+                EventManager().createEvent(name: "Dummy Event Name", user: user, completionHandler: {(event, error) in
+                    
+                })
+            }
+        }
+    }
+    
+    @IBAction func cancelEventAdd(_ sender: UIBarButtonItem) {
+        
+        ZAlertView.positiveColor = UIColor.clear
+        ZAlertView.negativeColor = UIColor.clear
+        ZAlertView.buttonFont = UIFont(name: "HelveticaNeue", size: 17)
+        ZAlertView.buttonTitleColor = UIColor(red: (65.0/255.0), green: (131.0/255.0), blue: (215.0/255.0), alpha: 1.0)
+        ZAlertView.titleColor = UIColor(red: (102.0/255.0), green: (102.0/255.0), blue: (102.0/255.0), alpha: 1.0)
+        
+        let dialog = ZAlertView(title: "Discard Event?", message: "The Event  will NOT be saved. Are you sure you want cancel?", okButtonText: "Yes, cancel it", cancelButtonText: "No, take me back")
+        dialog.width = self.view.frame.width * 0.9
+        //dialog.cancelHandler = self.closeScreen
+        dialog.okHandler = self.closeScreen
+        
+        dialog.show()
+    }
+    
+    func closeScreen(theAlertView : ZAlertView) -> () {
+        theAlertView.dismissAlertView()
+        dismiss(animated: true) {
+            print("Cancelled Event Add !!!")
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

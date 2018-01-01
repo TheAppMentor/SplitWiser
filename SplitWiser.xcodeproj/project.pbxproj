@@ -13,7 +13,6 @@
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20E210A41FF618B700362C0C /* PersistanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A31FF618B700362C0C /* PersistanceFactory.swift */; };
 		20E210A61FF61B3900362C0C /* HerokuPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */; };
-		20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FC7CED1FDB99940036735E /* EventsVC.swift */; };
 		20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDC4C91FDAD90F0013456B /* EventManager.swift */; };
 		28D540E4C77897253F5231CA /* Pods_SplitWiserUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 769C5C5A93FF61DC24AF761E /* Pods_SplitWiserUITests.framework */; };
 		2F1933D41FDE971E0016C2AE /* CalculationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1933D31FDE971E0016C2AE /* CalculationEngine.swift */; };
@@ -83,7 +82,6 @@
 		20E210A31FF618B700362C0C /* PersistanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceFactory.swift; sourceTree = "<group>"; };
 		20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuPersistanceManager.swift; sourceTree = "<group>"; };
 		20FC7CE91FDB8B340036735E /* SplitWiser.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitWiser.entitlements; sourceTree = "<group>"; };
-		20FC7CED1FDB99940036735E /* EventsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsVC.swift; sourceTree = "<group>"; };
 		20FDC4C91FDAD90F0013456B /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		2F1933D31FDE971E0016C2AE /* CalculationEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationEngine.swift; sourceTree = "<group>"; };
 		2F7971CF1FED7AF1003E7A29 /* EventListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTVC.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				88B7B3171FF229AB0083BF22 /* SignInNavController.swift */,
-				20FC7CED1FDB99940036735E /* EventsVC.swift */,
 				88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */,
 				2F7971D11FEE1019003E7A29 /* CreateEventVC.swift */,
 			);
@@ -518,8 +515,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -572,7 +569,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		69884D9E5DECA2FFC90AEC99 /* [CP] Embed Pods Frameworks */ = {
@@ -631,7 +628,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A7255E9AFF03F0C65FAE29B2 /* [CP] Check Pods Manifest.lock */ = {
@@ -649,7 +646,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BC25FFF7B586DB002E0F877C /* [CP] Embed Pods Frameworks */ = {
@@ -674,8 +671,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -696,7 +693,6 @@
 			files = (
 				2F7971D01FED7AF1003E7A29 /* EventListTVC.swift in Sources */,
 				2F7971DD1FEE6264003E7A29 /* RoundedImageView.swift in Sources */,
-				20FC7CEE1FDB99940036735E /* EventsVC.swift in Sources */,
 				202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */,
 				20FDC4CA1FDAD90F0013456B /* EventManager.swift in Sources */,
 				73E2732A1FF377AD0039DE47 /* Persistance.swift in Sources */,
