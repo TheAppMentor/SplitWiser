@@ -12,10 +12,10 @@ import FirebaseDatabase
 
 struct EventManager {
 
-	let persistanceManager: Persistance = PersistanceFactory.getPersistanceManager()
+	private let persistanceManager: Persistance = PersistanceFactory.getPersistanceManager()
 
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
-		let event = Event(name: name, description: description, createdBy: user)
+		let event = Event(name: name, description: description, createdBy: user.uid)
 		persistanceManager.insert(persistanceConvertible: event) { (insertionId, error) in
 			if error == nil {
 				var mutatingUser = user
@@ -46,33 +46,23 @@ struct EventManager {
 	}
 	
 	func fetchEventsFor(user: SplitWiserUser, completionHandler: @escaping ([Event]?, Error?) -> Void) {
-		//will refactor
-		/*let eventUserMappingRef = Database.database().reference(withPath: EVENTCONSTANTS.EVENT_USER_MAPPING+"/"+user.uid)
-		eventUserMappingRef.observeSingleEvent(of: .value, with: {(snapshot) in
-			print("🔆🔆 FOUND IT! ")
-			var arrayOfEvents = [Event]()
-			if let eventIds = (snapshot.value as? NSDictionary)?.allKeys as? [String] {
-				var count = 0
-				for eventId in eventIds {
-					count = count + 1
-					self.eventRef.child(eventId).observeSingleEvent(of: .value, with: {(datasnapshot) in
-						if let properties = datasnapshot.value as? NSDictionary {
-							let name = properties["name"] as? String
-							let description = properties["description"] as? String
-							print("🔆🔆🔆🔆 \(String(describing: name)) ")
-							let event = Event(name: name!, description: description, createdBy: user)
-							arrayOfEvents.append(event)
-							if count == eventIds.count {
-								completionHandler(arrayOfEvents, nil)
-							}
-						}
-					})
-				}
+		var events = [Event]()
+		if user.events.count == 0 {
+			completionHandler(events, nil)
+		} else {
+			for eventId in user.events {
+				persistanceManager.getEventWith(eventId: eventId, completionHandler: {(event, error) in
+					if error == nil {
+						events.append(event!)
+					} else {
+						completionHandler(events, error)
+					}
+					if events.count == user.events.count {
+						completionHandler(events, nil)
+					}
+				})
 			}
-		}) {(error) in
-			print("🔆🔆🔆 " + error.localizedDescription)
-			completionHandler(nil, EventError.genericError)
-		}*/
+		}
 	}
 
 }

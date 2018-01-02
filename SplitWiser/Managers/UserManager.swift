@@ -12,6 +12,12 @@ struct UserManager {
 
 	let persistanceManager: Persistance = PersistanceFactory.getPersistanceManager()
 
+	func currentLoggedInUser(completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
+		persistanceManager.getCurrentLoggedInUser(completionHandler: {(user, error) in
+			completionHandler(user,error)
+		})
+	}
+
 	func getUserWith(userID: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
 		persistanceManager.getUserWith(userId: userID, completionHandler: {(user, error) in
 			completionHandler(user,error)

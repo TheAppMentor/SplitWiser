@@ -12,6 +12,8 @@ protocol Persistance {
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
 	func createUser(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ userId: String?,_ error: Error?) -> Void)
 	func getUserWith(userId: String, completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void)
+	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void)
+	func getEventWith(eventId: String, completionHandler:@escaping (_ event: Event?,_ error: Error?) -> Void)
 	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 }
