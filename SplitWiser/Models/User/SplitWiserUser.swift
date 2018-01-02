@@ -17,8 +17,8 @@ struct SplitWiserUser {
 	var profileImage:UIImage?
 	var email:String?
 	var events: [String]
-	var transactionsProvider: TransactionManager
-	var eventsProvider: EventManager
+	private var transactionsProvider: TransactionManager
+	private var eventsProvider: EventManager
 
 	init(uid: String, phoneNumber: String? = "", userName: String, profileImage: UIImage?, email: String? = "") {
 		self.uid = uid
@@ -35,11 +35,10 @@ struct SplitWiserUser {
 		return transactionsProvider.fetchTransactionsFor(userID: uid)
 	}
 	
-	func getEvents() -> [Event]? {
+	func getEvents(completionHandler: @escaping ([Event]?, Error?) -> Void) {
 		eventsProvider.fetchEventsFor(user: self, completionHandler: {(events, error) in
-
+			completionHandler(events, error)
 		})
-		return nil
 	}
 	
 	func getTransactionsPaidByCurrentUser() -> [TransactionRepresentable]? {

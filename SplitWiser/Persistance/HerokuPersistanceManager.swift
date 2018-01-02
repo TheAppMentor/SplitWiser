@@ -10,10 +10,13 @@ import Foundation
 
 struct HerokuPersistanceManager: Persistance {
 
-	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
+	func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
 		
 	}
 
+	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
+		
+	}
 
 	func getUserWith(userId: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
 

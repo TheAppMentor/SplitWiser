@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* EventError.swift */; };
+		202C59B71FDD1E02001E6A0C /* SplitWiserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* SplitWiserError.swift */; };
 		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
 		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
@@ -75,7 +75,7 @@
 		0A9FEE336FEC3DD716BEA193 /* Pods-SplitWiser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.release.xcconfig"; sourceTree = "<group>"; };
 		130A91CFB3C77AF2EE834B93 /* Pods-SplitWiser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiser/Pods-SplitWiser.debug.xcconfig"; sourceTree = "<group>"; };
 		145B34C525296BF97FAE3C75 /* Pods-SplitWiserUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserUITests/Pods-SplitWiserUITests.release.xcconfig"; sourceTree = "<group>"; };
-		202C59B61FDD1E02001E6A0C /* EventError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventError.swift; sourceTree = "<group>"; };
+		202C59B61FDD1E02001E6A0C /* SplitWiserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiserError.swift; sourceTree = "<group>"; };
 		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -235,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				2F8151391FDAA303001F9452 /* TransactionError.swift */,
-				202C59B61FDD1E02001E6A0C /* EventError.swift */,
+				202C59B61FDD1E02001E6A0C /* SplitWiserError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -704,7 +704,7 @@
 				2F8151421FDAACE1001F9452 /* UserTranShare.swift in Sources */,
 				7376CEB81FD7AF520010C673 /* AppDelegate.swift in Sources */,
 				20E210A41FF618B700362C0C /* PersistanceFactory.swift in Sources */,
-				202C59B71FDD1E02001E6A0C /* EventError.swift in Sources */,
+				202C59B71FDD1E02001E6A0C /* SplitWiserError.swift in Sources */,
 				2F8151441FDAACF7001F9452 /* TransactionRepresentable.swift in Sources */,
 				2F7971D21FEE1019003E7A29 /* CreateEventVC.swift in Sources */,
 				2F81513A1FDAA303001F9452 /* TransactionError.swift in Sources */,

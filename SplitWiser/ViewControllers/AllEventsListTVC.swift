@@ -117,9 +117,9 @@ extension AllEventsListTVC {
         
         let user1 = SplitWiserUser.init(uid: UUID().uuidString, phoneNumber: "89185-393485", userName: "Pavan", profileImage: nil, email: "PK@gmail.com")
 
-        let ev1 = Event.init(name: "Lunch", description: "When we had lunch together", createdBy: user1)
-        let ev2 = Event.init(name: "Dinner", description: "When we had dinner together", createdBy: user1)
-        let ev3 = Event.init(name: "Movie", description: "When we went for a Movie", createdBy: user1)
+        let ev1 = Event.init(name: "Lunch", description: "When we had lunch together", createdBy: user1.uid)
+        let ev2 = Event.init(name: "Dinner", description: "When we had dinner together", createdBy: user1.uid)
+        let ev3 = Event.init(name: "Movie", description: "When we went for a Movie", createdBy: user1.uid)
 
         return [ev1,ev2,ev3]
     }
