@@ -47,41 +47,41 @@ struct TransactionManager : TransactionDelegate {
     
     
     func fetchTransactionsFor(userID: String) -> [TransactionRepresentable]? {
-        if let theUser = UserManager().getUserWith(userID: userID){
+        /*if let theUser = UserManager().getUserWith(userID: userID){
             assertionFailure("Prashanth Implement this shit.")
-        }
+        }*/
         
         return nil
     }
     
     func fetchAllTransactionsFor(eventID: String, userID: String) throws -> [TransactionRepresentable]? {
-        if let theUser = UserManager().getUserWith(userID: userID){
+        /*if let theUser = UserManager().getUserWith(userID: userID){
             if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
                 assertionFailure("Prashanth Implment this shit man.")
             }
-        }
+        }*/
         return nil
 
     }
     
     func fetchTotalAmountPaidBy(eventID: String, userID: String) throws -> Double? {
-        if let theUser = UserManager().getUserWith(userID: userID){
+        /*if let theUser = UserManager().getUserWith(userID: userID){
             if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
                 return try calculationEngine.fetchTotalAmountPaidBy(event: theEvent, user: theUser)
             }
-        }
+        }*/
         return nil
     }
     
     func fetchTotalAmountOwed(eventID: String, userID: String) throws -> Double? {
 
-        if let theUser = UserManager().getUserWith(userID: userID){
+        /*if let theUser = UserManager().getUserWith(userID: userID){
             if let theEvent = EventManager().getDetailsOfEvent(id: eventID){
                 if let theAmount = try? calculationEngine.fetchTotalAmountOwedBy(event: theEvent, user: theUser){
                     return theAmount
                 }
             }
-        }
+        }*/
         return nil
 
         
@@ -114,9 +114,9 @@ struct TransactionManager : TransactionDelegate {
 
     
     func fetchTotalAmountOwed(event: Event, user: UUID) throws -> Double? {
-        if let theUser = UserManager().getUserWith(userID: user.uuidString){
+		/*if let theUser = UserManager().getUserWith(userID: user.uuidString, completionHandler: nil){
             return try calculationEngine.fetchTotalAmountOwedBy(event:event,user:theUser)
-        }
+        }*/
         return nil
     }
     

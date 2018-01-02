@@ -9,7 +9,7 @@
 import XCTest
 @testable import SplitWiser
 
-class TransactionTester: XCTestCase {
+/*class TransactionTester: XCTestCase {
 
     var tranMan = TransactionManager.shared
     let eventMan = EventManager()
@@ -20,10 +20,10 @@ class TransactionTester: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        let userPavan = SplitWiserUser(phoneNumber: "1111111", userName: "Pavan", profileImage: nil, email: nil, transactionsProvider: tranMan, eventsProvider: eventMan)
-        let userReshma = SplitWiserUser(phoneNumber: "222222", userName: "Reshma", profileImage: nil, email: nil, transactionsProvider: tranMan, eventsProvider: eventMan)
-        let userPrashanth = SplitWiserUser(phoneNumber: "333333", userName: "Prashanth", profileImage: nil, email: nil, transactionsProvider: tranMan, eventsProvider: eventMan)
-        let userJagan = SplitWiserUser(phoneNumber: "444444", userName: "Jagan", profileImage: nil, email: nil, transactionsProvider: tranMan, eventsProvider: eventMan)
+		let userPavan = SplitWiserUser(uid: "", phoneNumber: "1111111", userName: "Pavan", profileImage: nil, email: nil)
+		let userReshma = SplitWiserUser(uid: "", phoneNumber: "222222", userName: "Reshma", profileImage: nil, email: nil)
+		let userPrashanth = SplitWiserUser(uid: "", phoneNumber: "333333", userName: "Prashanth", profileImage: nil, email: nil)
+		let userJagan = SplitWiserUser(uid: "", phoneNumber: "444444", userName: "Jagan", profileImage: nil, email: nil)
         
         userList.append(userPavan)
         userList.append(userReshma)
@@ -72,4 +72,4 @@ class TransactionTester: XCTestCase {
         }
     }
     
-}
+}*/
