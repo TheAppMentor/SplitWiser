@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
@@ -70,6 +71,16 @@ struct FirebasePersistanceManager: Persistance {
 				completionHandler(nil, UserError.noSuchUser)
 			}
 		}) { (error) in
+			completionHandler(nil, UserError.noSuchUser)
+		}
+	}
+
+	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
+		if let u = Auth.auth().currentUser {
+			self.getUserWith(userId: u.uid, completionHandler: {(user, error) in
+				completionHandler(user, error)
+			})
+		} else {
 			completionHandler(nil, UserError.noSuchUser)
 		}
 	}
