@@ -11,6 +11,26 @@ import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
 
+	func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
+		let path = EVENTCONSTANTS.DB_PATH+"/"+eventId
+		let ref = Database.database().reference(withPath: path)
+		ref.observeSingleEvent(of: .value, with: {(dataSnapshot) in
+			if let value = dataSnapshot.value as? NSDictionary {
+				let name = value["name"] as? String
+				let description = value["description"] as? String ?? ""
+				let date = value["date"] as? Double
+				let createdBy = value["createdBy"] as? String
+				var event = Event(name: name!, description: description, createdBy: createdBy!)
+				event.date = date!
+				completionHandler(event, nil)
+			} else {
+				completionHandler(nil, EventError.noSuchEvent)
+			}
+		}) { (error) in
+			completionHandler(nil, EventError.noSuchEvent)
+		}
+	}
+
 	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
 		let path = USERCONSTANTS.DB_PATH
 		let ref = Database.database().reference(withPath: path)
@@ -50,7 +70,7 @@ struct FirebasePersistanceManager: Persistance {
 				completionHandler(nil, UserError.noSuchUser)
 			}
 		}) { (error) in
-			print(error.localizedDescription)
+			completionHandler(nil, UserError.noSuchUser)
 		}
 	}
 	

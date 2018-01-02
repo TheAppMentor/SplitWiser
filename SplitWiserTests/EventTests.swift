@@ -43,10 +43,9 @@ class EventTests: XCTestCase {
 		let expectation = XCTestExpectation(description: "Create event")
 
 		if let u = Auth.auth().currentUser {
-			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
 			UserManager().getUserWith(userID: u.uid, completionHandler: {(user, userError) in
 				if userError == nil {
-					EventManager().createEvent(name: "Lunch1@SomeDarnPlace", user: user!, completionHandler: {(event, eventError) in
+					EventManager().createEvent(name: "Lunch3@SomeDarnPlace", description: "Lunch together", user: user!, completionHandler: {(event, eventError) in
 						XCTAssertNil(eventError, "❌ Event error : \(String(describing: eventError?.localizedDescription))")
 						// Fulfill the expectation to indicate that the background task has finished successfully.
 						expectation.fulfill()
@@ -55,7 +54,7 @@ class EventTests: XCTestCase {
 				XCTAssertNil(userError, "❌ User error : \(String(describing: userError?.localizedDescription))")
 			})
 			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
-			self.wait(for: [expectation], timeout: 10.0)
+			self.wait(for: [expectation], timeout: 5.0)
 		}
 	}
 
@@ -64,9 +63,8 @@ class EventTests: XCTestCase {
 		let expectation = XCTestExpectation(description: "Delete event")
 
 		if let u = Auth.auth().currentUser {
-			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
 			let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email!)
-			var event = Event(name: "Lunch@SomeDarnPlace", createdBy: user)
+			var event = Event(name: "Lunch@SomeDarnPlace", createdBy: user.uid)
 			event.eventId = "-L1GNc_hUSIR9siA8cm5"
 			EventManager().deleteEvent(event: event, completionHandler: {(error) in
 
@@ -84,16 +82,19 @@ class EventTests: XCTestCase {
 		let expectation = XCTestExpectation(description: "Fetch events")
 
 		if let u = Auth.auth().currentUser {
-			print("🙏🏻 Welcome - \(String(describing: u.displayName))")
-			let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email!)
-			EventManager().fetchEventsFor(user: user, completionHandler: {(events, error) in
-
-				XCTAssertNil(error)
-				// Fulfill the expectation to indicate that the background task has finished successfully.
-				expectation.fulfill()
+			UserManager().getUserWith(userID: u.uid, completionHandler: {(user, userError) in
+				if userError == nil {
+					EventManager().fetchEventsFor(user: user!, completionHandler: {(events, eventError) in
+						print(events)
+						XCTAssertNil(eventError, "❌ Event error : \(String(describing: eventError?.localizedDescription))")
+						// Fulfill the expectation to indicate that the background task has finished successfully.
+						expectation.fulfill()
+					})
+				}
+				XCTAssertNil(userError, "❌ User error : \(String(describing: userError?.localizedDescription))")
 			})
 			// Wait until the expectation is fulfilled, with a timeout of 5 seconds.
-			wait(for: [expectation], timeout: 30.0)
+			wait(for: [expectation], timeout: 5.0)
 		}
 	}
     
