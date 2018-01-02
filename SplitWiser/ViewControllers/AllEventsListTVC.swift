@@ -115,7 +115,7 @@ extension AllEventsListTVC {
         
         var tempEventList = [Event]()
         
-        let user1 = SplitWiserUser.init(uid: UUID().uuidString, phoneNumber: "89185-393485", userName: "Pavan", profileImage: nil, email: "PK@gmail.com", transactionsProvider: TransactionManager.shared, eventsProvider: EventManager())
+        let user1 = SplitWiserUser.init(uid: UUID().uuidString, phoneNumber: "89185-393485", userName: "Pavan", profileImage: nil, email: "PK@gmail.com")
 
         let ev1 = Event.init(name: "Lunch", description: "When we had lunch together", createdBy: user1)
         let ev2 = Event.init(name: "Dinner", description: "When we had dinner together", createdBy: user1)

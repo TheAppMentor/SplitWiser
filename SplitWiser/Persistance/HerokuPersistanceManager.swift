@@ -9,9 +9,15 @@
 import Foundation
 
 struct HerokuPersistanceManager: Persistance {
-    func retrieve() -> PersistanceConvertible? {
-        return nil
-    }
+
+	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
+		
+	}
+
+
+	func getUserWith(userId: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
+
+	}
     
 	func insert(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
 

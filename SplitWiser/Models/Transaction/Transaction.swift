@@ -28,8 +28,8 @@ struct Transaction : Equatable {
     var description : String?
 }
 
-extension Transaction : PersistanceConvertible{
-    func getIdToBeModified() -> String {
+extension Transaction: PersistanceConvertible {
+    func getId() -> String {
         return self.tranID.uuidString
     }
     

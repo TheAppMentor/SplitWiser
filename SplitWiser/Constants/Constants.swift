@@ -10,7 +10,10 @@ import Foundation
 
 struct EVENTCONSTANTS {
 	static let DB_PATH = "EVENTS"
-	static let EVENT_USER_MAPPING = "EVENT-USER-MAPPING"
+}
+
+struct USERCONSTANTS {
+	static let DB_PATH = "USERS"
 }
 
 struct TRANSACTIONCONSTANTS {

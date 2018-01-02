@@ -10,7 +10,8 @@ import Foundation
 
 protocol Persistance {
 	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
-	func retrieve() -> PersistanceConvertible?
+	func createUser(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ userId: String?,_ error: Error?) -> Void)
+	func getUserWith(userId: String, completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void)
 	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 }
@@ -21,7 +22,7 @@ protocol PersistanceConvertible {
 	func getColumnNamevalueDictionary() -> [String : Any]
 	
 	//Id of the row to be deleted/updated from the table
-	func getIdToBeModified() -> String
+	func getId() -> String
 	
 	//Id of the row to be updated from the table
 	

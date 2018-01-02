@@ -18,6 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
         FirebaseApp.configure()
+		if let currentLoggedInUser = Auth.auth().currentUser {
+			print("🙏🏻 Welcome --- \(String(describing: currentLoggedInUser.displayName))")
+			UserManager().getUserWith(userID: currentLoggedInUser.uid, completionHandler: {(splitWiserUser, error) in
+				if error != nil {
+					UserManager().registerUser(userID: currentLoggedInUser.uid, userName: currentLoggedInUser.displayName!, email: currentLoggedInUser.email!,  completionHandler: {(success) in
+						print("---------- REGISTERED!")
+					})
+				}
+			})
+		}
 		return true
 	}
 

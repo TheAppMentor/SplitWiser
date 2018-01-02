@@ -16,9 +16,21 @@ struct SplitWiserUser {
 	var userName:String
 	var profileImage:UIImage?
 	var email:String?
+	var events: [String]
 	var transactionsProvider: TransactionManager
 	var eventsProvider: EventManager
-	
+
+	init(uid: String, phoneNumber: String? = "", userName: String, profileImage: UIImage?, email: String? = "") {
+		self.uid = uid
+		self.phoneNumber = phoneNumber!
+		self.userName = userName
+		self.profileImage = profileImage
+		self.email = email
+		self.events = [String]()
+		self.transactionsProvider = TransactionManager.shared
+		self.eventsProvider = EventManager()
+	}
+
 	private func getTranscations() -> [TransactionRepresentable]? {
 		return transactionsProvider.fetchTransactionsFor(userID: uid)
 	}
@@ -50,4 +62,24 @@ extension SplitWiserUser : Equatable {
     static func == (lhs : SplitWiserUser, rhs : SplitWiserUser) -> Bool{
         return (lhs.phoneNumber == rhs.phoneNumber && lhs.userName == rhs.userName)
     }
+}
+
+extension SplitWiserUser: PersistanceConvertible {
+
+	func getId() -> String {
+		return self.uid
+	}
+
+	func getColumnNamevalueDictionary() -> [String : Any] {
+		return  ["phoneNumber": self.phoneNumber,
+				 "userName": self.userName,
+				 "email": self.email,
+				 "events": self.events as Any] as [String : Any]
+	}
+
+	func getTableName() -> String {
+		return USERCONSTANTS.DB_PATH
+	}
+
+
 }
