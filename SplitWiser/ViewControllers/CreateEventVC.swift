@@ -10,12 +10,22 @@ import UIKit
 import ZAlertView
 import Firebase
 import FirebaseAuth
+import Contacts
 
 class CreateEventVC: UIViewController, EventDetailsDelegate {
     
     struct EventDetails {
         var eventName : String?
         var eventDetails : String?
+    }
+    
+    private var _allContacts : [CNContact]?
+    
+    var allContacts : [CNContact] {
+        if _allContacts == nil {
+            _allContacts = ContactManager().fetchAllContacts()
+        }
+        return _allContacts ?? [CNContact]()
     }
     
     var createdEvent : EventDetails = EventDetails()
@@ -34,7 +44,7 @@ class CreateEventVC: UIViewController, EventDetailsDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
 //        userListTableView.delegate = self
 //        userListTableView.dataSource = self
@@ -98,22 +108,31 @@ extension CreateEventVC : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return allContacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let contactCell = userListTableView.dequeueReusableCell(withIdentifier: "contactInfoCell"){
+            
+            
+            let theContact = allContacts[indexPath.row]
+            
             if let profileImageView = contactCell.viewWithTag(1111) as? UIImageView{
-                profileImageView.image = #imageLiteral(resourceName: "PersonPlaceHolder")
+                profileImageView.image = #imageLiteral(resourceName: "PersonPlaceHolderNoGender")
+                if let imgData = theContact.imageData {
+                    if let theImage = UIImage.init(data: imgData){
+                        profileImageView.image = theImage
+                    }
+                }
             }
             
             if let profileName = contactCell.viewWithTag(2222) as? UILabel{
-                profileName.text = "Pavan Kowshik"
+                profileName.text = theContact.givenName + " " + theContact.familyName
             }
             
             if let profileNumber = contactCell.viewWithTag(3333) as? UILabel{
-                profileNumber.text = "99789-09086"
+                profileNumber.text = theContact.phoneNumbers.first?.value.stringValue ?? "Not Found"
             }
             
             if let isSelected = contactCell.viewWithTag(4444) as? UIImageView{
