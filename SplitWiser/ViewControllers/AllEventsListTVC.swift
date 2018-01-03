@@ -7,6 +7,15 @@
 //
 
 import UIKit
+import PHDiff
+
+extension Event : Diffable{
+    var diffIdentifier: String {
+        return self.eventId
+    }
+    
+    typealias HashType = String
+}
 
 class AllEventsListTVC: UITableViewController {
 
@@ -38,11 +47,10 @@ class AllEventsListTVC: UITableViewController {
         UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
             user?.getEvents(completionHandler: {(events, eventError) in
                 
-                self.allEvents = events!.reversed() //TODO: Pavan/Reshma, is there way to get the events in reverse by date from Firebase.
-                
                 if shouldAnimate == true {
-                    self.reloadTableViewWithChamakAnimations()
+                    self.reloadTableViewWithChamakAnimations(newEventList: events!.reversed())
                 }else {
+                    self.allEvents = events!.reversed() //TODO: Pavan/Reshma, is there way to get the events in reverse by date from Firebase.
                     self.tableView.reloadData()
                 }
                 
@@ -155,5 +163,40 @@ class AllEventsListTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    func reloadTableViewWithChamakAnimations(newEventList: [Event]){
+        let steps = PHDiff.steps(fromArray: self.allEvents, toArray: newEventList)
+        
+        if steps.count > 0 {
+            tableView.beginUpdates()
+            self.allEvents = newEventList // update your model here
+            
+            var insertions: [IndexPath] = []
+            var deletions: [IndexPath] = []
+            var reloads: [IndexPath] = []
+            
+            steps.forEach { step in
+                switch step {
+                case let .insert(_, index):
+                    insertions.append(IndexPath(row: index, section: 0))
+                case let .delete(_, index):
+                    deletions.append(IndexPath(row: index, section: 0))
+                case let .move(_, fromIndex, toIndex):
+                    deletions.append(IndexPath(row: fromIndex, section: 0))
+                    insertions.append(IndexPath(row: toIndex, section: 0))
+                case let .update(_, index):
+                    reloads.append(IndexPath(row: index, section: 0))
+                }
+            }
+            
+            tableView.insertRows(at: insertions, with: .automatic)
+            tableView.deleteRows(at: deletions, with: .automatic)
+            tableView.reloadRows(at: reloads, with: .automatic)
+            
+            tableView.endUpdates()
+        }
+    }
+
 
 }

@@ -60,6 +60,7 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - PHDiff (1.1.0)
   - ZAlertView (1.0.4)
 
 DEPENDENCIES:
@@ -68,6 +69,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FirebaseUI/Auth
   - FirebaseUI/Google
+  - PHDiff (~> 1.1)
   - ZAlertView (~> 1.0)
 
 SPEC CHECKSUMS:
@@ -84,8 +86,9 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  PHDiff: 038f260091199c0e2325de6f6223024633b500cc
   ZAlertView: 59fffdb4e37a01df461835566d5101052b8af953
 
-PODFILE CHECKSUM: 256f9f8e9be3776402d9c868b826c517f8ae64cf
+PODFILE CHECKSUM: dc0aa3d5cc1c3c3337ac645e18f3b909f82cf76b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0
