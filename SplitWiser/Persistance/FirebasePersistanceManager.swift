@@ -22,7 +22,7 @@ struct FirebasePersistanceManager: Persistance {
 		}else {
 			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0])
 		}
-		dataBaseQuery.observe(DataEventType.value) { (dataSnapShot) in
+		dataBaseQuery.observeSingleEvent(of: .value) { (dataSnapShot) in
 			switch(tableName) {
 			case USERCONSTANTS.DB_PATH:
 				completionHandler(self.getUsers(dataSnapShot: dataSnapShot))

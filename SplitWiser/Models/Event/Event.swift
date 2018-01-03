@@ -20,7 +20,7 @@ struct Event {
 	init(name: String, description: String? = "", createdBy: String) {
         self.eventId = UUID().uuidString
 		self.name = name
-		self.description = description!
+		self.description = description ?? ""
 		self.date = Date().timeIntervalSince1970
 		self.createdBy = createdBy
 		self.transactionsProvider = TransactionManager.shared
