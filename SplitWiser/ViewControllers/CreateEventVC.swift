@@ -14,6 +14,9 @@ import Contacts
 
 class CreateEventVC: UIViewController, EventDetailsDelegate {
     
+    
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
     struct EventDetails {
         var eventName : String?
         var eventDetails : String?
@@ -50,21 +53,23 @@ class CreateEventVC: UIViewController, EventDetailsDelegate {
 //        userListTableView.dataSource = self
         
         //self.navigationController?.navigationBar.set = UIBarButtonItem.init(title: "Cancel", style: .done, target: self, action: #selector(cancelAddingEvent(sender:)))
-        
+        doneButton.isEnabled = false
         eventDetailsView.delegate = self
     }
 
     
     @IBAction func doneAddingEvent(_ sender: UIBarButtonItem) {
-        self.navigationController?.popViewController(animated: true)
-        dismiss(animated: true) {
-            print("Create event called!")
-			UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
-				EventManager().createEvent(name: self.createdEvent.eventName!, description: self.createdEvent.eventDetails, user: user!, completionHandler: {(event, eventError) in
-                    print("CreateEventVC : Finished creating event.")
-                    })
-                })
-            }
+        self.view.endEditing(true)
+        //self.navigationController?.popViewController(animated: true)
+
+        UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
+            EventManager().createEvent(name: self.createdEvent.eventName!, description: self.createdEvent.eventDetails, user: user!, completionHandler: {(event, eventError) in
+                print("CreateEventVC : Finished creating event.")
+                self.dismiss(animated: true) {
+                }
+            })
+        })
+        
         }
     
     @IBAction func cancelEventAdd(_ sender: UIBarButtonItem) {
@@ -163,11 +168,22 @@ extension CreateEventVC : UITableViewDelegate, UITableViewDataSource{
 
 
 extension CreateEventVC{
+    
+    func didBeginEnteringEventName(eventName : String){
+        doneButton.isEnabled = true
+        createdEvent.eventName = eventName
+    }
+    
+    func didRemoveEventName(eventName : String){
+        doneButton.isEnabled = false
+        createdEvent.eventName = eventName
+    }
+
+    
     func didEnterEventName(eventName : String){
         print(#function)
         print("Did add event with Name : \(eventName)")
         createdEvent.eventName = eventName
-        
     }
     
     func didEnterEventDescription(eventDescription : String){

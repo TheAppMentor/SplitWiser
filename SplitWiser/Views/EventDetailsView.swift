@@ -35,6 +35,8 @@ class EventDetailsView: UIView {
         profilePicButton.isUserInteractionEnabled = allowsEditing
         eventName.isUserInteractionEnabled = allowsEditing
         eventDescription.isUserInteractionEnabled = allowsEditing
+        
+        eventName.addTarget(self, action: #selector(typingEventName), for: .editingChanged)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,6 +65,17 @@ class EventDetailsView: UIView {
         self.addSubview(theView)
     }
     
+    @objc func typingEventName (textField : UITextField){
+        if textField.text?.isEmpty == false {
+            delegate?.didBeginEnteringEventName(eventName: textField.text!)
+        }
+
+        if textField.text?.isEmpty == true {
+            delegate?.didRemoveEventName(eventName: "")
+        }
+
+    }
+    
     
     
     /*
@@ -76,6 +89,25 @@ class EventDetailsView: UIView {
 }
 
 extension EventDetailsView : UITextFieldDelegate{
+    
+    
+    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        if textField.tag == 1111{ // Event name text field
+//            if textField.text?.isEmpty == false {
+//                delegate?.didBeginEnteringEventName(eventName: textField.text!)
+//            }
+//        }
+//    }
+//
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//        if (textField.text?.isEmpty)!{
+//            delegate?.didRemoveEventName(eventName: "")
+//        }
+//
+//        return true
+//    }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         if textField.tag == 1111{ // Event name text field
@@ -98,6 +130,8 @@ extension EventDetailsView : UITextFieldDelegate{
 
 
 protocol EventDetailsDelegate : AnyObject {
+    func didBeginEnteringEventName(eventName : String)
+    func didRemoveEventName(eventName : String)
     func didEnterEventName(eventName : String)
     func didEnterEventDescription(eventDescription : String)
     func didAddEventProfilePic(profilePic : UIImage)

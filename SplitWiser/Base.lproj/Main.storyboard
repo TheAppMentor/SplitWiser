@@ -363,6 +363,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addNewUser" destination="6gI-Hh-H2A" id="t82-fc-g6h"/>
+                        <outlet property="doneButton" destination="Tu7-00-FHB" id="Z0W-pG-WYa"/>
                         <outlet property="eventDetailsView" destination="m4F-ps-M8a" id="WSw-HG-hFB"/>
                         <outlet property="userListTableView" destination="Qri-x7-2YT" id="I9f-TF-5uI"/>
                     </connections>

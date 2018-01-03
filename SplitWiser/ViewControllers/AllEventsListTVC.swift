@@ -23,13 +23,55 @@ class AllEventsListTVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(fetchDataAndReloadTable), for: UIControlEvents.valueChanged)
         navigationItem.searchController = searchController
-		UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
-			user?.getEvents(completionHandler: {(events, eventError) in
-				self.allEvents = events!
-				self.tableView.reloadData()
-			})
-		})
+        
+        fetchDataAndReloadTable(shouldAnimate: false)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchDataAndReloadTable(shouldAnimate: true)
+    }
+    
+    @objc func fetchDataAndReloadTable(shouldAnimate : Bool){
+        UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
+            user?.getEvents(completionHandler: {(events, eventError) in
+                
+                self.allEvents = events!.reversed() //TODO: Pavan/Reshma, is there way to get the events in reverse by date from Firebase.
+                
+                if shouldAnimate == true {
+                    self.reloadTableViewWithChamakAnimations()
+                }else {
+                    self.tableView.reloadData()
+                }
+                
+                if self.refreshControl?.isRefreshing == true{
+                    self.refreshControl?.endRefreshing()
+                }
+            })
+        })
+    }
+    
+    func reloadTableViewWithChamakAnimations(){
+        // Temporary fix, remove this after we figure out the batch updates thing.
+        self.tableView.reloadData()
+
+        
+        tableView.performBatchUpdates({
+            
+            //Process all Additions
+            
+            
+            //Process all Deletes
+            
+            
+            //Process all Moves.
+            
+        }) { (success) in
+            print("Successfully finished loading the table view.")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
