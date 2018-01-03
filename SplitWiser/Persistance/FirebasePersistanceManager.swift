@@ -45,7 +45,7 @@ struct FirebasePersistanceManager: Persistance {
 	
 	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
-		var key:String!
+		var key = ""
 		if autoGenerateKey {
 			key = eventRef.childByAutoId().key
 		} else {
