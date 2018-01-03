@@ -60,8 +60,8 @@ extension Transaction: PersistanceConvertible {
                  "paidFor":paidForString,
                  "amount": self.amount,
                  "currency":self.currency,
-                 "tranImages":self.tranImages,
-                 "description":self.description] as [String : Any]
+				 "tranImages":self.tranImages as Any,
+				 "description":self.description as Any] as [String : Any]
     }
 
     func getTableName() -> String {

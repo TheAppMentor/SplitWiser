@@ -83,7 +83,7 @@ extension SplitWiserUser: PersistanceConvertible {
 	func getColumnNamevalueDictionary() -> [String : Any] {
 		return  ["phoneNumber": self.phoneNumber,
 				 "userName": self.userName,
-				 "email": self.email,
+				 "email": self.email ?? "",
 				 "events": self.events as Any] as [String : Any]
 	}
 

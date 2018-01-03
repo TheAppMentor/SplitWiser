@@ -52,10 +52,10 @@ class CreateEventVC: UIViewController, EventDetailsDelegate {
             if let u = Auth.auth().currentUser {
                 print("🙏🏻 Welcome - \(String(describing: u.displayName)) with uid - \(u.uid)")
 				let user = SplitWiserUser(uid: u.uid, phoneNumber: u.phoneNumber ?? "", userName: u.displayName!, profileImage: nil, email: u.email)
-                EventManager().createEvent(name: self.createdEvent.eventName!, user: user, completionHandler: {[weak self](event, error) in
+                EventManager().createEvent(name: self.createdEvent.eventName!, user: user, completionHandler: {(event, error) in
                     print("CreateEventVC : Finished creating event.")
                     EventManager().fetchEventsFor(user: user, completionHandler: { (eventList, error) in
-                        print("Fetching all Events now.... \(eventList)")
+						
                     })
                 })
             }
