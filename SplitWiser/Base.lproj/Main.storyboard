@@ -26,10 +26,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="los-Oo-0d1">
-                                <rect key="frame" x="100" y="228.5" width="175" height="210"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="los-Oo-0d1">
+                                <rect key="frame" x="100" y="224.5" width="175" height="218"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noun_213720_cc" translatesAutoresizingMaskIntoConstraints="NO" id="t7h-yp-hXQ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppIconSplitWiser" translatesAutoresizingMaskIntoConstraints="NO" id="t7h-yp-hXQ">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="t7h-yp-hXQ" secondAttribute="height" multiplier="1:1" id="2a9-3f-N7w"/>
@@ -37,7 +37,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Split Wiser" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZr-in-YQb">
-                                        <rect key="frame" x="15.5" y="175" width="144" height="35"/>
+                                        <rect key="frame" x="15.5" y="183" width="144" height="35"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -118,18 +118,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wx3-zC-zoW" id="6bT-U2-Adb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pku-Bm-wau">
-                                            <rect key="frame" x="16" y="26" width="34" height="20"/>
+                                            <rect key="frame" x="16" y="26" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S5o-NG-aNv">
-                                            <rect key="frame" x="16" y="49" width="44" height="15"/>
+                                            <rect key="frame" x="16" y="49.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -142,7 +142,7 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B4u-Tn-uSS" id="JsP-b0-VbA">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="92"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view tag="1111" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxI-pZ-MOc" customClass="EventDetailsView" customModule="SplitWiser" customModuleProvider="target">
@@ -216,7 +216,7 @@
                                                                         <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:6gI-Hh-H2A:image" translatesAutoresizingMaskIntoConstraints="NO" id="6gI-Hh-H2A">
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="imageView:6gI-Hh-H2A:image" translatesAutoresizingMaskIntoConstraints="NO" id="6gI-Hh-H2A">
                                                                         <rect key="frame" x="278" y="0.0" width="33" height="33"/>
                                                                         <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <constraints>
@@ -238,6 +238,11 @@
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="sD2-h5-qla" secondAttribute="trailing" id="QmY-1N-vme"/>
+                                                            <constraint firstItem="sD2-h5-qla" firstAttribute="top" secondItem="2av-sV-Fac" secondAttribute="top" id="Yzs-40-2Wy"/>
+                                                            <constraint firstItem="sD2-h5-qla" firstAttribute="leading" secondItem="2av-sV-Fac" secondAttribute="leading" id="nR1-lf-O4L"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -256,7 +261,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="343" height="66"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k37-NB-1X8" id="w3A-qv-mFJ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="65.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4SP-dY-zBt">
@@ -422,6 +427,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AppIconSplitWiser" width="256" height="256"/>
         <image name="imageView:6gI-Hh-H2A:image" width="80" height="80">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
@@ -1489,7 +1495,6 @@ bbptw23IbdBt023Ybedt623ybfpuB24Mbg5uEG4Vbh1uIG4lbi1uMG5CbkVuSgAAAAAAAAIBAAAAAAAA
 AEEAAAAAAAAAAAAAAAAAAG5MA
 </mutableData>
         </image>
-        <image name="noun_213720_cc" width="350" height="350"/>
     </resources>
     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -51,6 +51,7 @@
 		88B7B31A1FF2C2AA0083BF22 /* AllEventsListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */; };
 		88D4F4EA1FF22341005E6CFD /* UserRegistrationPhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4F4E91FF22341005E6CFD /* UserRegistrationPhoneVC.swift */; };
 		88D4F4EC1FF227EF005E6CFD /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D4F4EB1FF227EF005E6CFD /* LandingPageVC.swift */; };
+		88E0F1C21FFBBF3C00E85FA5 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E0F1C11FFBBF3C00E85FA5 /* ContactManager.swift */; };
 		FB0906858EE29C63F1176496 /* Pods_SplitWiser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83898C538C14B2FDEE3234A9 /* Pods_SplitWiser.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		88B7B3191FF2C2AA0083BF22 /* AllEventsListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsListTVC.swift; sourceTree = "<group>"; };
 		88D4F4E91FF22341005E6CFD /* UserRegistrationPhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationPhoneVC.swift; sourceTree = "<group>"; };
 		88D4F4EB1FF227EF005E6CFD /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
+		88E0F1C11FFBBF3C00E85FA5 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		A60713B6304599F0155A583C /* Pods-SplitWiserTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWiserTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SplitWiserTests/Pods-SplitWiserTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D45D6945FA810C018E60AE88 /* Pods_SplitWiserTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SplitWiserTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -202,6 +204,7 @@
 		20FDC4C81FDAD8FC0013456B /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				88E0F1C11FFBBF3C00E85FA5 /* ContactManager.swift */,
 				2F8151361FDA9B6A001F9452 /* TransactionManager.swift */,
 				20FDC4C91FDAD90F0013456B /* EventManager.swift */,
 				73CC52D21FDC229D00CF2376 /* UserManager.swift */,
@@ -713,6 +716,7 @@
 				2F7971D91FEE61C5003E7A29 /* ParticipantCell.swift in Sources */,
 				2F8151401FDAACAF001F9452 /* TransactionCurrency.swift in Sources */,
 				20E210A61FF61B3900362C0C /* HerokuPersistanceManager.swift in Sources */,
+				88E0F1C21FFBBF3C00E85FA5 /* ContactManager.swift in Sources */,
 				73271BF21FD988E300FD0EBB /* SplitWiserUser.swift in Sources */,
 				88B7B3181FF229AB0083BF22 /* SignInNavController.swift in Sources */,
 				2F8150C31FDA3E82001F9452 /* Transaction.swift in Sources */,
