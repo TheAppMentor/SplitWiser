@@ -31,17 +31,6 @@ struct FirebasePersistanceManager: Persistance {
 			completionHandler(nil, EventError.noSuchEvent)
 		}
 	}
-
-	/*func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
-		let path = USERCONSTANTS.DB_PATH
-		let ref = Database.database().reference(withPath: path)
-		let entry = persistanceConvertible.getColumnNamevalueDictionary()
-		let updates = ["\(persistanceConvertible.getId())": entry] as [String : Any]
-		ref.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
-			completionHandler(persistanceConvertible.getId(),error)
-		})
-	}*/
-
 	
 	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())

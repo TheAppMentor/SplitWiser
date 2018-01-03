@@ -14,10 +14,6 @@ struct HerokuPersistanceManager: Persistance {
 		
 	}
 
-	/*func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
-		
-	}*/
-
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
 
 	}
