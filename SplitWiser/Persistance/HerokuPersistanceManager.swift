@@ -14,15 +14,6 @@ struct HerokuPersistanceManager: Persistance {
 		
 	}
 	
-	/*func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
-		
-	}
-	
-	func getUserWith(userId: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
-		
-	}*/
-	
-
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
 
 	}

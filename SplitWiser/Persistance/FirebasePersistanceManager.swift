@@ -35,48 +35,6 @@ struct FirebasePersistanceManager: Persistance {
 			}
 		}
 	}
-
-	/*func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
-		let path = EVENTCONSTANTS.DB_PATH+"/"+eventId
-		let ref = Database.database().reference(withPath: path)
-		ref.observeSingleEvent(of: .value, with: {(dataSnapshot) in
-			if let value = dataSnapshot.value as? NSDictionary {
-				let name = value["name"] as? String
-				let description = value["description"] as? String ?? ""
-				let date = value["date"] as? Double
-				let createdBy = value["createdBy"] as? String
-				var event = Event(name: name!, description: description, createdBy: createdBy!)
-				event.date = date!
-				completionHandler(event, nil)
-			} else {
-				completionHandler(nil, EventError.noSuchEvent)
-			}
-		}) { (error) in
-			completionHandler(nil, EventError.noSuchEvent)
-		}
-	}
-	
-	func getUserWith(userId: String, completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
-		let path = USERCONSTANTS.DB_PATH+"/"+userId
-		let ref = Database.database().reference(withPath: path)
-		ref.observeSingleEvent(of: .value, with: {(dataSnapshot) in
-			if let value = dataSnapshot.value as? NSDictionary {
-				let uid = userId
-				let phoneNumber = value["phoneNumber"] as? String
-				let userName = value["userName"] as? String
-				let email = value["email"] as? String
-				var splitWiserUser = SplitWiserUser(uid: uid, phoneNumber: phoneNumber!, userName: userName!, profileImage: nil, email: email)
-				if let events = value["events"] as? [String] {
-					splitWiserUser.events = events
-				}
-				completionHandler(splitWiserUser, nil)
-			} else {
-				completionHandler(nil, UserError.noSuchUser)
-			}
-		}) { (error) in
-			completionHandler(nil, UserError.noSuchUser)
-		}
-	}*/
 	
 	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
@@ -135,7 +93,7 @@ struct FirebasePersistanceManager: Persistance {
 	}
 }
 
-//MARK:
+//MARK: utility methods to get array of events, transactions or users
 extension FirebasePersistanceManager {
 	
 	func getEvents(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {

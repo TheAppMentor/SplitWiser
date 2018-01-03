@@ -57,19 +57,6 @@ struct EventManager {
 				events = persistanceArray as! [Event]
 				completionHandler(events , nil)
 			})
-			
-			/*for eventId in user.events {
-				persistanceManager.getEventWith(eventId: eventId, completionHandler: {(event, error) in
-					if error == nil {
-						events.append(event!)
-					} else {
-						completionHandler(events, error)
-					}
-					if events.count == user.events.count {
-						completionHandler(events, nil)
-					}
-				})
-			}*/
 		}
 	}
 
