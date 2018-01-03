@@ -16,7 +16,7 @@ struct EventManager {
 
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
 		let event = Event(name: name, description: description, createdBy: user.uid)
-		persistanceManager.insert(persistanceConvertible: event) { (insertionId, error) in
+		persistanceManager.insert(persistanceConvertible: event, autoGenerateKey: true) { (insertionId, error) in
 			if error == nil {
 				var mutatingUser = user
 				mutatingUser.events.append(insertionId!)
@@ -50,18 +50,13 @@ struct EventManager {
 		if user.events.count == 0 {
 			completionHandler(events, nil)
 		} else {
-			for eventId in user.events {
-				persistanceManager.getEventWith(eventId: eventId, completionHandler: {(event, error) in
-					if error == nil {
-						events.append(event!)
-					} else {
-						completionHandler(events, error)
-					}
-					if events.count == user.events.count {
-						completionHandler(events, nil)
-					}
-				})
-			}
+			
+			var whereClause = [String:[String]]()
+			whereClause["id"] = user.events
+			persistanceManager.fetch(whereClause: whereClause, orderedByClause: "id", tableName: EVENTCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+				events = persistanceArray as! [Event]
+				completionHandler(events , nil)
+			})
 		}
 	}
 

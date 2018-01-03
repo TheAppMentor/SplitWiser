@@ -9,16 +9,18 @@
 import Foundation
 
 protocol Persistance {
-	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
-	func createUser(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ userId: String?,_ error: Error?) -> Void)
-	func getUserWith(userId: String, completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void)
+	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void)
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void)
-	func getEventWith(eventId: String, completionHandler:@escaping (_ event: Event?,_ error: Error?) -> Void)
 	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
+	func fetch(whereClause:[String:[String]],orderedByClause:String,tableName:String,completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void)
 }
 
 protocol PersistanceConvertible {
+	
+	//initialize with a dictionary of data
+	init(dataDictonary:[String:Any])
+	
 	//values to be inserted/updated into the table.
 	//key is the column name, value is the value to be inserted
 	func getColumnNamevalueDictionary() -> [String : Any]
