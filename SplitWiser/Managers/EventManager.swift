@@ -16,7 +16,7 @@ struct EventManager {
 
 	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
 		let event = Event(name: name, description: description, createdBy: user.uid)
-		persistanceManager.insert(persistanceConvertible: event) { (insertionId, error) in
+		persistanceManager.insert(persistanceConvertible: event, autoGenerateKey: true) { (insertionId, error) in
 			if error == nil {
 				var mutatingUser = user
 				mutatingUser.events.append(insertionId!)

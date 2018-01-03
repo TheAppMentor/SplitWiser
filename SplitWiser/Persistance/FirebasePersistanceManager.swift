@@ -32,7 +32,7 @@ struct FirebasePersistanceManager: Persistance {
 		}
 	}
 
-	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
+	/*func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
 		let path = USERCONSTANTS.DB_PATH
 		let ref = Database.database().reference(withPath: path)
 		let entry = persistanceConvertible.getColumnNamevalueDictionary()
@@ -40,12 +40,17 @@ struct FirebasePersistanceManager: Persistance {
 		ref.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
 			completionHandler(persistanceConvertible.getId(),error)
 		})
-	}
+	}*/
 
 	
-	func insert(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
+	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
-		let key = eventRef.childByAutoId().key
+		var key:String!
+		if autoGenerateKey {
+			key = eventRef.childByAutoId().key
+		} else {
+			key = persistanceConvertible.getId()
+		}
 		let entry = persistanceConvertible.getColumnNamevalueDictionary()
 		let updates = ["\(key)": entry] as [String : Any]
 		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in

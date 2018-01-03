@@ -14,9 +14,9 @@ struct HerokuPersistanceManager: Persistance {
 		
 	}
 
-	func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
+	/*func createUser(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
 		
-	}
+	}*/
 
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
 
@@ -26,8 +26,8 @@ struct HerokuPersistanceManager: Persistance {
 
 	}
     
-	func insert(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (String?, Error?) -> Void) {
-
+	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
+		
 	}
 
 	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
