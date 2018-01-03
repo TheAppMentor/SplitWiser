@@ -71,7 +71,7 @@ extension SplitWiserUser: PersistanceConvertible {
 		self.userName = dataDictonary["userName"] as! String
 		self.email = dataDictonary["email"] as? String
 		self.profileImage = nil
-		self.events = [String]()
+		self.events = dataDictonary["events"] as? [String] ?? []
 		self.transactionsProvider = TransactionManager.shared
 		self.eventsProvider = EventManager()
 	}

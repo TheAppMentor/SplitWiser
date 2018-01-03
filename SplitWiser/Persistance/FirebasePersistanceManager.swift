@@ -12,10 +12,9 @@ import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
 	
-	func fetch(whereClause:[String:[String]],orderedByClause:String,tableName:String,completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void) {
-		let path = EVENTCONSTANTS.DB_PATH
+	func fetch(whereClause: [String:[String]], orderedByClause: String, tableName: String, completionHandler: @escaping (_ records: [PersistanceConvertible]) -> Void) {
 		let values = whereClause[whereClause.keys.first!]!
-		let ref = Database.database().reference(withPath: path)
+		let ref = Database.database().reference(withPath: tableName)
 		var dataBaseQuery:DatabaseQuery!
 		if values.count >= 2 {
 			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
