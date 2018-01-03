@@ -19,9 +19,14 @@ struct UserManager {
 	}
 
 	func getUserWith(userID: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
-		persistanceManager.getUserWith(userId: userID, completionHandler: {(user, error) in
-			completionHandler(user,error)
+		var whereClause = [String:[String]]()
+		whereClause["id"] = [userID]
+		persistanceManager.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+			completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
 		})
+		/*persistanceManager.getUserWith(userId: userID, completionHandler: {(user, error) in
+			completionHandler(user,error)
+		})*/
     }
     
 	func registerUser(userID: String, userName: String, email: String, phoneNumber: String? = "", completionHandler: @escaping (Bool) -> Void) {

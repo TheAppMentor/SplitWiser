@@ -64,6 +64,17 @@ extension SplitWiserUser : Equatable {
 }
 
 extension SplitWiserUser: PersistanceConvertible {
+	
+	init(dataDictonary: [String : Any]) {
+		self.uid = dataDictonary["id"] as! String
+		self.phoneNumber = dataDictonary["phoneNumber"] as! String
+		self.userName = dataDictonary["userName"] as! String
+		self.email = dataDictonary["email"] as? String
+		self.profileImage = nil
+		self.events = [String]()
+		self.transactionsProvider = TransactionManager.shared
+		self.eventsProvider = EventManager()
+	}
 
 	func getId() -> String {
 		return self.uid

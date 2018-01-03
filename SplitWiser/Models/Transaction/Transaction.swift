@@ -29,6 +29,21 @@ struct Transaction : Equatable {
 }
 
 extension Transaction: PersistanceConvertible {
+	
+	init(dataDictonary: [String : Any]) {
+		//@Prashanth please fill this up :D
+		self.tranID = UUID()
+		self.associatedEvent = UUID()
+		self.tranDate = Date()
+		self.status = .complete
+		self.paidBy = UUID()
+		self.paidFor = [UserTranShare]()
+		self.amount = 0.0
+		self.currency = .Dollar
+		self.tranImages = nil
+		self.description = nil
+	}
+	
     func getId() -> String {
         return self.tranID.uuidString
     }

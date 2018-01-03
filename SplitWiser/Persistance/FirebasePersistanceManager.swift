@@ -11,8 +11,33 @@ import FirebaseAuth
 import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
+	
+	func fetch(whereClause:[String:[String]],orderedByClause:String,tableName:String,completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void) {
+		let path = EVENTCONSTANTS.DB_PATH
+		let values = whereClause[whereClause.keys.first!]!
+		let ref = Database.database().reference(withPath: path)
+		var dataBaseQuery:DatabaseQuery!
+		if values.count >= 2 {
+			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
+			
+		}else {
+			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0])
+		}
+		dataBaseQuery.observe(DataEventType.value) { (dataSnapShot) in
+			switch(tableName) {
+			case USERCONSTANTS.DB_PATH:
+				completionHandler(self.getUsers(dataSnapShot: dataSnapShot))
+			case EVENTCONSTANTS.DB_PATH:
+				completionHandler(self.getEvents(dataSnapShot: dataSnapShot))
+			case TRANSACTIONCONSTANTS.DB_PATH:
+				completionHandler(self.getTransactions(dataSnapShot: dataSnapShot))
+			default:
+				print("Error")
+			}
+		}
+	}
 
-	func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
+	/*func getEventWith(eventId: String, completionHandler: @escaping (Event?, Error?) -> Void) {
 		let path = EVENTCONSTANTS.DB_PATH+"/"+eventId
 		let ref = Database.database().reference(withPath: path)
 		ref.observeSingleEvent(of: .value, with: {(dataSnapshot) in
@@ -30,21 +55,6 @@ struct FirebasePersistanceManager: Persistance {
 		}) { (error) in
 			completionHandler(nil, EventError.noSuchEvent)
 		}
-	}
-	
-	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
-		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
-		var key = ""
-		if autoGenerateKey {
-			key = eventRef.childByAutoId().key
-		} else {
-			key = persistanceConvertible.getId()
-		}
-		let entry = persistanceConvertible.getColumnNamevalueDictionary()
-		let updates = ["\(key)": entry] as [String : Any]
-		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
-			completionHandler(key,error)
-		})
 	}
 	
 	func getUserWith(userId: String, completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
@@ -67,13 +77,33 @@ struct FirebasePersistanceManager: Persistance {
 		}) { (error) in
 			completionHandler(nil, UserError.noSuchUser)
 		}
+	}*/
+	
+	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
+		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
+		var key = ""
+		if autoGenerateKey {
+			key = eventRef.childByAutoId().key
+		} else {
+			key = persistanceConvertible.getId()
+		}
+		let entry = persistanceConvertible.getColumnNamevalueDictionary()
+		let updates = ["\(key)": entry] as [String : Any]
+		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			completionHandler(key,error)
+		})
 	}
 
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
 		if let u = Auth.auth().currentUser {
-			self.getUserWith(userId: u.uid, completionHandler: {(user, error) in
-				completionHandler(user, error)
+			var whereClause = [String:[String]]()
+			whereClause["id"] = [u.uid]
+			self.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+				completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
 			})
+			/*self.getUserWith(userId: u.uid, completionHandler: {(user, error) in
+				completionHandler(user, error)
+			})*/
 		} else {
 			completionHandler(nil, UserError.noSuchUser)
 		}
@@ -103,5 +133,54 @@ struct FirebasePersistanceManager: Persistance {
 				completionHandler(true)
 			}
 		})
+	}
+}
+
+//MARK:
+extension FirebasePersistanceManager {
+	
+	func getEvents(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+		var events = [PersistanceConvertible]()
+		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
+			for child in snapshots {
+				if let dataDict = child.value as? Dictionary<String, Any> {
+					var dataDict = dataDict
+					dataDict["id"] = child.key as Any
+					let event = Event(dataDictonary: dataDict)
+					events.append(event)
+				}
+			}
+		}
+		return events
+	}
+	
+	func getUsers(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+		var users = [PersistanceConvertible]()
+		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
+			for child in snapshots {
+				if let dataDict = child.value as? Dictionary<String, Any> {
+					var dataDict = dataDict
+					dataDict["id"] = child.key as Any
+					let user = SplitWiserUser(dataDictonary: dataDict)
+					users.append(user)
+				}
+			}
+		}
+		return users
+	}
+	
+	func getTransactions(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+		var transactions = [PersistanceConvertible]()
+		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
+			for child in snapshots {
+				if let dataDict = child.value as? Dictionary<String, Any> {
+					var dataDict = dataDict
+					dataDict["id"] = child.key as Any
+					let transaction = Transaction(dataDictonary: dataDict)
+					transactions.append(transaction)
+				}
+			}
+		}
+		return transactions
 	}
 }
