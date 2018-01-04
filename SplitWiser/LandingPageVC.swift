@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LandingPageVC: UIViewController {
 
@@ -24,7 +25,7 @@ class LandingPageVC: UIViewController {
     
     
     @IBAction func showSignUpPage(_ sender: UIButton){
-        self.performSegue(withIdentifier: "showSignUpPage", sender: nil)
+        self.performSegue(withIdentifier: "showSignUpPage", sender: nil)        
     }
     
     @IBAction func loginToApp(_ sender: UIButton) {
