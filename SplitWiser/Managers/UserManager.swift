@@ -22,7 +22,11 @@ struct UserManager {
 		var whereClause = [String:[String]]()
 		whereClause["id"] = [userID]
 		persistanceManager.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
-			completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
+			if persistanceArray.count == 0 {
+				completionHandler(nil, UserError.noSuchUser)
+			} else {
+				completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
+			}
 		})
     }
     

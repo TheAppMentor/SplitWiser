@@ -56,7 +56,11 @@ struct FirebasePersistanceManager: Persistance {
 			var whereClause = [String:[String]]()
 			whereClause["id"] = [u.uid]
 			self.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
-				completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
+				if persistanceArray.count == 0 {
+					completionHandler(nil, UserError.noSuchUser)
+				} else {
+					completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
+				}
 			})
 			/*self.getUserWith(userId: u.uid, completionHandler: {(user, error) in
 				completionHandler(user, error)
