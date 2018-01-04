@@ -20,7 +20,7 @@ struct FirebasePersistanceManager: Persistance {
 			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
 			
 		}else {
-			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0])
+			dataBaseQuery = ref.queryOrderedByKey().queryEqual(toValue: values[0])
 		}
 		dataBaseQuery.observeSingleEvent(of: .value) { (dataSnapShot) in
 			switch(tableName) {
