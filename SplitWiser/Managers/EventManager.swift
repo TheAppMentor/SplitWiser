@@ -14,8 +14,14 @@ struct EventManager {
 
 	private let persistanceManager: Persistance = PersistanceFactory.getPersistanceManager()
 
-	func createEvent(name: String, description: String? = "", user: SplitWiserUser, completionHandler: @escaping (Event?, Error?) -> Void) {
-		let event = Event(name: name, description: description, createdBy: user.uid)
+	func createEvent(name: String, description: String? = "", user: SplitWiserUser, members: [SplitWiserUser]? = [], completionHandler: @escaping (Event?, Error?) -> Void) {
+		var arrayOfMembers = members ?? []
+		var membersList = [String]()
+		for member in arrayOfMembers {
+			membersList.append(member.getId())
+		}
+		membersList.append(user.getId())
+		let event = Event(name: name, description: description, createdBy: user.uid, members: membersList)
 		persistanceManager.insert(persistanceConvertible: event, autoGenerateKey: true) { (insertionId, error) in
 			if error == nil {
 				var mutatingUser = user

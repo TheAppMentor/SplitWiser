@@ -63,7 +63,7 @@ class CreateEventVC: UIViewController, EventDetailsDelegate {
         //self.navigationController?.popViewController(animated: true)
 
         UserManager().currentLoggedInUser(completionHandler: {(user, userError) in
-            EventManager().createEvent(name: self.createdEvent.eventName!, description: self.createdEvent.eventDetails, user: user!, completionHandler: {(event, eventError) in
+			EventManager().createEvent(name: self.createdEvent.eventName!, description: self.createdEvent.eventDetails, user: user!, members: nil, completionHandler: {(event, eventError) in
                 print("CreateEventVC : Finished creating event.")
                 self.dismiss(animated: true) {
                 }
