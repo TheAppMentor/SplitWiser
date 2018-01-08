@@ -70,11 +70,16 @@ struct FirebasePersistanceManager: Persistance {
 		}
 	}
 	
-	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
+	func update(persistanceConvertible: PersistanceConvertible,columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
 		let key = persistanceConvertible.getId()
 		let entry = persistanceConvertible.getColumnNamevalueDictionary()
-		let updates = ["\(key)": entry] as [String : Any]
+		var updates = [String:Any]()
+		for columnName in entry.keys {
+			if columnsToBeUpdated.index(of: columnName) != nil {
+				updates["\(key)/\(columnName)"] = entry[columnName] as Any
+			}
+		}
 		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
 			if error != nil {
 				completionHandler(false)

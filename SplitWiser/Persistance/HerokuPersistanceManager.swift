@@ -22,7 +22,7 @@ struct HerokuPersistanceManager: Persistance {
 		
 	}
 
-	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
+	func update(persistanceConvertible: PersistanceConvertible,columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void) {
 		
 	}
 
