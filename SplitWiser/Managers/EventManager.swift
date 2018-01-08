@@ -25,13 +25,19 @@ struct EventManager {
 		// Create event
 		persistanceManager.insert(persistanceConvertible: event, autoGenerateKey: true) { (insertionId, error) in
 			if error == nil {
-				var mutatingUser = user
-				mutatingUser.events.append(insertionId!)
-				// Add the event under every member
+				var allUsers = [SplitWiserUser]()
 				
-				self.persistanceManager.update(persistanceConvertible: mutatingUser, completionHandler: {(success) in
+				//next add event to all the participant users
+				for participant in arrayOfMembers {
+					var participant = participant
+					participant.events.append(insertionId!)
+					allUsers.append(participant)
+				}
+				self.persistanceManager.batchUpdate(persistanceConvertibles: allUsers, columnsToBeUpdated: ["events"], completionHandler: { (success) in
 					if success {
 						completionHandler(event, nil)
+					} else {
+						completionHandler(nil,EventError.creationFailed)
 					}
 				})
 			} else {

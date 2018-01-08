@@ -84,6 +84,30 @@ struct FirebasePersistanceManager: Persistance {
 		})
 	}
 	
+	func batchUpdate(persistanceConvertibles: [PersistanceConvertible],columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void) {
+		var tableName:String!
+		var updates = [String:Any]()
+		
+		for persistanceConvertible in persistanceConvertibles {
+			tableName = persistanceConvertible.getTableName()
+			let key = persistanceConvertible.getId()
+			let entry = persistanceConvertible.getColumnNamevalueDictionary()
+			for columnName in entry.keys {
+				if columnsToBeUpdated.index(of: columnName) != nil {
+					updates["\(key)/\(columnName)"] = entry[columnName] as Any
+				}
+			}
+		}
+		let eventRef = Database.database().reference(withPath: tableName)
+		eventRef.updateChildValues(updates, withCompletionBlock: {(error: Error?, dbRef: DatabaseReference) in
+			if error != nil {
+				completionHandler(false)
+			} else {
+				completionHandler(true)
+			}
+		})
+	}
+	
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void) {
 		let eventRef = Database.database().reference(withPath: persistanceConvertible.getTableName())
 		let node = eventRef.child(persistanceConvertible.getId())

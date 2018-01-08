@@ -29,4 +29,8 @@ struct HerokuPersistanceManager: Persistance {
 	func delete(persistanceConvertible: PersistanceConvertible, completionHandler: @escaping (Bool) -> Void) {
 
 	}
+	
+	func batchUpdate(persistanceConvertibles: [PersistanceConvertible],columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void) {
+		
+	}
 }

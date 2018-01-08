@@ -14,6 +14,7 @@ protocol Persistance {
 	func update(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 	func delete(persistanceConvertible: PersistanceConvertible,completionHandler:@escaping (_ success: Bool) -> Void)
 	func fetch(whereClause:[String:[String]],orderedByClause:String,tableName:String,completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void)
+	func batchUpdate(persistanceConvertibles: [PersistanceConvertible],columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void)
 }
 
 protocol PersistanceConvertible {
