@@ -25,11 +25,11 @@ struct FirebasePersistanceManager: Persistance {
 		dataBaseQuery.observeSingleEvent(of: .value) { (dataSnapShot) in
 			switch(tableName) {
 			case USERCONSTANTS.DB_PATH:
-				completionHandler(self.getUsers(dataSnapShot: dataSnapShot))
+				completionHandler(self.buildUsersFrom(dataSnapShot: dataSnapShot))
 			case EVENTCONSTANTS.DB_PATH:
-				completionHandler(self.getEvents(dataSnapShot: dataSnapShot))
+				completionHandler(self.buildEventsFrom(dataSnapShot: dataSnapShot))
 			case TRANSACTIONCONSTANTS.DB_PATH:
-				completionHandler(self.getTransactions(dataSnapShot: dataSnapShot))
+				completionHandler(self.buildTransactionsFrom(dataSnapShot: dataSnapShot))
 			default:
 				print("Error")
 			}
@@ -62,9 +62,6 @@ struct FirebasePersistanceManager: Persistance {
 					completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
 				}
 			})
-			/*self.getUserWith(userId: u.uid, completionHandler: {(user, error) in
-				completionHandler(user, error)
-			})*/
 		} else {
 			completionHandler(nil, UserError.noSuchUser)
 		}
@@ -129,7 +126,7 @@ struct FirebasePersistanceManager: Persistance {
 //MARK: utility methods to get array of events, transactions or users
 extension FirebasePersistanceManager {
 	
-	func getEvents(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+	func buildEventsFrom(dataSnapShot: DataSnapshot) -> [PersistanceConvertible] {
 		var events = [PersistanceConvertible]()
 		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
 			for child in snapshots {
@@ -144,7 +141,7 @@ extension FirebasePersistanceManager {
 		return events
 	}
 	
-	func getUsers(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+	func buildUsersFrom(dataSnapShot: DataSnapshot) -> [PersistanceConvertible] {
 		var users = [PersistanceConvertible]()
 		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
 			for child in snapshots {
@@ -159,7 +156,7 @@ extension FirebasePersistanceManager {
 		return users
 	}
 	
-	func getTransactions(dataSnapShot:DataSnapshot) -> [PersistanceConvertible] {
+	func buildTransactionsFrom(dataSnapShot: DataSnapshot) -> [PersistanceConvertible] {
 		var transactions = [PersistanceConvertible]()
 		if let snapshots = dataSnapShot.children.allObjects as? [DataSnapshot] {
 			for child in snapshots {
