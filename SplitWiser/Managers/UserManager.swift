@@ -42,8 +42,8 @@ struct UserManager {
 		})
 	}
     
-	func registerUser(userID: String, userName: String, email: String, phoneNumber: String? = "", completionHandler: @escaping (Bool) -> Void) {
-		let splitWiserUser = SplitWiserUser(uid: userID, phoneNumber: phoneNumber!, userName: userName, profileImage: nil, email: email)
+	func registerUser(userName: String, email: String?, phoneNumber: String, completionHandler: @escaping (Bool) -> Void) {
+		let splitWiserUser = SplitWiserUser(phoneNumber: phoneNumber, userName: userName, profileImage: nil, email: email)
 		persistanceManager.insert(persistanceConvertible: splitWiserUser, autoGenerateKey: false) { (insertionId, error) in
 			if let insertionError = error {
 				print(insertionError.localizedDescription)

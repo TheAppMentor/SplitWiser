@@ -84,7 +84,7 @@ class UserTests: XCTestCase {
 		// Create an expectation for a background download task.
 		let expectation = XCTestExpectation(description: "Current logged-in user")
 
-		UserManager().registerUser(userID: "UasboNmbDbaCL7BDAf2VQrMpbNq1", userName: "Mr.Moorthy", email: "", phoneNumber: "+918197510162", completionHandler: {(success) in
+		UserManager().registerUser(userName: "Pavan K S", email: "pavankowshik@gmail.com", phoneNumber: "+918197290734", completionHandler: {(success) in
 			XCTAssert(success, "❌ User error : Failed to create user")
 			if success {
 				// Fulfill the expectation to indicate that the background task has finished successfully.

@@ -20,9 +20,9 @@ struct SplitWiserUser {
 	private var transactionsProvider: TransactionManager
 	private var eventsProvider: EventManager
 
-	init(uid: String, phoneNumber: String? = "", userName: String, profileImage: UIImage?, email: String? = "") {
-		self.uid = uid
-		self.phoneNumber = phoneNumber!
+	init(phoneNumber: String, userName: String, profileImage: UIImage?, email: String? = "") {
+		self.uid = phoneNumber
+		self.phoneNumber = phoneNumber
 		self.userName = userName
 		self.profileImage = profileImage
 		self.email = email
@@ -67,9 +67,9 @@ extension SplitWiserUser: PersistanceConvertible {
 	
 	init(dataDictonary: [String : Any]) {
 		self.uid = dataDictonary["id"] as! String
-		self.phoneNumber = dataDictonary["phoneNumber"] as! String
-		self.userName = dataDictonary["userName"] as! String
-		self.email = dataDictonary["email"] as? String
+		self.phoneNumber = dataDictonary["phoneNumber"] as? String ?? dataDictonary["id"] as! String
+		self.userName = dataDictonary["userName"] as? String ?? ""
+		self.email = dataDictonary["email"] as? String ?? ""
 		self.profileImage = nil
 		self.events = dataDictonary["events"] as? [String] ?? []
 		self.transactionsProvider = TransactionManager.shared
