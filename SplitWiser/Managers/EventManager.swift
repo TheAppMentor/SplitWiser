@@ -65,10 +65,9 @@ struct EventManager {
 		if user.events.count == 0 {
 			completionHandler(events, nil)
 		} else {
-			
 			var whereClause = [String:[String]]()
 			whereClause["id"] = user.events
-			persistanceManager.fetch(whereClause: whereClause, orderedByClause: "id", tableName: EVENTCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+			persistanceManager.fetch(whereClause: whereClause, orderedByClause: nil, tableName: EVENTCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
 				events = persistanceArray as! [Event]
 				completionHandler(events , nil)
 			})

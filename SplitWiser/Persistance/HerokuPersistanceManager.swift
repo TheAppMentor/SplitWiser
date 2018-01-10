@@ -10,19 +10,19 @@ import Foundation
 
 struct HerokuPersistanceManager: Persistance {
 
-	func fetch(whereClause:[String:[String]],orderedByClause:String,tableName:String,completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void) {
+	func fetch(whereClause: [String:[String]], orderedByClause: String?, tableName: String, completionHandler:@escaping (_ records: [PersistanceConvertible]) -> Void) {
 		
 	}
 	
-	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
+	func getCurrentLoggedInUser(completionHandler: @escaping (_ user: SplitWiserUser?, _ error: Error?) -> Void) {
 
 	}
 	
-	func insert(persistanceConvertible: PersistanceConvertible,autoGenerateKey:Bool,completionHandler:@escaping (_ insertionId: String?,_ error: Error?) -> Void) {
+	func insert(persistanceConvertible: PersistanceConvertible, autoGenerateKey: Bool,completionHandler: @escaping (_ insertionId: String?, _ error: Error?) -> Void) {
 		
 	}
 
-	func update(persistanceConvertible: PersistanceConvertible,columnsToBeUpdated:[String],completionHandler:@escaping (_ success: Bool) -> Void) {
+	func update(persistanceConvertible: PersistanceConvertible, columnsToBeUpdated: [String],completionHandler: @escaping (_ success: Bool) -> Void) {
 		
 	}
 

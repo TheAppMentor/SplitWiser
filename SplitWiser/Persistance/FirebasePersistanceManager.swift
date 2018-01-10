@@ -12,15 +12,19 @@ import FirebaseDatabase
 
 struct FirebasePersistanceManager: Persistance {
 	
-	func fetch(whereClause: [String:[String]], orderedByClause: String, tableName: String, completionHandler: @escaping (_ records: [PersistanceConvertible]) -> Void) {
+	func fetch(whereClause: [String:[String]], orderedByClause: String?, tableName: String, completionHandler: @escaping (_ records: [PersistanceConvertible]) -> Void) {
 		let values = whereClause[whereClause.keys.first!]!
 		let ref = Database.database().reference(withPath: tableName)
 		var dataBaseQuery:DatabaseQuery!
+		if orderedByClause == nil {
+			dataBaseQuery = ref.queryOrderedByKey()
+		} else {
+			dataBaseQuery = ref.queryOrdered(byChild: orderedByClause!)
+		}
 		if values.count >= 2 {
-			dataBaseQuery = ref.queryOrderedByKey().queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
-			
-		}else {
-			dataBaseQuery = ref.queryOrderedByKey().queryEqual(toValue: values[0])
+			dataBaseQuery = dataBaseQuery.queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
+		} else {
+			dataBaseQuery = dataBaseQuery.queryEqual(toValue: values[0]);
 		}
 		dataBaseQuery.observeSingleEvent(of: .value) { (dataSnapShot) in
 			switch(tableName) {
@@ -55,7 +59,7 @@ struct FirebasePersistanceManager: Persistance {
 		if let u = Auth.auth().currentUser {
 			var whereClause = [String:[String]]()
 			whereClause["id"] = [u.uid]
-			self.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+			self.fetch(whereClause: whereClause, orderedByClause: nil, tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
 				if persistanceArray.count == 0 {
 					completionHandler(nil, UserError.noSuchUser)
 				} else {

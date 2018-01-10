@@ -10,6 +10,7 @@
 		202C59B71FDD1E02001E6A0C /* SplitWiserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59B61FDD1E02001E6A0C /* SplitWiserError.swift */; };
 		202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C11FDD2A85001E6A0C /* EventTests.swift */; };
 		202C59C51FDD2C63001E6A0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202C59C41FDD2C63001E6A0C /* Constants.swift */; };
+		20954C482003843900D51E17 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20954C472003843900D51E17 /* UserTests.swift */; };
 		20CDF4B01FD9956D00ED98E2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CDF4AF1FD9956D00ED98E2 /* Event.swift */; };
 		20E210A41FF618B700362C0C /* PersistanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A31FF618B700362C0C /* PersistanceFactory.swift */; };
 		20E210A61FF61B3900362C0C /* HerokuPersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */; };
@@ -79,6 +80,7 @@
 		202C59B61FDD1E02001E6A0C /* SplitWiserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiserError.swift; sourceTree = "<group>"; };
 		202C59C11FDD2A85001E6A0C /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		202C59C41FDD2C63001E6A0C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		20954C472003843900D51E17 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		20CDF4AF1FD9956D00ED98E2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		20E210A31FF618B700362C0C /* PersistanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceFactory.swift; sourceTree = "<group>"; };
 		20E210A51FF61B3900362C0C /* HerokuPersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerokuPersistanceManager.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 				7376CECC1FD7AF530010C673 /* SplitWiserTests.swift */,
 				2F81514B1FDD8182001F9452 /* TransactionTester.swift */,
 				7376CECE1FD7AF530010C673 /* Info.plist */,
+				20954C472003843900D51E17 /* UserTests.swift */,
 			);
 			path = SplitWiserTests;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20954C482003843900D51E17 /* UserTests.swift in Sources */,
 				202C59C21FDD2A85001E6A0C /* EventTests.swift in Sources */,
 				7376CECD1FD7AF530010C673 /* SplitWiserTests.swift in Sources */,
 				2F81514C1FDD8182001F9452 /* TransactionTester.swift in Sources */,
