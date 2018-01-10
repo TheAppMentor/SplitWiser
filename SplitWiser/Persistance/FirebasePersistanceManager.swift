@@ -16,10 +16,10 @@ struct FirebasePersistanceManager: Persistance {
 		let values = whereClause[whereClause.keys.first!]!
 		let ref = Database.database().reference(withPath: tableName)
 		var dataBaseQuery:DatabaseQuery!
-		if orderedByClause == nil {
-			dataBaseQuery = ref.queryOrderedByKey()
+		if let orderBy = orderedByClause {
+			dataBaseQuery = ref.queryOrdered(byChild: orderBy)
 		} else {
-			dataBaseQuery = ref.queryOrdered(byChild: orderedByClause!)
+			dataBaseQuery = ref.queryOrderedByKey()
 		}
 		if values.count >= 2 {
 			dataBaseQuery = dataBaseQuery.queryStarting(atValue: values[0]).queryEnding(atValue: values[values.count - 1])
