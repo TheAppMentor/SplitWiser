@@ -15,14 +15,16 @@ struct Event {
 	var description: String
 	var date: Double
 	var createdBy: String
+	var members: [String]
 	var transactionsProvider: TransactionManager
 
-	init(name: String, description: String? = "", createdBy: String) {
+	init(name: String, description: String? = "", createdBy: String, members: [String]? = []) {
         self.eventId = UUID().uuidString
 		self.name = name
 		self.description = description ?? ""
 		self.date = Date().timeIntervalSince1970
 		self.createdBy = createdBy
+		self.members = members!
 		self.transactionsProvider = TransactionManager.shared
 	}
 }
@@ -42,6 +44,7 @@ extension Event: PersistanceConvertible {
 		self.date = Date().timeIntervalSince1970
 		self.createdBy = dataDictonary["createdBy"] as! String
 		self.transactionsProvider = TransactionManager.shared
+		self.members = dataDictonary["members"] as! [String]
 	}
 	
 	func getId() -> String {
@@ -52,7 +55,8 @@ extension Event: PersistanceConvertible {
 		return  ["name": self.name,
 					 "description": self.description,
 					 "date": self.date,
-					 "createdBy": self.createdBy as Any] as [String : Any]
+					 "createdBy": self.createdBy,
+					 "members": self.members as Any] as [String : Any]
 	}
 	
 	func getTableName() -> String {

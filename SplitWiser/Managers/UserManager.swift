@@ -21,7 +21,7 @@ struct UserManager {
 	func getUserWith(userID: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
 		var whereClause = [String:[String]]()
 		whereClause["id"] = [userID]
-		persistanceManager.fetch(whereClause: whereClause, orderedByClause: "id", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+		persistanceManager.fetch(whereClause: whereClause, orderedByClause: nil, tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
 			if persistanceArray.count == 0 {
 				completionHandler(nil, UserError.noSuchUser)
 			} else {
@@ -29,9 +29,21 @@ struct UserManager {
 			}
 		})
     }
+
+	func getUserWith(phoneNumber: String, completionHandler: @escaping (SplitWiserUser?, Error?) -> Void) {
+		var whereClause = [String:[String]]()
+		whereClause["phoneNumber"] = [phoneNumber]
+		persistanceManager.fetch(whereClause: whereClause, orderedByClause: "phoneNumber", tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
+			if persistanceArray.count == 0 {
+				completionHandler(nil, UserError.noSuchUser)
+			} else {
+				completionHandler((persistanceArray as! [SplitWiserUser])[0] , nil)
+			}
+		})
+	}
     
-	func registerUser(userID: String, userName: String, email: String, phoneNumber: String? = "", completionHandler: @escaping (Bool) -> Void) {
-		let splitWiserUser = SplitWiserUser(uid: userID, phoneNumber: phoneNumber!, userName: userName, profileImage: nil, email: email)
+	func registerUser(userName: String, email: String?, phoneNumber: String, completionHandler: @escaping (Bool) -> Void) {
+		let splitWiserUser = SplitWiserUser(phoneNumber: phoneNumber, userName: userName, profileImage: nil, email: email)
 		persistanceManager.insert(persistanceConvertible: splitWiserUser, autoGenerateKey: false) { (insertionId, error) in
 			if let insertionError = error {
 				print(insertionError.localizedDescription)

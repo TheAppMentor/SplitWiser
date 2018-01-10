@@ -56,9 +56,11 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
     
     func signed(in user: User) {
 		print("🙏🏻 Welcome --- \(String(describing: user.displayName))")
-		UserManager().getUserWith(userID: user.uid, completionHandler: {(splitWiserUser, error) in
-			if error != nil {
-				UserManager().registerUser(userID: user.uid, userName: user.displayName ?? "Anonymous", email: user.email ?? "",  completionHandler: {(success) in
+		UserManager().getUserWith(userID: user.phoneNumber!, completionHandler: {(splitWiserUser, error) in
+			if error == nil {
+				//TODO: This means user exists, we need to ask him to update displaname/profilepic/emailId/whatever
+			} else {
+				UserManager().registerUser(userName: user.displayName ?? "Anonymous", email: user.email ?? "", phoneNumber: user.phoneNumber!,  completionHandler: {(success) in
 					print("---------- REGISTERED!")
 				})
 			}
