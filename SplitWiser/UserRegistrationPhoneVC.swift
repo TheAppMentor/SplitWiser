@@ -9,7 +9,10 @@
 import UIKit
 import Firebase
 
-class UserRegistrationPhoneVC: UIViewController {
+class UserRegistrationPhoneVC: UIViewController, PhoneNumberInputViewDelegate {
+    
+    @IBOutlet weak var phoneNumInputView: PhoneNumberInputView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +22,25 @@ class UserRegistrationPhoneVC: UIViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
         }
         self.title = "Your Phone"
-        continueButton.layer.cornerRadius = 10.0
+        phoneNumInputView.delegate = self
     }
-
-    @IBOutlet weak var continueButton: UIButton!
-    @IBOutlet weak var countryCode: UITextField!
-    @IBOutlet weak var thePhoneNumber: UITextField!
     
-    @IBAction func processPhoneNumber(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.becomeFirstResponder()
+    }
+    
+    
+    func userEnteredPhoneNumber(thePhoneNumber: String) {
+        print("We Got a phone number : \(thePhoneNumber)")
+        self.processPhoneNumber(theNumber: thePhoneNumber)
+    }
+    
+    
+    func processPhoneNumber(theNumber : String) {
         
         self.view.endEditing(true)
-
-        let phoneNumber = "+" + countryCode.text! + thePhoneNumber.text!
+        
+        let phoneNumber = theNumber
         
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber, uiDelegate: nil) { (verificationID, error) in
             if let error = error {

@@ -13,6 +13,7 @@ target 'SplitWiser' do
   pod 'Firebase', '~> 4.7'
   pod 'ZAlertView', '~> 1.0'
   pod 'PHDiff', '~> 1.1'
+  pod 'CountryKit', '~> 1.0'
 
   target 'SplitWiserTests' do
     inherit! :search_paths
