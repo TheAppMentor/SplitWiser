@@ -44,37 +44,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ixj-Pl-ULr">
-                                <rect key="frame" x="156.5" y="555" width="62" height="92"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SKB-iN-B0B">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="40"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                        <state key="normal" title="Enter">
-                                            <color key="titleColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loginToApp:" destination="DDh-g1-vxs" eventType="touchUpInside" id="SOT-Vv-qdn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5e-Wl-DT8">
-                                        <rect key="frame" x="0.0" y="60" width="62" height="32"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" red="0.32941177490000001" green="0.36078432199999999" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="showSignUpPage:" destination="DDh-g1-vxs" eventType="touchUpInside" id="yIS-5X-HVi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ixj-Pl-ULr" firstAttribute="centerX" secondItem="mBx-nH-fZz" secondAttribute="centerX" id="EVV-IF-Anu"/>
                             <constraint firstItem="los-Oo-0d1" firstAttribute="centerX" secondItem="mBx-nH-fZz" secondAttribute="centerX" id="GoO-Ik-41a"/>
-                            <constraint firstItem="SXc-Ko-2dM" firstAttribute="bottom" secondItem="ixj-Pl-ULr" secondAttribute="bottom" constant="20" id="qnU-E9-z3U"/>
                             <constraint firstItem="los-Oo-0d1" firstAttribute="centerY" secondItem="mBx-nH-fZz" secondAttribute="centerY" id="yd6-pF-cDa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SXc-Ko-2dM"/>

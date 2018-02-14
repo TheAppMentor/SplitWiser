@@ -15,6 +15,10 @@ class LandingPageVC: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
+			self.loginToApp()
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +31,7 @@ class LandingPageVC: UIViewController {
         self.performSegue(withIdentifier: "showSignUpPage", sender: nil)
     }
     
-    @IBAction func loginToApp(_ sender: UIButton) {
+    private func loginToApp() {
 
         self.performSegue(withIdentifier: "showEvents", sender: nil)
         
