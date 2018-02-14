@@ -10,6 +10,7 @@ target 'SplitWiser' do
   pod 'Firebase/Auth'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Phone'
   pod 'Firebase', '~> 4.7'
   pod 'ZAlertView', '~> 1.0'
   pod 'PHDiff', '~> 1.1'
