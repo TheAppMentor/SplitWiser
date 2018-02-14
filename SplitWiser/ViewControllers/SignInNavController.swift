@@ -33,9 +33,11 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
         authUI?.tosurl = kFirebaseTermsOfService
 		let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI: authUI!), FUIGoogleAuth()]
         authUI?.providers = providers
-        let authViewController: UINavigationController? = authUI?.authViewController()
-        authViewController?.navigationBar.isHidden = true
-        present(authViewController!, animated: true, completion: nil)
+        //let authViewController: UINavigationController? = authUI?.authViewController()
+        //authViewController?.navigationBar.isHidden = true
+        //present(authViewController!, animated: true, completion: nil)
+		let phoneProvider = FUIAuth.defaultAuthUI()?.providers.first as! FUIPhoneAuth
+		phoneProvider.signIn(withPresenting: self, phoneNumber: nil)
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
