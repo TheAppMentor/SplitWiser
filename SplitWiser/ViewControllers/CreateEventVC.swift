@@ -187,7 +187,7 @@ extension CreateEventVC{
     }
     
     func didEnterEventDescription(eventDescription : String){
-        
+      	createdEvent.eventDetails = eventDescription
     }
     
     func didAddEventProfilePic(profilePic : UIImage){

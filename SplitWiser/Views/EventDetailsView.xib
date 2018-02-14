@@ -59,7 +59,7 @@
                                                         <outlet property="delegate" destination="-1" id="0rB-ye-H0G"/>
                                                     </connections>
                                                 </textField>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-tx-pQl">
+                                                <textField opaque="NO" tag="1112" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-tx-pQl">
                                                     <rect key="frame" x="0.0" y="63" width="363" height="54.5"/>
                                                     <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>

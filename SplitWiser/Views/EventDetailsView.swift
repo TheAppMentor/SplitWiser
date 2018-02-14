@@ -114,7 +114,11 @@ extension EventDetailsView : UITextFieldDelegate{
             if let validText = textField.text{
                 delegate?.didEnterEventName(eventName: validText)
             }
-        }
+		} else if textField.tag == 1112{ // Event description text field
+			if let validText = textField.text{
+				delegate?.didEnterEventDescription(eventDescription: validText)
+			}
+		}
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
