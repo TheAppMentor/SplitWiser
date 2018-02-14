@@ -11,6 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
+import FirebasePhoneAuthUI
 
 private let kFirebaseTermsOfService = URL(string: "https://firebase.google.com/terms/")!
 
@@ -20,19 +21,17 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
     fileprivate var authStateDidChangeHandle: AuthStateDidChangeListenerHandle?
     
     override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+
+		super.viewDidAppear(animated)
         if Auth.auth().currentUser != nil {
 //            self.navigationBar.isHidden = false
 //            self.performSegue(withIdentifier: "showEvents", sender: nil)
             return
         }
-        
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
         authUI?.tosurl = kFirebaseTermsOfService
-        authUI?.isSignInWithEmailHidden = true
-        let providers: [FUIAuthProvider] = [FUIGoogleAuth()]
+		let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI: authUI!), FUIGoogleAuth()]
         authUI?.providers = providers
         let authViewController: UINavigationController? = authUI?.authViewController()
         authViewController?.navigationBar.isHidden = true

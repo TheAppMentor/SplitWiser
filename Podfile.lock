@@ -32,6 +32,8 @@ PODS:
   - FirebaseUI/Google (4.5.1):
     - FirebaseUI/Auth
     - GoogleSignIn (~> 4.0)
+  - FirebaseUI/Phone (4.5.1):
+    - FirebaseUI/Auth
   - GoogleSignIn (4.1.2):
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
@@ -69,6 +71,7 @@ DEPENDENCIES:
   - Firebase/Database
   - FirebaseUI/Auth
   - FirebaseUI/Google
+  - FirebaseUI/Phone
   - PHDiff (~> 1.1)
   - ZAlertView (~> 1.0)
 
