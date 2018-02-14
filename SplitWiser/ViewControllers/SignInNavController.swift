@@ -31,7 +31,8 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
         authUI = FUIAuth.defaultAuthUI()
         authUI?.delegate = self
         authUI?.tosurl = kFirebaseTermsOfService
-		let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI: authUI!), FUIGoogleAuth()]
+		authUI?.isSignInWithEmailHidden = true
+		let providers: [FUIAuthProvider] = [FUIPhoneAuth(authUI: authUI!)]
         authUI?.providers = providers
         let authViewController: UINavigationController? = authUI?.authViewController()
         authViewController?.navigationBar.isHidden = true
@@ -55,6 +56,10 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
     
     func signed(in user: User) {
 		print("🙏🏻 Welcome --- \(String(describing: user.displayName))")
+		registerUserIfNotAlreadyRegistered(user: user)
+    }
+
+	private func registerUserIfNotAlreadyRegistered(user: User) {
 		UserManager().getUserWith(userID: user.phoneNumber!, completionHandler: {(splitWiserUser, error) in
 			if error == nil {
 				//TODO: This means user exists, we need to ask him to update displaname/profilepic/emailId/whatever
@@ -64,6 +69,6 @@ class SignInNavController: UINavigationController, FUIAuthDelegate {
 				})
 			}
 		})
-    }
+	}
     
 }
