@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>44075100868-nbb3an48legjtk10qibfrn3lhe4t4ijn.apps.googleusercontent.com</string>
+	<string>44075100868-5cp1v02cslbet1rnvscpbep9rtpbsdeb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.44075100868-nbb3an48legjtk10qibfrn3lhe4t4ijn</string>
+	<string>com.googleusercontent.apps.44075100868-5cp1v02cslbet1rnvscpbep9rtpbsdeb</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAaIPbKIQAxV3f_34TpeB4acIJ306of3Yg</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.thehobbylobby.SplitWiser</string>
+	<string>com.thehobbylobby.SplitWiser1</string>
 	<key>PROJECT_ID</key>
 	<string>splitwiser-bad73</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:44075100868:ios:d2c3403eb2061e16</string>
+	<string>1:44075100868:ios:8c8f58f13b1632af</string>
 	<key>DATABASE_URL</key>
 	<string>https://splitwiser-bad73.firebaseio.com</string>
 </dict>
