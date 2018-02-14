@@ -58,7 +58,7 @@ struct FirebasePersistanceManager: Persistance {
 	func getCurrentLoggedInUser(completionHandler:@escaping (_ user: SplitWiserUser?,_ error: Error?) -> Void) {
 		if let u = Auth.auth().currentUser {
 			var whereClause = [String:[String]]()
-			whereClause["id"] = [u.uid]
+			whereClause["id"] = [u.phoneNumber!]
 			self.fetch(whereClause: whereClause, orderedByClause: nil, tableName: USERCONSTANTS.DB_PATH, completionHandler: { (persistanceArray) in
 				if persistanceArray.count == 0 {
 					completionHandler(nil, UserError.noSuchUser)
