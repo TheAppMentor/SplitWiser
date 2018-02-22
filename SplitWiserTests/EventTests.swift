@@ -43,15 +43,13 @@ class EventTests: XCTestCase {
 		let expectation = XCTestExpectation(description: "Create event")
 
 		if let u = Auth.auth().currentUser {
-			UserManager().getUserWith(userID: "+919632599369", completionHandler: {(user, userError) in
+			UserManager().getUserWith(userID: u.phoneNumber!, completionHandler: {(user, userError) in
 				if userError == nil {
-					UserManager().getUserWith(userID: "+918197510162", completionHandler: {(member, userError) in
-					let members = [member]
-					EventManager().createEvent(name: "Lunch-with-jagan", description: "God, yet another Lunch!", user: user!, members: members as? [SplitWiserUser], completionHandler: {(event, eventError) in
+					let members = [user]
+					EventManager().createEvent(name: "Lunch-with-team", description: "God, yet another Lunch!", user: user!, members: members as? [SplitWiserUser], completionHandler: {(event, eventError) in
 						XCTAssertNil(eventError, "❌ Event error : \(String(describing: eventError?.localizedDescription))")
 						// Fulfill the expectation to indicate that the background task has finished successfully.
 						expectation.fulfill()
-					})
 					})
 				}
 				XCTAssertNil(userError, "❌ User error : \(String(describing: userError?.localizedDescription))")
