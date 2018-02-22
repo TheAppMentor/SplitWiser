@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LandingPageVC: UIViewController {
 
@@ -16,10 +17,23 @@ class LandingPageVC: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationController?.setNavigationBarHidden(true, animated: false)
 
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 4) {
-			self.loginToApp()
+		if let user = Auth.auth().currentUser {
+			registerUserIfNotAlreadyRegistered(user: user)
 		}
     }
+
+	private func registerUserIfNotAlreadyRegistered(user: User) {
+		UserManager().getUserWith(userID: user.phoneNumber!, completionHandler: {(splitWiserUser, error) in
+			if error == nil {
+				self.loginToApp()
+			} else {
+				UserManager().registerUser(userName: user.displayName ?? "Anonymous", email: user.email ?? "", phoneNumber: user.phoneNumber!,  completionHandler: {(success) in
+					print("---------- REGISTERED!")
+					self.loginToApp()
+				})
+			}
+		})
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
