@@ -32,7 +32,7 @@ extension CalculationEngine {
 		var totalAmountPaidByuser:Double = 0.0
 		if let transacations = event.transactionsProvider.fetchAllTransactionIDForEvent(eventID: event.eventId) {
 			for transaction in transacations {
-                if transaction.paidBy.uuidString == user.uid {
+                if transaction.paidBy == user.uid {
                     totalAmountPaidByuser = totalAmountPaidByuser + transaction.amount
                 }
 			}

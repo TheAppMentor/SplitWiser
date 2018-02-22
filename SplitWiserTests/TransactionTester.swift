@@ -9,45 +9,33 @@
 import XCTest
 @testable import SplitWiser
 
-/*class TransactionTester: XCTestCase {
+class TransactionTester: XCTestCase {
 
     var tranMan = TransactionManager.shared
     let eventMan = EventManager()
-    var userList = [SplitWiserUser]()
+    var userList = [String]()
     var eventList = [Event]()
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-		let userPavan = SplitWiserUser(uid: "", phoneNumber: "1111111", userName: "Pavan", profileImage: nil, email: nil)
-		let userReshma = SplitWiserUser(uid: "", phoneNumber: "222222", userName: "Reshma", profileImage: nil, email: nil)
-		let userPrashanth = SplitWiserUser(uid: "", phoneNumber: "333333", userName: "Prashanth", profileImage: nil, email: nil)
-		let userJagan = SplitWiserUser(uid: "", phoneNumber: "444444", userName: "Jagan", profileImage: nil, email: nil)
-        
-        userList.append(userPavan)
-        userList.append(userReshma)
-        userList.append(userPrashanth)
-        userList.append(userJagan)
-        
-        //let lunchEvent = Event(eventId: UUID(), name: "Lunch", description: "Lunch Description", date: Date(), createdBy: userPavan, transactions: [])
-        //let movieEvent = Event(eventId: UUID(), name: "Movie", description: "Movie Description", date: Date(), createdBy: userPavan, transactions: [])
-        let lunchEvent = Event(eventId: UUID(), name: "Lunch", description: "Lunch Description", date: Date().timeIntervalSinceNow)
-        let movieEvent = Event(eventId: UUID(), name: "Movie", description: "Movie Description", date: Date().timeIntervalSinceNow)
+		userList.append("+919632599369")
+		userList.append("+918197290734")
 
-        //        let lunchEvent = EventManager().createEvent(name: "Lunch", description: "Lunch Description")
-//        let movieEvent = EventManager().createEvent(name: "Movie", description: "Movie Description")
-        
+        var lunchEvent = Event(name: "Lunch-with-team", description: "God, yet another Lunch!", createdBy: "+919632599369", members: userList)
+		lunchEvent.eventId = "-L5vtTsRuHI5amcWi7zY"
+        var movieEvent = Event(name: "Movie-with-team", description: "Wonder woman", createdBy: "+919632599369", members: userList)
+        movieEvent.eventId = "-L5vwqviPc9QdDPt8Uc9"
         eventList.append(lunchEvent)
         eventList.append(movieEvent)
     }
-    
-    
+
     //MARK: Add Transactions Test
     
     func testAddTransaction() {
         do{
-            if let addedTran = try tranMan.addTransaction(date: Date(), associatedEvent: eventList.first!, status: .pending, paidBy: userList.first!, paidFor: [], amount: 100, currency: .Rupee, transactionImages: nil, transactionDescription: "Simple Transaction"){
+			if let addedTran = try tranMan.addTransaction(date: Date().timeIntervalSince1970, associatedEvent: (eventList.first?.eventId)!, status: .pending, paidBy: userList.first!, paidFor: [], amount: 100, currency: .Rupee, transactionImages: nil, transactionDescription: "test transact"){
                 do {
                     if let fetchedTran = try tranMan.fetchTransaction(tranID: addedTran.tranID){
                         XCTAssert(true, "Transaction Added Successfully")
@@ -60,16 +48,14 @@ import XCTest
             XCTAssert(false, "Failed to Add Transaction")
         }
     }
-
     
-    
-    func testTotalAmount(){
+    /*func testTotalAmount(){
         do{
             let tranMan = try TransactionManager.shared.fetchTransaction(tranID: UUID())
             XCTAssert(true, "Simply Fail")
         }catch{
             print("Some Error \(error)")
         }
-    }
+    }*/
     
-}*/
+}

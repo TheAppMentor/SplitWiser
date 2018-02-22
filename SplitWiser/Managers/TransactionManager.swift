@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 struct TransactionManager : TransactionDelegate {
+	mutating func addTransaction(date: Double?, associatedEvent: String, status: TransactionStatus, paidBy: String, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) throws -> TransactionRepresentable? {
+		if let tran =  Transaction.generateTransaction(date: date, associatedEvent: associatedEvent, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, transactionImages: transactionImages, transactionDescription: transactionDescription){
+			transactionStore.append(tran)
+			return tran
+		}
+
+		return nil
+	}
 	
     static let shared = TransactionManager()
 	
@@ -21,17 +29,7 @@ struct TransactionManager : TransactionDelegate {
 		calculationEngine = CalculationEngine()
 	}
     
-    mutating func addTransaction(date: Date?, associatedEvent: UUID, status: TransactionStatus, paidBy: UUID, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) throws -> TransactionRepresentable? {
-        
-        if let tran =  Transaction.generateTransaction(date: date, associatedEvent: associatedEvent, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, transactionImages: transactionImages, transactionDescription: transactionDescription){
-            transactionStore.append(tran)
-            return tran
-        }
-
-        return nil
-    }
-    
-    func fetchTransaction(tranID : UUID) throws -> TransactionRepresentable?{
+    func fetchTransaction(tranID : String) throws -> TransactionRepresentable?{
         
         // No Transaction found.
         guard transactionStore.isEmpty == false else {throw TransactionError.noTransactionMatchingID(transactionID: tranID)}
@@ -123,7 +121,7 @@ struct TransactionManager : TransactionDelegate {
     func fetchAllTransactionsForEvent(eventID: String) -> [TransactionRepresentable]? {
         
         //TODO: Prashanth Re-look at this .
-        let allTrans = transactionStore.filter({$0.associatedEvent.uuidString == eventID})
+        let allTrans = transactionStore.filter({$0.associatedEvent == eventID})
         return allTrans
 
     }

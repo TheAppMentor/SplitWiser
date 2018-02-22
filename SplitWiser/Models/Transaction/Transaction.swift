@@ -16,27 +16,42 @@ struct Transaction : Equatable {
         return lhs.tranID == rhs.tranID
     }
     
-    var tranID : UUID
-    var associatedEvent : UUID
-    var tranDate : Date
+    var tranID : String
+    var associatedEvent : String
+    var tranDate : Double
     var status : TransactionStatus
-    var paidBy : UUID
+    var paidBy : String
     var paidFor : [UserTranShare]
     var amount : Double
     var currency : TransactionCurrency
     var tranImages : [UIImage]?
     var description : String?
+
+	init(date: Double? = nil, associatedEvent: String, status: TransactionStatus, paidBy: String, paidFor: [UserTranShare], amount: Double, currency : TransactionCurrency) {
+		self.associatedEvent = associatedEvent
+		self.status = status
+		self.paidBy = paidBy
+		self.paidFor = paidFor
+		self.amount = amount
+		self.currency = currency
+		self.tranID = UUID().uuidString
+		if let date = date {
+			self.tranDate = date
+		} else {
+			self.tranDate = Date().timeIntervalSince1970
+		}
+	}
 }
 
 extension Transaction: PersistanceConvertible {
 	
 	init(dataDictonary: [String : Any]) {
 		//@Prashanth please fill this up :D
-		self.tranID = UUID()
-		self.associatedEvent = UUID()
-		self.tranDate = Date()
+		self.tranID = UUID().uuidString
+		self.associatedEvent = UUID().uuidString
+		self.tranDate = Date().timeIntervalSince1970
 		self.status = .complete
-		self.paidBy = UUID()
+		self.paidBy = UUID().uuidString
 		self.paidFor = [UserTranShare]()
 		self.amount = 0.0
 		self.currency = .Dollar
@@ -45,14 +60,14 @@ extension Transaction: PersistanceConvertible {
 	}
 	
     func getId() -> String {
-        return self.tranID.uuidString
+        return self.tranID
     }
     
     func getColumnNamevalueDictionary() -> [String : Any] {
         
         let paidForString = paidFor.map({return try? $0.jsonFormat()})
         
-        return  ["tranID": self.tranID.uuidString,
+        return  ["tranID": self.tranID,
                  "associatedEvent": self.associatedEvent,
                  "tranDate":self.tranDate,
                  "status":self.status.hashValue,
@@ -73,21 +88,20 @@ extension Transaction: PersistanceConvertible {
 
 extension Transaction : TransactionRepresentable{
 
-    func getPaidBy() -> UUID {
+    func getPaidBy() -> String {
         return paidBy
     }
     
-    func getAssociatedEvent() -> UUID {
+    func getAssociatedEvent() -> String {
         return associatedEvent
     }
     
-    static public func generateTransaction(date: Date?, associatedEvent: UUID, status: TransactionStatus, paidBy: UUID, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
-        
-        
-        return Transaction.init(tranID: UUID(), associatedEvent: associatedEvent, tranDate: date!, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency, tranImages: transactionImages, description: transactionDescription)
+    static public func generateTransaction(date: Double?, associatedEvent: String, status: TransactionStatus, paidBy: String, paidFor: [UserTranShare], amount: Double, currency: TransactionCurrency, transactionImages: [UIImage]?, transactionDescription: String) -> Transaction? {
+
+		return Transaction(date: date, associatedEvent: associatedEvent, status: status, paidBy: paidBy, paidFor: paidFor, amount: amount, currency: currency)
     }
     
-    func getTransactionID() -> UUID{
+    func getTransactionID() -> String{
         return tranID
     }
 }

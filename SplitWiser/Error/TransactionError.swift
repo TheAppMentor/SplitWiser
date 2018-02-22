@@ -9,9 +9,9 @@
 import Foundation
 
 enum TransactionError : Error {
-    case noTransactionMatchingID (transactionID : UUID)
+    case noTransactionMatchingID (transactionID : String)
     case duplicateTransaction
     case invalidEvent
-    case failedToConvertTransactionToJSON(transactionID : UUID)
+    case failedToConvertTransactionToJSON(transactionID : String)
     case failedToConvertTransactionShareToJSON
 }

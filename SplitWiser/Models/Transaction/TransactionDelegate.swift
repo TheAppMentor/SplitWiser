@@ -23,10 +23,10 @@ protocol TransactionDelegate {
     func fetchTotalAmountPaidBy(eventID : String, userID : String) throws -> Double?
     func fetchTotalAmountOwed(eventID : String, userID : String) throws -> Double?
 
-    mutating func addTransaction(date : Date?,
-                        associatedEvent : UUID,
+    mutating func addTransaction(date : Double?,
+                        associatedEvent : String,
                         status : TransactionStatus,
-                        paidBy : UUID,
+                        paidBy : String,
                         paidFor : [UserTranShare],
                         amount : Double,
                         currency : TransactionCurrency,
